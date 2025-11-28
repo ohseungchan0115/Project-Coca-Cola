@@ -1,5 +1,5 @@
 [ 테이블 ]
-CREATE TABLE OUR_COMPANY (
+CREATE TABLE OURCOMPANY (
     CONTENT_ID      NUMBER          PRIMARY KEY,       -- 고유 식별자 (SEQUENCE 사용 권장)
     SECTION_CODE    VARCHAR2(50)    NOT NULL,          -- 섹션 구분 코드 (예: GLOBAL_COKE, KOREA_COKE)
     TITLE           VARCHAR2(255)   NOT NULL,          -- 제목 (<h2>에 출력)
