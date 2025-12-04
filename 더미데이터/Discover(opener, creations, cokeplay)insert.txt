@@ -1,0 +1,382 @@
+OPENER_CATEGORY
+
+INSERT ALL
+    INTO OPENER_CATEGORY (CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER, USE_YN)
+    VALUES (1, '음료 리뷰', '음료 리뷰: 마시는 즐거움', 1, 'Y')
+
+    INTO OPENER_CATEGORY (CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER, USE_YN)
+    VALUES (2, '라이프 스타일', '일상을 더 즐겁게! 음료 탐구생활', 2, 'Y')
+
+    INTO OPENER_CATEGORY (CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER, USE_YN)
+    VALUES (3, '나만의 레시피', '더 많은 이야기: 맛있는 일상, 특별한 레시피!', 3, 'Y')
+SELECT * FROM dual;
+
+ -- 음료리뷰
+
+INSERT ALL
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1001, 1,
+        '새로운 닥터페퍼 제로의 등장! 닥터페퍼 제로 스트로베리크림향',
+        '달콤하고 부드러운 딸기크림향 닥터페퍼라니? 당신의 음료 선택지를 넓혀줄 새로운 닥터페퍼 제로의 등장!',
+        '/img/opener/drpepper_zero_strawberry.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1002, 1,
+        '치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill',
+        '달콤한 소다향과 마시는 순간 퍼지는 시원함. 새로운 스프라이트가 왔다.',
+        '/img/opener/sprite_zero_chill.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1003, 1,
+        '올 여름, 당신의 감성을 채워줄 환타는?',
+        '특별하고 예쁜 풍경에는 계절의 감성에 어울리는 환타가 필요하다. 환타 멜론 그리고 환타 제로 상큼 피치.',
+        '/img/opener/fanta_summer.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1004, 1,
+        '달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향',
+        '나만의 순간 멈추지 않는 파워, 파워에이드! 10km의 마라톤 여정, 5종의 파워에이드와 함께 떠난다.',
+        '/img/opener/powerade_zero_lime.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1005, 1,
+        '울림워터, 환상의 섬 ‘울릉도’에서 온 먹는 샘물',
+        '자연의 힘으로 솟아난 울릉 용천수의 청정함. 울림워터가 전하는 일상 속 울림을 느끼다.',
+        '/img/opener/ullung_water.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1006, 1,
+        '집에서 만난 나만의 오아시스, 미닛메이드 제로 피치에이드',
+        '얼은 분홍빛, 상큼한 향. 그리고 복숭아의 상큼한 순간.',
+        '/img/opener/minutemaid_zero_peach.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1007, 1,
+        '추억은 부드러운 밀크 탄산처럼, 암바사 제로',
+        '‘다들 암바사와의 추억 하나쯤 가지고 있지 않나요?’ 상쾌한 탄산, 몽글몽글한 밀크, 그리고 추억의 만남.',
+        '/img/opener/ambasa_zero.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+
+    INTO OPENER_POST (
+        POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL
+    )
+    VALUES (
+        1008, 1,
+        '미라클 모닝을 부르는 단 하나의 커피! 조지아',
+        '미라클 모닝을 하고 있거나, 혹은 앞으로 계획 중인 부지런이들을 위한 맞춤형 조지아 커피 추천을 준비했다.',
+        '/img/opener/georgia_coffee.jpg',
+        'https://www.coca-cola.com/kr/ko/offerings/opener'
+    )
+SELECT * FROM dual;
+
+-- 라이프스타일
+INSERT ALL
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        2001, 2,
+        '닥터페퍼 붐은 온다! 닥터페퍼 클럽 오픈',
+        '버거킹 서교동사거리점에서 열린 닥터페퍼 클럽. 닥터페퍼의 독보적인 매력에 빠지다.',
+        '/images/lifestyle_01.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        2002, 2,
+        '코카-콜라 마시는 방법으로 확인하는 나의 성향',
+        '코카-콜라를 마시는 방법만 봐도 그 사람을 알 수 있다.',
+        '/images/lifestyle_02.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        2003, 2,
+        '수집가들이 주목한 코카-콜라 소장품 10선',
+        '익숙했던 것들이 소중한 이야기가 되어 돌아왔다.',
+        '/images/lifestyle_03.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        2004, 2,
+        '닥터페퍼가 굿즈가 된다면?',
+        '닥터페퍼 향수부터 캔 슬리브까지. 닥터페퍼 팬들이 말하는 가장 ‘닥터페퍼’스러운 굿즈!',
+        '/images/lifestyle_04.jpg'
+    )
+SELECT * FROM dual;
+
+-- 나만의 레시피
+
+INSERT ALL
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        3001, 3,
+        'Z세대가 음료를 마시는 법',
+        '소셜미디어에서 유행하는 Z세대들의 코카·콜라 음료를 즐기는 방법을 소개한다.',
+        '/images/recipe_01.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        3002, 3,
+        '닥터페퍼에 아이스크림을? 닥터페퍼 레시피 4종',
+        'SNS에서 난리난 레시피! 닥터페퍼를 더 특별하고 맛있게 즐기는 방법을 소개한다.',
+        '/images/recipe_02.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL)
+    VALUES (
+        3003, 3,
+        '조지아 커피 요리사, 커피로 달콤한 디저트 만드는 법',
+        '커피 티라미수부터 커피 젤리까지 간단하게 즐길 수 있는 디저트를 준비했다.',
+        '/images/recipe_03.jpg'
+    )
+
+    INTO OPENER_POST (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNA일_URL)
+    VALUES (
+        3004, 3,
+        '닥터페퍼, 그것은 최고의 요리재료입니다.',
+        '닥터페퍼를 마시는 것을 넘어, 닥터페퍼로 음식을 요리한다면? 인생을 두 배로 행복하게 즐길 수 있다.',
+        '/images/recipe_04.jpg'
+    )
+SELECT * FROM dual;
+
+-------------------------
+creations
+
+INSERT ALL
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4001, 'MAIN',
+        '한정판 코카-콜라 크리에이션 (Coca-Cola® Creations)',
+        '2022년 코카-콜라가 선보인 글로벌 혁신 플랫폼, Coca-Cola® Creations. 무한한 상상력과 가능성을 바탕으로 이색적이고 독창적인 브랜드 경험을 전달한다.',
+        '/img/creations/main_01.jpg',
+        NULL, 1
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4002, 'MAIN',
+        '코카-콜라는 왜 계속 변신을 하는 걸까?',
+        '가장 변하지 말아야 할 것을 지키기 위해, 가장 빠르게 변하는 코카-콜라 크리에이션. 다양한 코카-콜라 크리에이션에 대해 알아본다.',
+        '/img/creations/main_02.jpg',
+        NULL, 2
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4003, 'MAIN',
+        '전 세계 한류 팬들을 위한 한정판, 코카-콜라 제로 한류(K-Wave)',
+        'K-POP을 테마로 한 새로운 코카-콜라의 탄생. 전 세계 K-POP 팬들의 무한한 사랑과 열정을 담다.',
+        '/img/creations/main_03.jpg',
+        NULL, 3
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4004, 'MAIN',
+        '코카-콜라 X 리그 오브 레전드, 코카-콜라 제로 레전드',
+        '짜릿한 경험치(+XP)의 맛을 담다. 새로운 전설이 될 코카-콜라 제로 레전드 키트의 봉인을 해제하라!',
+        '/img/creations/main_04.jpg',
+        NULL, 4
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4005, 'MAIN',
+        '꿈나라를 담은 맛, 코카-콜라 제로 드림월드',
+        '코카-콜라 제로의 상상력은 어디까지일까? 꿈의 세계를 담아낸 꿈나라 맛 크리에이션, 코카-콜라 제로 드림월드',
+        '/img/creations/main_05.jpg',
+        NULL, 5
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4006, 'MAIN',
+        '아티스트와 콜라보한 짜릿한 리믹스, 코카-콜라 제로 마시멜로',
+        '그래미상 후보 아티스트 MARSHMELLO와 함께 만든 상상 이상의 리믹스가 시작된다! ‘‘코카-콜라 제로 MARSHMELLO’ 한정판',
+        '/img/creations/main_06.jpg',
+        NULL, 6
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        4007, 'MAIN',
+        '우주의 짜릿함이 온다! 코카-콜라 제로 스타더스트',
+        '어디서도 상상하지 못했던 우주의 짜릿함이 온다! 코카-콜라의 새로운 글로벌 이노베이션 플랫폼, 코카-콜라 크리에이션이 선보이는 첫 번째 프로젝트',
+        '/img/creations/main_07.jpg',
+        NULL, 7
+    )
+SELECT * FROM DUAL;
+
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(101, 'RECOMMEND',
+'코카-콜라 제로 한류, 전세계 K-POP 팬의 사랑을 담다',
+'전 세계 36개국 출시! 글로벌 한정판 코카-콜라 제로 한류를 최초 공개하는 미디어 컨퍼런스 현장',
+'/images/creations/recommend_01.jpg',
+'/creations/detail/101',
+1);
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(102, 'RECOMMEND',
+'코카-콜라가 되어버린 한류, ‘상큼한 최애 맛’은 어떤 맛일까?',
+'코카-콜라 제로 한류(K-Wave). 디자인에 놀라고, 팬심을 저격하는 표현에 한 번 더 놀라다. ‘상큼한 최애 맛’이라니?!',
+'/images/creations/recommend_02.jpg',
+'/creations/detail/102',
+2);
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(103, 'RECOMMEND',
+'짜릿한 경험치(+XP)를 안겨줄 코카-콜라 제로 레전드 탄생!',
+'전설과 전설이 만난다. 코카-콜라와 리그 오브 레전드(LoL)의 만남! 이제부터 새로운 전설이 시작된다.',
+'/images/creations/recommend_03.jpg',
+'/creations/detail/103',
+3);
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(104, 'RECOMMEND',
+'코카-콜라 제로 마시멜로 출시 기념 하우스 파티',
+'느슨해진 파티씬에 긴장감을 줘~ 힙플레이스, 성수 피치스 도원에서 펼쳐지는 리드미컬한 하우스 파티!',
+'/images/creations/recommend_04.jpg',
+'/creations/detail/104',
+4);
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(105, 'RECOMMEND',
+'코카-콜라 제로 드림월드로 놀러와! (feat. 뉴진스)',
+'뉴진스, 로꼬, GRAY, 이이경 등 수많은 셀럽들의 눈과 마음을 훔친 코카-콜라 제로 드림월드 팝업 행사 현장!',
+'/images/creations/recommend_05.jpg',
+'/creations/detail/105',
+5);
+
+INSERT INTO CREATION_STORY 
+(STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+VALUES 
+(106, 'RECOMMEND',
+'우주에서 온 코카-콜라가 지구에 착륙하다?',
+'코카-콜라와 피치스 도원의 우주적 컬래버레이션! 힙스터들의 성지, 성수동 피치스 도원에 우주에서 온 코카-콜라가 착륙했다.',
+'/images/creations/recommend_06.jpg',
+'/creations/detail/106',
+6);
+
+INSERT ALL
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        5001, 'MORE',
+        '꿈에도 맛이 있다면? 코카-콜라 제로 드림월드',
+        '이젠 꿈나라까지? 새로운 차원을 넘어 등장한 꿈나라 맛 ‘코카-콜라 제로 드림월드’ 전격 리뷰!',
+        '/img/creations/more_01.jpg',
+        NULL, 1
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        5002, 'MORE',
+        '음악과 예술의 리믹스, 코카-콜라 제로 마시멜로',
+        '음료계의 도슨트, 마시멜로가 소개하는 코카-콜라의 예술 세계. 글로벌 아티스트 DJ MARSHMELLO와 협업한 코카-콜라 제로 마시멜로는 어떤 맛일까?',
+        '/img/creations/more_02.jpg',
+        NULL, 2
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        5003, 'MORE',
+        '코카-콜라 Y3000: 미래에 존재하는 코카-콜라는 어떤 맛일까?',
+        '코카-콜라가 지금으로부터 970여 년 뒤인 3000년으로 데려갈 미래의 맛을 AI와 함께 구현했다.',
+        '/img/creations/more_03.jpg',
+        NULL, 3
+    )
+
+    INTO CREATION_STORY (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DISPLAY_ORDER)
+    VALUES (
+        5004, 'MORE',
+        '코카-콜라 제로 스타더스트 x Peaches 배경화면 5종',
+        '당신의 우주가 매일 즐거움으로 가득하기를! 코카-콜라 제로 스타더스트 x Peaches 배경화면 다운로드 하러가기',
+        '/img/creations/more_04.jpg',
+        NULL, 4
+    )
+
+SELECT * FROM DUAL;
+
+INSERT ALL
+    INTO COKEPLAY_BENEFIT (
+        BENEFIT_ID, TITLE, DESCRIPTION, IMAGE_URL, EXTERNAL_URL, DISPLAY_ORDER, USE_YN
+    ) VALUES (
+        6001,
+        '스페셜 할인과 다양한 이벤트',
+        '스페셜 할인부터 다양한 이벤트까지! 오직 CokePLAY에서 즐길 수 있는 특별한 혜택.',
+        '/img/cokeplay/benefit_01.jpg',
+        NULL,
+        1,
+        'Y'
+    )
+
+    INTO COKEPLAY_BENEFIT (
+        BENEFIT_ID, TITLE, DESCRIPTION, IMAGE_URL, EXTERNAL_URL, DISPLAY_ORDER, USE_YN
+    ) VALUES (
+        6002,
+        '결제액 기준 최대 60% 포인트 적립',
+        'CokePLAY에서 결제 시 최대 60%까지 포인트 적립! 더 모으고, 더 즐기자.',
+        '/img/cokeplay/benefit_02.jpg',
+        NULL,
+        2,
+        'Y'
+    )
+
+    INTO COKEPLAY_BENEFIT (
+        BENEFIT_ID, TITLE, DESCRIPTION, IMAGE_URL, EXTERNAL_URL, DISPLAY_ORDER, USE_YN
+    ) VALUES (
+        6003,
+        '포인트로 한정판/스페셜 리워드 GET',
+        '포인트를 사용하면 코카-콜라 한정판 굿즈와 다양한 스페셜 리워드를 받을 수 있다!',
+        '/img/cokeplay/benefit_03.jpg',
+        NULL,
+        3,
+        'Y'
+    )
+SELECT * FROM DUAL;
+
