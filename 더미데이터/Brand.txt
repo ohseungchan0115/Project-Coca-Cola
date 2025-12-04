@@ -1,0 +1,59 @@
+-- Brand 테이블
+INSERT INTO Brand (brand_id, brand_name, brand_logo_url, brand_description, brand_origin) VALUES
+(1, 'Coca-Cola', NULL, '대표 탄산음료', 'USA'),
+(2, 'Diet Coke', NULL, '저칼로리 코카-콜라', 'USA'),
+(3, 'Coca-Cola Zero', NULL, '제로 슈거 코카-콜라', 'USA'),
+(4, 'Sprite', NULL, '청량한 레몬-라임 탄산음료', 'USA'),
+(5, 'Fanta', NULL, '과일향 탄산음료', 'USA'),
+(6, 'Dasani', NULL, '생수 / 미네랄 워터', 'USA'),
+(7, 'vitaminwater', NULL, '비타민 워터', 'USA'),
+(8, 'Powerade', NULL, '스포츠 / 이온 음료', 'USA'),
+(9, 'Minute Maid', NULL, '주스 & 과일 음료', 'USA'),
+(10, 'Simply', NULL, '100% 주스 음료', 'USA'),
+(11, 'Del Valle', NULL, '주스 / 과일 음료', 'Latin America'),
+(12, 'Georgia Coffee', NULL, 'RTD 커피 음료', 'USA'),
+(13, 'Gold Peak', NULL, '티 / 아이스티 음료', 'USA');
+
+
+-- Product 테이블 (각 브랜드당 대표 제품 1개 예시)
+INSERT INTO Product (product_id, brand_id, product_name, product_volume, product_image_url, product_nutritional_info, product_launch_date, product_description) VALUES
+(1, 1, 'Coca-Cola Classic 330ml', '330ml', NULL, '탄산수, 설탕, 카페인 등', '1886-05-08', '오리지널 코카콜라 탄산음료'),
+(2, 2, 'Diet Coke 330ml', '330ml', NULL, '탄산수, 감미료, 카페인, 저칼로리', '1982-08-01', '칼로리 낮은 코카콜라'),
+(3, 3, 'Coca-Cola Zero Sugar 330ml', '330ml', NULL, '탄산수, 감미료, 카페인, 0 kcal', '2005-08-01', '제로 슈거 코카콜라'),
+(4, 4, 'Sprite 500ml', '500ml', NULL, '탄산수, 레몬-라임 향, 설탕', '1961-06-01', '상쾌한 사이다 탄산음료'),
+(5, 5, 'Fanta Orange 500ml', '500ml', NULL, '탄산수, 오렌지향, 설탕', '1940-05-01', '오렌지향 탄산음료'),
+(6, 6, 'Dasani Water 500ml', '500ml', NULL, '정제수, 미네랄', '1999-01-01', '미네랄 워터'),
+(7, 7, 'vitaminwater Zero 500ml', '500ml', NULL, '정제수, 비타민, 미네랄, 감미료', '1996-01-01', '비타민 워터 음료'),
+(8, 8, 'Powerade 500ml', '500ml', NULL, '전해질, 당류, 물', '1992-01-01', '스포츠용 이온음료'),
+(9, 9, 'Minute Maid Orange Juice 1L', '1L', NULL, '오렌지 주스, 당분, 비타민', '1945-01-01', '과일 주스 음료'),
+(10, 10, 'Simply Orange 1L', '1L', NULL, '오렌지 주스 100%', '2001-01-01', '100% 주스 음료'),
+(11, 11, 'Del Valle Mixed Fruit Juice 1L', '1L', NULL, '과일 주스, 당류', '2007-01-01', '과일 혼합 주스 음료'),
+(12, 12, 'Georgia Coffee Can 240ml', '240ml', NULL, '커피, 설탕, 우유 등', '1975-01-01', '캔 커피 음료'),
+(13, 13, 'Gold Peak Iced Tea 500ml', '500ml', NULL, '홍차, 설탕, 향료', '2014-01-01', '아이스티 음료');
+
+
+-- Category 테이블 예시
+INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
+(1, 'Sparkling Soft Drinks', '탄산 소프트 드링크'),
+(2, 'Water / Mineral Water', '생수 및 미네랄 워터'),
+(3, 'Vitamin / Functional Water', '비타민 워터 / 기능성 워터'),
+(4, 'Sports Drinks & Hydration', '스포츠 / 이온 음료'),
+(5, 'Juices & Fruit Drinks', '주스 및 과일 음료'),
+(6, 'Coffee Drinks', '커피 음료'),
+(7, 'Tea & Iced Tea', '차 / 아이스티 음료');
+
+-- Brand_Category 매핑 예시
+INSERT INTO Brand_Category (brand_category_id, brand_id) VALUES
+(1, 1),  -- Coca-Cola → 탄산음료  
+(1, 2),  -- Diet Coke → 탄산음료  
+(1, 3),  -- Coca-Cola Zero → 탄산음료  
+(1, 4),  -- Sprite → 탄산음료  
+(1, 5),  -- Fanta → 탄산음료  
+(2, 6),  -- Dasani → 생수/미네랄 워터  
+(3, 7),  -- vitaminwater → 비타민워터  
+(4, 8),  -- Powerade → 스포츠 음료  
+(5, 9),  -- Minute Maid → 주스 음료  
+(5, 10), -- Simply → 주스 음료  
+(5, 11), -- Del Valle → 주스 음료  
+(6, 12), -- Georgia Coffee → 커피 음료  
+(7, 13); -- Gold Peak → 차 / 아이스티 음료
