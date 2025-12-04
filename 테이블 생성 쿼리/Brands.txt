@@ -1,0 +1,46 @@
+CREATE TABLE Brand (
+    brand_id INT PRIMARY KEY AUTO_INCREMENT,
+    brand_name VARCHAR(100) NOT NULL,
+    brand_logo_url VARCHAR(255),
+    brand_description VARCHAR(1000),
+    brand_origin VARCHAR(100)
+);
+
+CREATE TABLE Product (
+    product_id INT PRIMARY KEY AUTO_INCREMENT,
+    brand_id INT NOT NULL,
+    product_name VARCHAR(150) NOT NULL,
+    product_volume VARCHAR(50),
+    product_image_url VARCHAR(255),
+    product_nutritional_info TEXT,
+    product_launch_date DATE,
+    product_description VARCHAR(1000),
+
+    CONSTRAINT fk_product_brand
+        FOREIGN KEY (brand_id) REFERENCES Brand(brand_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
+
+CREATE TABLE Category (
+    brand_category_id INT PRIMARY KEY AUTO_INCREMENT,
+    brand_category_name VARCHAR(100) NOT NULL,
+    brand_category_description VARCHAR(500)
+);
+
+CREATE TABLE Brand_Category (
+    brand_category_id INT NOT NULL,
+    brand_id INT NOT NULL,
+
+    PRIMARY KEY (brand_category_id, brand_id),
+
+    CONSTRAINT fk_brandcategory_category
+        FOREIGN KEY (brand_category_id) REFERENCES Category(brand_category_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE,
+
+    CONSTRAINT fk_brandcategory_brand
+        FOREIGN KEY (brand_id) REFERENCES Brand(brand_id)
+        ON DELETE CASCADE
+        ON UPDATE CASCADE
+);
