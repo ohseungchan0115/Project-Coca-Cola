@@ -1,0 +1,189 @@
+-- 브랜드(brand)
+
+CREATE TABLE Brands (
+    brand_id            NUMBER          PRIMARY KEY,
+    brand_name          VARCHAR2(100)   NOT NULL,
+    brand_logo_url      VARCHAR2(255),
+    brand_description   VARCHAR2(1000),
+    brand_origin        VARCHAR2(100)
+);
+
+CREATE TABLE Product (
+    product_id              NUMBER          PRIMARY KEY,
+    brand_id                NUMBER          NOT NULL,
+    product_name            VARCHAR2(150)   NOT NULL,
+    product_volume          VARCHAR2(50),
+    product_image_url       VARCHAR2(255),
+    product_nutritional_info CLOB,
+    product_launch_date     DATE,
+    product_description     VARCHAR2(1000),
+
+    CONSTRAINT fk_product_brand FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id)
+);
+
+CREATE TABLE Category (
+    brand_category_id          NUMBER          PRIMARY KEY,
+    brand_category_name        VARCHAR2(100)   NOT NULL,
+    brand_category_description VARCHAR2(500)
+);
+
+CREATE TABLE Brand_Category (
+    brand_category_id  NUMBER,
+    brand_id           NUMBER,
+    PRIMARY KEY (brand_category_id, brand_id),
+    CONSTRAINT fk_bc_category FOREIGN KEY (brand_category_id)
+        REFERENCES Category(brand_category_id),
+    CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id)
+);
+
+-- discover (수진)
+
+CREATE TABLE OPENER_CATEGORY (
+CATEGORY_ID      NUMBER         PRIMARY KEY,
+CATEGORY_NAME    VARCHAR2(100)  NOT NULL,
+SECTION_TITLE    VARCHAR2(200),
+DISPLAY_ORDER    NUMBER,
+USE_YN           CHAR(1)        DEFAULT 'Y'
+);
+
+
+CREATE TABLE OPENER_POST (
+    POST_ID         NUMBER          PRIMARY KEY,
+    CATEGORY_ID     NUMBER          NOT NULL,
+    TITLE           VARCHAR2(300)   NOT NULL,
+    SUMMARY         VARCHAR2(1000),
+    THUMBNAIL_URL   VARCHAR2(500),
+    EXTERNAL_URL    VARCHAR2(500),
+    CONTENT         CLOB,                
+    CREATED_AT      DATE            DEFAULT SYSDATE,
+    VIEW_COUNT      NUMBER          DEFAULT 0,
+
+    CONSTRAINT FK_OPENER_POST_CATEGORY
+        FOREIGN KEY (CATEGORY_ID)
+        REFERENCES OPENER_CATEGORY (CATEGORY_ID)
+);
+
+CREATE TABLE CREATION_STORY (
+    STORY_ID        NUMBER          PRIMARY KEY,
+    SECTION_TYPE    VARCHAR2(20)    NOT NULL,   -- MAIN / RECOMMEND / MORE
+    TITLE           VARCHAR2(300)   NOT NULL,
+    SUMMARY         VARCHAR2(1000),
+    THUMBNAIL_URL   VARCHAR2(500),
+    EXTERNAL_URL    VARCHAR2(500),
+    CONTENT         CLOB,              
+    CREATED_AT      DATE            DEFAULT SYSDATE,
+    DISPLAY_ORDER   NUMBER
+);
+
+CREATE TABLE COKEPLAY_BENEFIT (
+    BENEFIT_ID      NUMBER          PRIMARY KEY,
+    TITLE           VARCHAR2(300)   NOT NULL,
+    DESCRIPTION     VARCHAR2(1000),
+    IMAGE_URL       VARCHAR2(500),
+    EXTERNAL_URL    VARCHAR2(500),
+    DISPLAY_ORDER   NUMBER,
+    USE_YN          CHAR(1)         DEFAULT 'Y'
+);
+
+
+-- discover (소예)
+
+CREATE TABLE CAMPAIGNS (
+    campaigns_id        NUMBER        PRIMARY KEY,
+    campaigns_title     VARCHAR2(255),
+    campaigns_summary   VARCHAR2(255),
+    campaigns_body      VARCHAR2(255),
+    campaigns_date      DATE
+);
+
+CREATE TABLE STORIES (
+    story_id        NUMBER        PRIMARY KEY,
+    story_title     VARCHAR2(255),
+    story_summary   VARCHAR2(255),
+    story_body      CLOB,
+    story_image     VARCHAR2(255),
+    story_date      DATE
+);
+
+CREATE TABLE DISC_MEDIA (
+    media_id        NUMBER,
+    story_id        NUMBER,
+    campaigns_id    NUMBER,
+    media_url       VARCHAR2(255),
+    media_index     NUMBER,
+
+    -- 복합 PRIMARY KEY
+    CONSTRAINT pk_disc_media 
+        PRIMARY KEY (media_id, story_id, campaigns_id),
+
+    -- FK: STORIES
+    CONSTRAINT fk_discmedia_story
+        FOREIGN KEY (story_id)
+        REFERENCES STORIES (story_id),
+
+    -- FK: CAMPAIGNS
+    CONSTRAINT fk_discmedia_campaign
+        FOREIGN KEY (campaigns_id)
+        REFERENCES CAMPAIGNS (campaigns_id)
+);
+
+--ourcompany
+
+CREATE TABLE OURCOMPANY (
+    CONTENT_ID      NUMBER          PRIMARY KEY,       
+    SECTION_CODE    VARCHAR2(50)    NOT NULL,        
+    TITLE           VARCHAR2(255)   NOT NULL,     
+    SUMMARY         VARCHAR2(255)  NOT NULL,        
+    IMAGE_FILENAME  VARCHAR2(255)   NOT NULL,        
+    BUTTON_LINK     VARCHAR2(255)   DEFAULT '#',      
+    DISPLAY_ORDER   NUMBER          NOT NULL          
+);
+
+CREATE SEQUENCE SEQ_OURCOMPANY START WITH 1 INCREMENT BY 1;
+
+--sustainability
+
+CREATE TABLE SECTION (
+    section_id        NUMBER          PRIMARY KEY,
+    section_title     VARCHAR2(100),
+    section_subtitle  VARCHAR2(100),
+    section_description CLOB,
+    section_image     VARCHAR2(255)
+);
+
+CREATE TABLE CONTENT (
+    content_id        NUMBER          PRIMARY KEY,
+    section_id        NUMBER,
+    content_title     VARCHAR2(100),
+    content_body      CLOB,
+    content_category  VARCHAR2(50),
+    content_link      VARCHAR2(200),
+    CONSTRAINT fk_content_section
+        FOREIGN KEY (section_id)
+        REFERENCES SECTION(section_id)
+);
+
+CREATE TABLE MEDIA (
+    media_id          NUMBER          PRIMARY KEY,
+    content_id        NUMBER,
+    media_file_type   VARCHAR2(50),
+    media_file        VARCHAR2(100),
+    media_description CLOB,
+    CONSTRAINT fk_media_content
+        FOREIGN KEY (content_id)
+        REFERENCES CONTENT(content_id)
+);
+
+CREATE TABLE DOCUMENT (
+    document_id         NUMBER        PRIMARY KEY,
+    section_id          NUMBER,
+    document_title      VARCHAR2(100),
+    document_file       VARCHAR2(100),
+    document_description CLOB,
+    document_date       DATE,
+    CONSTRAINT fk_document_section
+        FOREIGN KEY (section_id)
+        REFERENCES SECTION(section_id)
+);
