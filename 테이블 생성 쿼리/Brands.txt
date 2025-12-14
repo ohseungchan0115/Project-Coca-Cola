@@ -6,6 +6,18 @@ CREATE TABLE Brands (
     brand_origin        VARCHAR2(100)
 );
 
+CREATE TABLE SubBrand (
+    sub_brand_id      NUMBER PRIMARY KEY,
+    brand_id          NUMBER NOT NULL,
+    sub_brand_name    VARCHAR2(100) NOT NULL,
+    sub_brand_logo_url VARCHAR2(255),
+
+    CONSTRAINT fk_subbrand_brand
+        FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id)
+);
+
+
 CREATE TABLE Product (
     product_id              NUMBER          PRIMARY KEY,
     brand_id                NUMBER          NOT NULL,
@@ -35,3 +47,4 @@ CREATE TABLE Brand_Category (
     CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
 );
+
