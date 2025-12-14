@@ -19,7 +19,8 @@ CREATE TABLE SubBrand (
 
 CREATE TABLE Product (
     product_id               NUMBER          PRIMARY KEY,
-    sub_brand_id             NUMBER          NOT NULL,
+    brand_id                 NUMBER          NOT NULL,
+    sub_brand_id             NUMBER          NULL,
 
     product_name             VARCHAR2(150)   NOT NULL,
     product_volume           VARCHAR2(50),
@@ -28,10 +29,15 @@ CREATE TABLE Product (
     product_launch_date      DATE,
     product_description      VARCHAR2(1000),
 
+    CONSTRAINT fk_product_brand
+        FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id),
+
     CONSTRAINT fk_product_sub_brand
         FOREIGN KEY (sub_brand_id)
         REFERENCES SubBrand(sub_brand_id)
 );
+
 
 
 
@@ -50,6 +56,7 @@ CREATE TABLE Brand_Category (
     CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
 );
+
 
 
 
