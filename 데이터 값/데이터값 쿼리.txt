@@ -1,0 +1,715 @@
+ALTER TABLE STORIES
+DROP COLUMN story_body;
+
+ALTER TABLE CAMPAIGNS
+DROP COLUMN campaigns_body;
+
+ALTER TABLE CAMPAIGNS
+ADD campaigns_image VARCHAR2(255);
+
+ALTER TABLE DISC_MEDIA
+DROP CONSTRAINT fk_discmedia_campaign;
+
+ALTER TABLE DISC_MEDIA
+DROP COLUMN campaigns_id;
+
+ALTER TABLE DISC_MEDIA DROP COLUMN story_id;
+
+ALTER TABLE DISC_MEDIA
+DROP COLUMN story_id;
+
+ALTER TABLE CAMPAIGNS
+RENAME TO COKE_MEAL;
+
+ALTER TABLE COKE_MEAL
+RENAME COLUMN campaigns_id TO coke_meal_id;
+
+ALTER TABLE COKE_MEAL
+RENAME COLUMN campaigns_title TO coke_meal_title;
+
+ALTER TABLE COKE_MEAL
+RENAME COLUMN campaigns_summary TO coke_meal_summary;
+
+ALTER TABLE COKE_MEAL
+RENAME COLUMN campaigns_image TO coke_meal_image;
+
+ALTER TABLE COKE_MEAL
+RENAME COLUMN campaigns_date TO coke_meal_date;
+
+ALTER TABLE STORIES RENAME TO BRAND_STORY;
+
+ALTER TABLE BRAND_STORY RENAME COLUMN story_id TO brand_story_id;
+ALTER TABLE BRAND_STORY RENAME COLUMN story_title TO brand_story_title;
+ALTER TABLE BRAND_STORY RENAME COLUMN story_summary TO brand_story_summary;
+ALTER TABLE BRAND_STORY RENAME COLUMN story_image TO brand_story_image;
+ALTER TABLE BRAND_STORY RENAME COLUMN story_date TO brand_story_date;
+
+CREATE TABLE ORIGINALS (
+    originals_id        NUMBER        PRIMARY KEY,
+    originals_title     VARCHAR2(255),
+    originals_summary   VARCHAR2(255),
+    originals_image     VARCHAR2(255),
+    originals_date      DATE
+);
+
+ALTER TABLE DISC_MEDIA
+ADD coke_meal_id NUMBER;
+
+ALTER TABLE DISC_MEDIA
+ADD originals_id NUMBER;
+
+ALTER TABLE DISC_MEDIA
+ADD brand_story_id NUMBER;
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_coke_meal
+FOREIGN KEY (coke_meal_id)
+REFERENCES COKE_MEAL (coke_meal_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_originals
+FOREIGN KEY (originals_id)
+REFERENCES ORIGINALS (originals_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT FK_DISC_MEDIA_BRAND_STORY
+FOREIGN KEY (brand_story_id)
+REFERENCES BRAND_STORY (brand_story_id);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_image, story_date
+) VALUES
+(1,
+ '코카-콜라와 뷔 이토록 짜릿한 만남!',
+ 'Best Coke Ever? Yes! 코카-콜라 앰배서더로 선정된 뷔가 전하는 이야기, 지금 만나보세요.',
+ '/brand_story/coca-cola_v.png',
+ TO_DATE('2025-08-06','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(2,
+ '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집 탐방 프로젝트',
+ '코카-콜라와 함께하는 짜릿한 미식 생활.  
+전국 맛집 탐방, 레드리본 가이드로 완전 정복!',
+ '/brand_story/reed-ribbon.png',
+ TO_DATE('2025-05-01','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(3,
+ '상쾌한 라임향이 더해진 새로운 파워에이드 제로',
+ '운동 후 갈증 해소는 물론, 상쾌한 하루의 시작까지 책임질 새로운 맛의 파워에이드가 찾아왔다. 파워에이드 제로 라임향이 그 주인공.',
+ '/brand_story/powerade-zero-lime.png',
+ TO_DATE('2025-04-29','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(4,
+ '원해? 새로 나온 환타!
+환타 멜론 & 환타 제로 상큼 피치',
+ '과일향의 상큼달콤함과 톡 쏘는 탄산감이 매력인 환타! 달콤한 ‘환타 멜론’과 상큼하게 즐기는 ‘환타 제로 상큼 피치’가 새롭게 출시됐다.',
+ '/brand_story/fanta.png',
+ TO_DATE('2025-04-29','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(5,
+ '몰랐을 걸 백퍼? 닥터 페퍼에 숨겨진 7가지 팩트 체크',
+ '닥터 페퍼가 코카-콜라보다 먼저 태어났다? 닥터페어에 숨겨진 7가지 이야기 전격공개!',
+ '/brand_story/dr-pepper.jpg',
+  NULL
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(6,
+ '취향대로 즐기는 코카-콜라 제로 시리즈',
+ '코카-콜라 제로, 코카-콜라 제로 레몬, 코카-콜라 제로제로.. 가벼운 짜릿함이 필요할 때, 골라 마시는 코카-콜라 제로!',
+ '/brand_story/coca-cola-zero-zero.jpg',
+ TO_DATE('2023-08-01','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(7,
+ '우주에서 온 콜라라고? 다른 세상의 코카-콜라들',
+ '만약 매일 마시는 코카-콜라가 달라진다면? 당신이 만나지 못한 마법 같은 코카-콜라 대공개!',
+ '/brand_story/masism-unexpected-coke.jpg',
+ TO_DATE('2022-03-14','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(8,
+ 'K-Wave 콘서트 <인기가요> 필수템, '한류’ 응원봉 꾸미기!',
+ 'K-POP을 향한 전세계 팬들의 무한한 사랑과 열정을 모티브로 탄생한 코카-콜라 제로 한류. K-팬덤의 마법 같은 짜릿함을 담아낸 한정판 응원봉을 나만의 개성이 담기게 꾸며보자. (a.k.a 응꾸)',
+ '/brand_story/k-wave-light-stick.png',
+ TO_DATE('2024-03-12','YYYY-MM-DD')
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(9,
+ '콜라를 못 만들게 했더니 환타가 탄생했습니다',
+ '코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기',
+ '/brand_story/fanta-history.jpg',
+ NULL
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(10,
+ '코카-콜라와 관련된 흥미로운 기네스북 기록 10가지!',
+ '세계에서 다이아몬드가 가장 많이 박힌 핸드백? 코카-콜라만의 기네스북 특별한 기록들!',
+ '/brand_story/coca-cola-guinness-world-records.jpg',
+  NULL
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(11,
+ '[제로로 제로하자] #1 제로의 시대, 제로(0)족을 위한 제로 음료 3',
+ '제로 라이프를 살고 있는 ‘제로(0)족’ 모여라! 칼로리 제로부터 환경을 생각한 제로까지! 제로로 제로할 수 있는 제로 음료들을 소개한다.',
+ '/brand_story/coke-zero-people.jpg',
+  NULL
+);
+
+INSERT INTO STORIES (
+    story_id, story_title, story_summary, story_body, story_image, story_date
+) VALUES
+(12,
+ '[제로로 제로하자] #2 제로의 기원부터 현재까지. 코카-콜라 제로의 역사',
+ '오랜 시간, “제로”라는 이름을 굳건히 지켜온 제로 칼로리 음료의 대명사, 코카-콜라 제로의 시작부터 현재까지 그 역사를 살펴본다.',
+ '/brand_story/coke-zero-history.jpg',
+ NULL
+);
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    1,
+    '나의 미식 파트너, 코카-콜라',
+    '오늘을 제대로 즐기기 위해 필요한 건? 맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!',
+    '/coke_meal/coke_and_meal.png',
+    TO_DATE('2025-02-17','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    2,
+    '코카-콜라 X 신흥시장 프로젝트',
+    '떠오르는 핫플레이스, 해방촌 신흥시장에 스며든 코카-콜라의 짜릿함. 코카-콜라 X 신흥시장 프로젝트를 소개한다.',
+    '/coke_meal/coke-and-meal__food.png',
+    TO_DATE('2025-07-07','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    3,
+    '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 1편',
+    NULL,
+    '/coke_meal/cokemeal_guide1.png',
+    TO_DATE('2025-07-21','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    4,
+    '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 2편',
+    NULL,
+    '/coke_meal/cokemeal_guide2.png',
+    TO_DATE('2025-10-27','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    5,
+    '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집',
+    '코카-콜라와 함께하는 짜릿한 미식 생활. 전국 맛집 탐방, 레드리본 가이드로 완전 정복!',
+    '/coke_meal/red-ribbon.png',
+    TO_DATE('2025-05-01','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    6,
+    '레드리본 맛집 찾기',
+    '내 주변 레드리본 맛집 찾고, 코카-콜라와 함께하는 짜릿한 미식 경험을 즐겨보세요!',
+    '/coke_meal/coke-meal_map.png',
+    NULL
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    7,
+    '[대학로 편] 예술과 낭만 사이'
+    NULL,
+    '/coke_meal/coke-meal-16_card.png',
+    TO_DATE('2025-08-29','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    8,
+    '[신용산 편] 감성과 미식이 공존하는 곳',
+    NULL,
+    '/coke_meal/coke-meal-15_card.png',
+    TO_DATE('2025-07-25','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    9,
+    '[삼성동 편] 숨가뿐 도심 속 미식 한 끼',
+    NULL,
+    '/coke_meal/coke-meal-14_card.png',
+    TO_DATE('2025-07-02','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    10,
+    '[명동 편] 맛과 관광의 중심지',
+    NULL,
+    '/coke_meal/coke-meal-13_card.png',
+    TO_DATE('2025-06-16','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    11,
+    '[을지로 편] 힙과 레트로 감성 한 스푼',
+    NULL,
+    '/coke_meal/coke-meal-12_card.png',
+    TO_DATE('2025-06-16','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    12,
+    '[여의도 편] 직장인들이 픽한 찐맛집',
+    NULL,
+    '/coke_meal/coke-meal-11_card.png',
+    TO_DATE('2025-02-28','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    13,
+    '[한남동 편] 미식과 문화의 최전선',
+    NULL,
+    '/coke_meal/coke-meal-10_card.png',
+    TO_DATE('2025-01-31','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    14,
+    '[도산공원 편] 감도 높은 트렌드 집합소',
+    NULL,
+    '/coke_meal/coke-meal-9_card.png',
+    TO_DATE('2024-12-10','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    15,
+    '[문래창작촌 편] 힘과 예술의 경지',
+    NULL,
+    '/coke_meal/coke-meal-8_card.png',
+    TO_DATE('2024-11-25','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    16,
+    '[서촌 편] 고즈넉한 골목 맛집',
+    NULL,
+    '/coke_meal/coke-meal-7_card.png',
+    TO_DATE('2024-10-30','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    17,
+    '[올림픽공원 편] 도심 속 푸른 섬',
+    NULL,
+    '/coke_meal/coke-meal-6_card.png',
+    TO_DATE('2024-09-30','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    17,
+    '[성수 편] 성수동의 남다른 맛집 바이브',
+    NULL,
+    '/coke_meal/coke-meal-5_card.png',
+    TO_DATE('2024-08-12','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    18,
+    '[삼각지 편] MZ 문화의 메카',
+    NULL,
+    '/coke_meal/coke-meal-4_card.png',
+    TO_DATE('2024-07-05','YYYY-MM-DD')
+);
+
+INSERT INTO COKE_MEAL (
+    coke_meal_id,
+    coke_meal_title,
+    coke_meal_summary,
+    coke_meal_image,
+    coke_meal_date
+) VALUES (
+    19,
+    '도심 속 가장 짜릿한 만남! 코카-콜라 X 현대카드 쿠킹 라이브러리',
+    '도심 속 책과 음식이 어울어진 공간. 현대카드 쿠킹 라이브러리에서 새로운 미식 팝업 공간이 열린다!',
+    '/coke_meal/cookinglibrary.png',
+    TO_DATE('2025-10-02','YYYY-MM-DD')
+);
+
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    1,
+    '[시즌 3] 썰스티',
+    'MC 콕따, 이이경과 함께 코카-콜라사의 다양한 음료 브랜드의 팬들을 만나 '나의 최애 음료'에 담긴 '썰'을 풀어본다!
+
+※ 썰스티, 2025.06 ~',
+    '/originals/ssulsty3.png',
+    TO_DATE('2025-06-09','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    2,
+    '러닝이 처음이라고? '션'이 알려주는 러닝 입문 꿀팁',
+    '파워에이드 앰배서더이자 대한민국 대표 러너, 션과 함께! 이이경의 첫 러닝 입문기 & 파워런 챌린지',
+    '/originals/running.png',
+    TO_DATE('2025-09-23','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    3,
+    '입터짐 주의! 쭈니형 한입에 신흥시장 통째로 BAAAM!',
+    '신흥시장 곳곳에 스며든 코카-콜라, 그리고 새로워진 코카-콜라 제로까지! 코-크 제로 광팬 쭈니형과 함께 즐긴다!',
+    '/originals/ssulsty2-coke-zero.png',
+    TO_DATE('2025-07-25','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    4,
+    '잔나비 콘서트장을 뒤집어놓은 It's 닥터페퍼 타임!',
+    '닥터페어 엠버서더로 발탁된 잔나비 '최정훈'을 만나러 콘서트장을 찾은 MC 콕따! 그리고 이어지는 열광의 현장',
+    '/originals/ssulsty1-drpepper.png',
+    TO_DATE('2025-06-09','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    5,
+    '[시즌 2] 에이전트 콕의 콕콕콕!',
+    '에이전트 콕, 장도연. 코카-콜라와 관련된 궁금증들을 이해하기 쉽게 콕! 집어서 콕! 콕! 해결한다.
+
+※ 콕콕콕, 2021 ~ 2024',
+    '/originals/ssulsty2.png',
+    NULL
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    6,
+    '"코카-콜라 맛있다♬" 코카-콜라 노래의 기원을 찾아서',
+    '코카-콜라와 관련된 모든 궁금증과 비밀을 콕! 첫 번쩨 미션은, 모두가 아는 그 노래! "코카-콜라 맛있다~" 노래의 기원을 찾아라!',
+    '/originals/coke_song.png',
+    TO_DATE('2021-02-07','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    7,
+    '인턴 장도연, 코카-콜라 본사 털고 왔습니다.',
+    '한국 코카-콜라의 기업 문화와 업무를 파헤치는 1일 인턴 체험기',
+    '/originals/coke_company.png',
+    TO_DATE('2021-09-08','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    8,
+    '코카-콜라 수집품에 숨겨진 비밀!',
+    '코카-콜라 수집 외길 인생 40년 & 코카-콜라 레드리본 맛집 운영까지! 코카-콜라에 누구보다 진심인 콜렉터를 만나다.',
+    '/originals/coke_collect.png',
+    TO_DATE('2024-07-31','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    9,
+    'I Feel Coke 청춘스타, 심혜진을 만나다',
+    '한국 코카-콜라 50주년을 맞아, 그 시절 코카-콜라의 뮤즈였던 심혜진을 만났다.',
+    '/originals/coke_star.png',
+    TO_DATE('2024-06-03','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    10,
+    'FIFA 월드컵™ 트로피 투어 일일 인턴 체험',
+    '일일 인턴으로 변신한 에이전트 콕의 미션! 코카-콜라와 함께하는 FIFA 월드컵 트로피의 한국 방문을 생생하게 전달하라!',
+    '/originals/coke_FIFA.png',
+    TO_DATE('2022-11-07','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    11,
+    '★찐들의 전쟁★ 못 맞히라고 낸 코믈리에 테스트',
+    '자신만만하게 세 명의 코카-콜라 전문가. 단계별로 올라가는 난이도의 벽을 넘을 수 있을 것인가!',
+    '/originals/coke_real_war.png',
+    TO_DATE('2021-08-11','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    12,
+    '[시즌 1] 코카-콜라 저니 카풀',
+    '일상 속 응원이 필요하다면? 코카-콜라 저니 카풀에 탑승! 꿈을 향한 짜릿한 여정을 코카-콜라가 응원한다.
+
+※ Coca‑Cola Journey Carpool, 2017 ~ 2020',
+    '/originals/coke_dream.png',
+    TO_DATE('2017-10-31','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    13,
+    '코카-콜라와 정진운, 절친된 사연부터 깜짝 콘서트까지!',
+    NULL,
+    '/originals/coke_jung.png',
+    TO_DATE('2017-11-01','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    14,
+    '쭈니형이 떴다! 코카-콜라 한국 오피스 어택',
+    NULL,
+    '/originals/coke_juni.png',
+    TO_DATE('2019-05-21','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    15,
+    '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 국가대표 박상영',
+    NULL,
+    '/originals/coke_syndrom.png',
+    TO_DATE('2018-12-21','YYYY-MM-DD')
+);
+
+INSERT INTO ORIGINALS (
+    originals_id,
+    originals_title,
+    originals_summary,
+    originals_image,
+    originals_date
+) VALUES (
+    16,
+    '[특별편] 애틀랜타 코카-콜라 본사 & 박물관 투어',
+    '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?',
+    '/originals/coke_special',
+    TO_DATE('2019-12-24','YYYY-MM-DD')
+);
