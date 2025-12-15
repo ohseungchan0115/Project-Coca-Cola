@@ -1,18 +1,25 @@
-CREATE TABLE CAMPAIGNS (
-    campaigns_id        NUMBER        PRIMARY KEY,
-    campaigns_title     VARCHAR2(255),
-    campaigns_summary   VARCHAR2(255),
-    campaigns_body      VARCHAR2(255),
-    campaigns_date      DATE
+CREATE TABLE COKE_MEAL (
+    coke_meal_id        NUMBER        PRIMARY KEY,
+    coke_meal_title     VARCHAR2(255),
+    coke_meal_summary   VARCHAR2(255),
+    coke_meal_image     VARCHAR2(255),
+    coke_meal_date      DATE
 );
 
-CREATE TABLE STORIES (
-    story_id        NUMBER        PRIMARY KEY,
-    story_title     VARCHAR2(255),
-    story_summary   VARCHAR2(255),
-    story_body      CLOB,
-    story_image     VARCHAR2(255),
-    story_date      DATE
+CREATE TABLE ORIGINALS (
+    originals_id        NUMBER        PRIMARY KEY,
+    originals_title     VARCHAR2(255),
+    originals_summary   VARCHAR2(255),
+    originals_image     VARCHAR2(255),
+    originals_date      DATE
+);
+
+CREATE TABLE BRAND_STORY (
+    brand_story_id        NUMBER        PRIMARY KEY,
+    brand_story_title     VARCHAR2(255),
+    brand_story_summary   VARCHAR2(255),
+    brand_story_image     VARCHAR2(255),
+    brand_story_date      DATE
 );
 
 CREATE TABLE DISC_MEDIA (
@@ -36,6 +43,8 @@ CREATE TABLE DISC_MEDIA (
         FOREIGN KEY (campaigns_id)
         REFERENCES CAMPAIGNS (campaigns_id)
 );
+
+
 
 ---------------------------------------------------------------------------------------
 
@@ -66,4 +75,5 @@ INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index
 -- 스토리 12의 미디어 (닥터페퍼 팩트 기사 이미지)
 INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
 (400, 12, NULL, 'media/doctorpepper_fact.jpg', 1);
+
 
