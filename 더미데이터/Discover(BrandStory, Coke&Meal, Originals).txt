@@ -1,44 +1,3 @@
-CREATE TABLE CAMPAIGNS (
-    campaigns_id        NUMBER        PRIMARY KEY,
-    campaigns_title     VARCHAR2(255),
-    campaigns_summary   VARCHAR2(255),
-    campaigns_body      VARCHAR2(255),
-    campaigns_date      DATE
-);
-
-CREATE TABLE STORIES (
-    story_id        NUMBER        PRIMARY KEY,
-    story_title     VARCHAR2(255),
-    story_summary   VARCHAR2(255),
-    story_body      CLOB,
-    story_image     VARCHAR2(255),
-    story_date      DATE
-);
-
-CREATE TABLE DISC_MEDIA (
-    media_id        NUMBER,
-    story_id        NUMBER,
-    campaigns_id    NUMBER,
-    media_url       VARCHAR2(255),
-    media_index     NUMBER,
-
-    -- 복합 PRIMARY KEY
-    CONSTRAINT pk_disc_media 
-        PRIMARY KEY (media_id, story_id, campaigns_id),
-
-    -- FK: STORIES
-    CONSTRAINT fk_discmedia_story
-        FOREIGN KEY (story_id)
-        REFERENCES STORIES (story_id),
-
-    -- FK: CAMPAIGNS
-    CONSTRAINT fk_discmedia_campaign
-        FOREIGN KEY (campaigns_id)
-        REFERENCES CAMPAIGNS (campaigns_id)
-);
-
----------------------------------------------------------------------------------------
-
 INSERT INTO CAMPAIGNS (campaigns_id, campaigns_title, campaigns_summary, campaigns_body, campaigns_date) VALUES
 (1, '코카-콜라 X 블루리본 서베이', '2025 레드리본 전국의 맛집', '코카-콜라와 함께하는 전국 맛집 탐방 프로젝트! 레드리본 맛집을 소개합니다. 탄산음료와 찰떡궁합 음식 추천부터 현장 스토리까지.', TO_DATE('2025-05-10','YYYY-MM-DD')),
 (2, '파워에이드 제로 라임향 출시', '상쾌한 라임향을 입은 제로 칼로리 파워에이드', '운동 후 갈증을 상쾌하게 해주는 파워에이드 제로 라임향이 새롭게 출시되었습니다. 가볍고 청량한 한 모금으로 하루를 시작해보세요!', TO_DATE('2025-06-20','YYYY-MM-DD')),
@@ -66,4 +25,5 @@ INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index
 -- 스토리 12의 미디어 (닥터페퍼 팩트 기사 이미지)
 INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
 (400, 12, NULL, 'media/doctorpepper_fact.jpg', 1);
+
 
