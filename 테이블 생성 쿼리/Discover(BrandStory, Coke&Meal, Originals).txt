@@ -1,5 +1,5 @@
 CREATE TABLE COKE_MEAL (
-    coke_meal_id        NUMBER        PRIMARY KEY,
+    coke_meal_id        NUMBER PRIMARY KEY,
     coke_meal_title     VARCHAR2(255),
     coke_meal_summary   VARCHAR2(255),
     coke_meal_image     VARCHAR2(255),
@@ -7,7 +7,7 @@ CREATE TABLE COKE_MEAL (
 );
 
 CREATE TABLE ORIGINALS (
-    originals_id        NUMBER        PRIMARY KEY,
+    originals_id        NUMBER PRIMARY KEY,
     originals_title     VARCHAR2(255),
     originals_summary   VARCHAR2(255),
     originals_image     VARCHAR2(255),
@@ -15,7 +15,7 @@ CREATE TABLE ORIGINALS (
 );
 
 CREATE TABLE BRAND_STORY (
-    brand_story_id        NUMBER        PRIMARY KEY,
+    brand_story_id        NUMBER PRIMARY KEY,
     brand_story_title     VARCHAR2(255),
     brand_story_summary   VARCHAR2(255),
     brand_story_image     VARCHAR2(255),
@@ -23,24 +23,33 @@ CREATE TABLE BRAND_STORY (
 );
 
 CREATE TABLE DISC_MEDIA (
-    media_id        NUMBER,
-    brand_story_id        NUMBER,
+    media_id        NUMBER PRIMARY KEY,
+    brand_story_id  NUMBER,
     coke_meal_id    NUMBER,
     originals_id    NUMBER,
     media_url       VARCHAR2(255),
     media_index     NUMBER,
 
-    -- 복합 PRIMARY KEY
-    CONSTRAINT pk_disc_media 
-        PRIMARY KEY (media_id, story_id, campaigns_id),
-
-    -- FK: STORIES
-    CONSTRAINT fk_discmedia_story
-        FOREIGN KEY (story_id)
-        REFERENCES STORIES (story_id),
-
-    -- FK: CAMPAIGNS
-    CONSTRAINT fk_discmedia_campaign
-        FOREIGN KEY (campaigns_id)
-        REFERENCES CAMPAIGNS (campaigns_id)
+    -- 하나의 콘텐츠에만 속하도록 제한
+    CONSTRAINT ck_disc_media_one_parent CHECK (
+        (CASE WHEN brand_story_id IS NOT NULL THEN 1 ELSE 0 END) +
+        (CASE WHEN coke_meal_id   IS NOT NULL THEN 1 ELSE 0 END) +
+        (CASE WHEN originals_id   IS NOT NULL THEN 1 ELSE 0 END)
+        = 1
+    )
 );
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_brand_story
+FOREIGN KEY (brand_story_id)
+REFERENCES BRAND_STORY (brand_story_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_coke_meal
+FOREIGN KEY (coke_meal_id)
+REFERENCES COKE_MEAL (coke_meal_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_originals
+FOREIGN KEY (originals_id)
+REFERENCES ORIGINALS (originals_id);
