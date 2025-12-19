@@ -8,18 +8,36 @@ CREATE TABLE Brands (
     brand_origin        VARCHAR2(100)
 );
 
-CREATE TABLE Product (
-    product_id              NUMBER          PRIMARY KEY,
-    brand_id                NUMBER          NOT NULL,
-    product_name            VARCHAR2(150)   NOT NULL,
-    product_volume          VARCHAR2(50),
-    product_image_url       VARCHAR2(255),
-    product_nutritional_info CLOB,
-    product_launch_date     DATE,
-    product_description     VARCHAR2(1000),
+CREATE TABLE SubBrand (
+    sub_brand_id      NUMBER PRIMARY KEY,
+    brand_id          NUMBER NOT NULL,
+    sub_brand_name    VARCHAR2(100) NOT NULL,
+    sub_brand_logo_url VARCHAR2(255),
 
-    CONSTRAINT fk_product_brand FOREIGN KEY (brand_id)
+    CONSTRAINT fk_subbrand_brand
+        FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
+);
+
+CREATE TABLE Product (
+    product_id               NUMBER          PRIMARY KEY,
+    brand_id                 NUMBER          NOT NULL,
+    sub_brand_id             NUMBER          NULL,
+
+    product_name             VARCHAR2(150)   NOT NULL,
+    product_volume           VARCHAR2(50),
+    product_image_url        VARCHAR2(255),
+    product_nutritional_info CLOB,
+    product_launch_date      DATE,
+    product_description      VARCHAR2(1000),
+
+    CONSTRAINT fk_product_brand
+        FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id),
+
+    CONSTRAINT fk_product_sub_brand
+        FOREIGN KEY (sub_brand_id)
+        REFERENCES SubBrand(sub_brand_id)
 );
 
 CREATE TABLE Category (
@@ -38,7 +56,8 @@ CREATE TABLE Brand_Category (
         REFERENCES Brands(brand_id)
 );
 
--- discover (수진)
+
+-- discover(opener, creations, cokeplay) - 수진
 
 CREATE TABLE OPENER_CATEGORY (
 CATEGORY_ID      NUMBER         PRIMARY KEY,
@@ -88,46 +107,64 @@ CREATE TABLE COKEPLAY_BENEFIT (
 );
 
 
--- discover (소예)
+-- discover( Brand Story, Coke & Meal, Originals ) - 소예
 
-CREATE TABLE CAMPAIGNS (
-    campaigns_id        NUMBER        PRIMARY KEY,
-    campaigns_title     VARCHAR2(255),
-    campaigns_summary   VARCHAR2(255),
-    campaigns_body      VARCHAR2(255),
-    campaigns_date      DATE
+CREATE TABLE COKE_MEAL (
+    coke_meal_id        NUMBER PRIMARY KEY,
+    coke_meal_title     VARCHAR2(255),
+    coke_meal_summary   VARCHAR2(255),
+    coke_meal_image     VARCHAR2(255),
+    coke_meal_date      DATE
 );
 
-CREATE TABLE STORIES (
-    story_id        NUMBER        PRIMARY KEY,
-    story_title     VARCHAR2(255),
-    story_summary   VARCHAR2(255),
-    story_body      CLOB,
-    story_image     VARCHAR2(255),
-    story_date      DATE
+CREATE TABLE ORIGINALS (
+    originals_id        NUMBER PRIMARY KEY,
+    originals_title     VARCHAR2(255),
+    originals_summary   VARCHAR2(255),
+    originals_image     VARCHAR2(255),
+    originals_date      DATE
+);
+
+CREATE TABLE BRAND_STORY (
+    brand_story_id        NUMBER PRIMARY KEY,
+    brand_story_title     VARCHAR2(255),
+    brand_story_summary   VARCHAR2(255),
+    brand_story_image     VARCHAR2(255),
+    brand_story_date      DATE
 );
 
 CREATE TABLE DISC_MEDIA (
-    media_id        NUMBER,
-    story_id        NUMBER,
-    campaigns_id    NUMBER,
+    media_id        NUMBER PRIMARY KEY,
+    brand_story_id  NUMBER,
+    coke_meal_id    NUMBER,
+    originals_id    NUMBER,
     media_url       VARCHAR2(255),
     media_index     NUMBER,
 
-    -- 복합 PRIMARY KEY
-    CONSTRAINT pk_disc_media 
-        PRIMARY KEY (media_id, story_id, campaigns_id),
-
-    -- FK: STORIES
-    CONSTRAINT fk_discmedia_story
-        FOREIGN KEY (story_id)
-        REFERENCES STORIES (story_id),
-
-    -- FK: CAMPAIGNS
-    CONSTRAINT fk_discmedia_campaign
-        FOREIGN KEY (campaigns_id)
-        REFERENCES CAMPAIGNS (campaigns_id)
+    -- 하나의 콘텐츠에만 속하도록 제한
+    CONSTRAINT ck_disc_media_one_parent CHECK (
+        (CASE WHEN brand_story_id IS NOT NULL THEN 1 ELSE 0 END) +
+        (CASE WHEN coke_meal_id   IS NOT NULL THEN 1 ELSE 0 END) +
+        (CASE WHEN originals_id   IS NOT NULL THEN 1 ELSE 0 END)
+        = 1
+    )
 );
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_brand_story
+FOREIGN KEY (brand_story_id)
+REFERENCES BRAND_STORY (brand_story_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_coke_meal
+FOREIGN KEY (coke_meal_id)
+REFERENCES COKE_MEAL (coke_meal_id);
+
+ALTER TABLE DISC_MEDIA
+ADD CONSTRAINT fk_discmedia_originals
+FOREIGN KEY (originals_id)
+REFERENCES ORIGINALS (originals_id);
+
 
 --ourcompany
 
@@ -186,4 +223,5 @@ CREATE TABLE DOCUMENT (
     CONSTRAINT fk_document_section
         FOREIGN KEY (section_id)
         REFERENCES SECTION(section_id)
+
 );
