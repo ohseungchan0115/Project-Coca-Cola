@@ -333,7 +333,11 @@ INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, origina
 VALUES (7, '인턴 장도연, 코카-콜라 본사 털고 왔습니다.', '한국 코카-콜라의 기업 문화와 업무를 파헤치는 1일 인턴 체험기', '/originals/coke_company.png', TO_DATE('2021-09-08','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (8, '코카-콜라 수집품에 숨겨진 비밀!', '코카-콜라 수집 외길 인생 40년 & 코카-콜라 레드리본 맛집 운영까지! 코카-콜라에 누구보다 진심인 콜렉터를 만나다.', '/originals/coke_collect.png', TO_DATE('2024-07-31','YYYY-MM-DD'));
+VALUES (8, 
+        '코카-콜라 수집품에 숨겨진 비밀!', 
+        '코카-콜라 수집 외길 인생 40년 ' || CHR(38) || ' 코카-콜라 레드리본 맛집 운영까지! 코카-콜라에 누구보다 진심인 콜렉터를 만나다.', 
+        '/originals/coke_collect.png', 
+        TO_DATE('2024-07-31','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
 VALUES (9, 'I Feel Coke 청춘스타, 심혜진을 만나다', '한국 코카-콜라 50주년을 맞아, 그 시절 코카-콜라의 뮤즈였던 심혜진을 만났다.', '/originals/coke_star.png', TO_DATE('2024-06-03','YYYY-MM-DD'));
@@ -357,6 +361,10 @@ INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, origina
 VALUES (15, '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 국가대표 박상영', NULL, '/originals/coke_syndrom.png', TO_DATE('2018-12-21','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (16, '[특별편] 애틀랜타 코카-콜라 본사 & 박물관 투어', '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', '/originals/coke_special.png', TO_DATE('2019-12-24','YYYY-MM-DD'));
+VALUES (16, 
+        '[특별편] 애틀랜타 코카-콜라 본사 ' || CHR(38) || ' 박물관 투어', 
+        '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', 
+        '/originals/coke_special.png', 
+        TO_DATE('2019-12-24','YYYY-MM-DD'));
 
 
