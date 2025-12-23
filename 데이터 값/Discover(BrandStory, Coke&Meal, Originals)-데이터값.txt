@@ -184,12 +184,12 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(8,
- 'K-Wave 콘서트 <인기가요> 필수템, '한류’ 응원봉 꾸미기!',
- 'K-POP을 향한 전세계 팬들의 무한한 사랑과 열정을 모티브로 탄생한 코카-콜라 제로 한류. K-팬덤의 마법 같은 짜릿함을 담아낸 한정판 응원봉을 나만의 개성이 담기게 꾸며보자. (a.k.a 응꾸)',
- '/brand_story/k-wave-light-stick.png',
- TO_DATE('2024-03-12','YYYY-MM-DD')
+) VALUES (
+    8,
+    'K-Wave 콘서트 <인기가요> 필수템, ''한류'' 응원봉 꾸미기!',
+    'K-POP을 향한 전세계 팬들의 무한한 사랑과 열정을 모티브로 탄생한 코카-콜라 제로 한류. K-팬덤의 마법 같은 짜릿함을 담아낸 한정판 응원봉을 나만의 개성이 담기게 꾸며보자. (a.k.a 응꾸)',
+    '/brand_story/k-wave-light-stick.png',
+    TO_DATE('2024-03-12','YYYY-MM-DD')
 );
 
 INSERT INTO BRAND_STORY (
@@ -198,12 +198,12 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(9,
- '콜라를 못 만들게 했더니 환타가 탄생했습니다',
- '코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기',
- '/brand_story/fanta-history.jpg',
- NULL
+) VALUES (
+    9,
+    '콜라를 못 만들게 했더니 환타가 탄생했습니다',
+    '코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기',
+    '/brand_story/fanta-history.jpg',
+    NULL
 );
 
 INSERT INTO BRAND_STORY (
@@ -212,12 +212,12 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(10,
- '코카-콜라와 관련된 흥미로운 기네스북 기록 10가지!',
- '세계에서 다이아몬드가 가장 많이 박힌 핸드백? 코카-콜라만의 기네스북 특별한 기록들!',
- '/brand_story/coca-cola-guinness-world-records.jpg',
-  NULL
+) VALUES (
+    10,
+    '코카-콜라와 관련된 흥미로운 기네스북 기록 10가지!',
+    '세계에서 다이아몬드가 가장 많이 박힌 핸드백? 코카-콜라만의 기네스북 특별한 기록들!',
+    '/brand_story/coca-cola-guinness-world-records.jpg',
+    NULL
 );
 
 INSERT INTO BRAND_STORY (
@@ -226,12 +226,12 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(11,
- '[제로로 제로하자] #1 제로의 시대, 제로(0)족을 위한 제로 음료 3',
- '제로 라이프를 살고 있는 ‘제로(0)족’ 모여라! 칼로리 제로부터 환경을 생각한 제로까지! 제로로 제로할 수 있는 제로 음료들을 소개한다.',
- '/brand_story/coke-zero-people.jpg',
-  NULL
+) VALUES (
+    11,
+    '[제로로 제로하자] #1 제로의 시대, 제로(0)족을 위한 제로 음료 3',
+    '제로 라이프를 살고 있는 ‘제로(0)족’ 모여라! 칼로리 제로부터 환경을 생각한 제로까지! 제로로 제로할 수 있는 제로 음료들을 소개한다.',
+    '/brand_story/coke-zero-people.jpg',
+    NULL
 );
 
 INSERT INTO BRAND_STORY (
@@ -240,295 +240,75 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(12,
- '[제로로 제로하자] #2 제로의 기원부터 현재까지. 코카-콜라 제로의 역사',
- '오랜 시간, “제로”라는 이름을 굳건히 지켜온 제로 칼로리 음료의 대명사, 코카-콜라 제로의 시작부터 현재까지 그 역사를 살펴본다.',
- '/brand_story/coke-zero-history.jpg',
- NULL
+) VALUES (
+    12,
+    '[제로로 제로하자] #2 제로의 기원부터 현재까지. 코카-콜라 제로의 역사',
+    '오랜 시간, “제로”라는 이름을 굳건히 지켜온 제로 칼로리 음료의 대명사, 코카-콜라 제로의 시작부터 현재까지 그 역사를 살펴본다.',
+    '/brand_story/coke-zero-history.jpg',
+    NULL
 );
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    1,
-    '나의 미식 파트너, 코카-콜라',
-    '오늘을 제대로 즐기기 위해 필요한 건? 맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!',
-    '/coke_meal/coke_and_meal.png',
-    TO_DATE('2025-02-17','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (1, '나의 미식 파트너, 코카-콜라', '오늘을 제대로 즐기기 위해 필요한 건? 맛있는 음식, 그리고 어떤 요리도 제대로 살려주는 코카-콜라!', '/coke_meal/coke_and_meal.png', TO_DATE('2025-02-17','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    2,
-    '코카-콜라 X 신흥시장 프로젝트',
-    '떠오르는 핫플레이스, 해방촌 신흥시장에 스며든 코카-콜라의 짜릿함. 코카-콜라 X 신흥시장 프로젝트를 소개한다.',
-    '/coke_meal/coke-and-meal__food.png',
-    TO_DATE('2025-07-07','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (2, '코카-콜라 X 신흥시장 프로젝트', '떠오르는 핫플레이스, 해방촌 신흥시장에 스며든 코카-콜라의 짜릿함. 코카-콜라 X 신흥시장 프로젝트를 소개한다.', '/coke_meal/coke-and-meal__food.png', TO_DATE('2025-07-07','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    3,
-    '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 1편',
-    NULL,
-    '/coke_meal/cokemeal_guide1.png',
-    TO_DATE('2025-07-21','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (3, '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 1편', NULL, '/coke_meal/cokemeal_guide1.png', TO_DATE('2025-07-21','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    4,
-    '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 2편',
-    NULL,
-    '/coke_meal/cokemeal_guide2.png',
-    TO_DATE('2025-10-27','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (4, '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 2편', NULL, '/coke_meal/cokemeal_guide2.png', TO_DATE('2025-10-27','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    5,
-    '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집',
-    '코카-콜라와 함께하는 짜릿한 미식 생활. 전국 맛집 탐방, 레드리본 가이드로 완전 정복!',
-    '/coke_meal/red-ribbon.png',
-    TO_DATE('2025-05-01','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (5, '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집', '코카-콜라와 함께하는 짜릿한 미식 생활. 전국 맛집 탐방, 레드리본 가이드로 완전 정복!', '/coke_meal/red-ribbon.png', TO_DATE('2025-05-01','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    6,
-    '레드리본 맛집 찾기',
-    '내 주변 레드리본 맛집 찾고, 코카-콜라와 함께하는 짜릿한 미식 경험을 즐겨보세요!',
-    '/coke_meal/coke-meal_map.png',
-    NULL
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (6, '레드리본 맛집 찾기', '내 주변 레드리본 맛집 찾고, 코카-콜라와 함께하는 짜릿한 미식 경험을 즐겨보세요!', '/coke_meal/coke-meal_map.png', NULL);
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    7,
-    '[대학로 편] 예술과 낭만 사이'
-    NULL,
-    '/coke_meal/coke-meal-16_card.png',
-    TO_DATE('2025-08-29','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (7, '[대학로 편] 예술과 낭만 사이', NULL, '/coke_meal/coke-meal-16_card.png', TO_DATE('2025-08-29','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    8,
-    '[신용산 편] 감성과 미식이 공존하는 곳',
-    NULL,
-    '/coke_meal/coke-meal-15_card.png',
-    TO_DATE('2025-07-25','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (8, '[신용산 편] 감성과 미식이 공존하는 곳', NULL, '/coke_meal/coke-meal-15_card.png', TO_DATE('2025-07-25','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    9,
-    '[삼성동 편] 숨가뿐 도심 속 미식 한 끼',
-    NULL,
-    '/coke_meal/coke-meal-14_card.png',
-    TO_DATE('2025-07-02','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (9, '[삼성동 편] 숨가뿐 도심 속 미식 한 끼', NULL, '/coke_meal/coke-meal-14_card.png', TO_DATE('2025-07-02','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    10,
-    '[명동 편] 맛과 관광의 중심지',
-    NULL,
-    '/coke_meal/coke-meal-13_card.png',
-    TO_DATE('2025-06-16','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (10, '[명동 편] 맛과 관광의 중심지', NULL, '/coke_meal/coke-meal-13_card.png', TO_DATE('2025-06-16','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    11,
-    '[을지로 편] 힙과 레트로 감성 한 스푼',
-    NULL,
-    '/coke_meal/coke-meal-12_card.png',
-    TO_DATE('2025-06-16','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (11, '[을지로 편] 힙과 레트로 감성 한 스푼', NULL, '/coke_meal/coke-meal-12_card.png', TO_DATE('2025-06-16','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    12,
-    '[여의도 편] 직장인들이 픽한 찐맛집',
-    NULL,
-    '/coke_meal/coke-meal-11_card.png',
-    TO_DATE('2025-02-28','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (12, '[여의도 편] 직장인들이 픽한 찐맛집', NULL, '/coke_meal/coke-meal-11_card.png', TO_DATE('2025-02-28','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    13,
-    '[한남동 편] 미식과 문화의 최전선',
-    NULL,
-    '/coke_meal/coke-meal-10_card.png',
-    TO_DATE('2025-01-31','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (13, '[한남동 편] 미식과 문화의 최전선', NULL, '/coke_meal/coke-meal-10_card.png', TO_DATE('2025-01-31','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    14,
-    '[도산공원 편] 감도 높은 트렌드 집합소',
-    NULL,
-    '/coke_meal/coke-meal-9_card.png',
-    TO_DATE('2024-12-10','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (14, '[도산공원 편] 감도 높은 트렌드 집합소', NULL, '/coke_meal/coke-meal-9_card.png', TO_DATE('2024-12-10','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    15,
-    '[문래창작촌 편] 힘과 예술의 경지',
-    NULL,
-    '/coke_meal/coke-meal-8_card.png',
-    TO_DATE('2024-11-25','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (15, '[문래창작촌 편] 힘과 예술의 경지', NULL, '/coke_meal/coke-meal-8_card.png', TO_DATE('2024-11-25','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    16,
-    '[서촌 편] 고즈넉한 골목 맛집',
-    NULL,
-    '/coke_meal/coke-meal-7_card.png',
-    TO_DATE('2024-10-30','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (16, '[서촌 편] 고즈넉한 골목 맛집', NULL, '/coke_meal/coke-meal-7_card.png', TO_DATE('2024-10-30','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    17,
-    '[올림픽공원 편] 도심 속 푸른 섬',
-    NULL,
-    '/coke_meal/coke-meal-6_card.png',
-    TO_DATE('2024-09-30','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (17, '[올림픽공원 편] 도심 속 푸른 섬', NULL, '/coke_meal/coke-meal-6_card.png', TO_DATE('2024-09-30','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    17,
-    '[성수 편] 성수동의 남다른 맛집 바이브',
-    NULL,
-    '/coke_meal/coke-meal-5_card.png',
-    TO_DATE('2024-08-12','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (18, '[성수 편] 성수동의 남다른 맛집 바이브', NULL, '/coke_meal/coke-meal-5_card.png', TO_DATE('2024-08-12','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    18,
-    '[삼각지 편] MZ 문화의 메카',
-    NULL,
-    '/coke_meal/coke-meal-4_card.png',
-    TO_DATE('2024-07-05','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (19, '[삼각지 편] MZ 문화의 메카', NULL, '/coke_meal/coke-meal-4_card.png', TO_DATE('2024-07-05','YYYY-MM-DD'));
 
-INSERT INTO COKE_MEAL (
-    coke_meal_id,
-    coke_meal_title,
-    coke_meal_summary,
-    coke_meal_image,
-    coke_meal_date
-) VALUES (
-    19,
-    '도심 속 가장 짜릿한 만남! 코카-콜라 X 현대카드 쿠킹 라이브러리',
-    '도심 속 책과 음식이 어울어진 공간. 현대카드 쿠킹 라이브러리에서 새로운 미식 팝업 공간이 열린다!',
-    '/coke_meal/cookinglibrary.png',
-    TO_DATE('2025-10-02','YYYY-MM-DD')
-);
+INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
+VALUES (20, '도심 속 가장 짜릿한 만남! 코카-콜라 X 현대카드 쿠킹 라이브러리', '도심 속 책과 음식이 어울어진 공간. 현대카드 쿠킹 라이브러리에서 새로운 미식 팝업 공간이 열린다!', '/coke_meal/cookinglibrary.png', TO_DATE('2025-10-02','YYYY-MM-DD'));
 
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
@@ -579,3 +359,4 @@ VALUES (15, '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
 VALUES (16, '[특별편] 애틀랜타 코카-콜라 본사 & 박물관 투어', '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', '/originals/coke_special.png', TO_DATE('2019-12-24','YYYY-MM-DD'));
+
