@@ -78,8 +78,12 @@ REFERENCES BRAND_STORY (brand_story_id);
 
 ----------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (1,
  '코카-콜라와 뷔 이토록 짜릿한 만남!',
@@ -88,8 +92,12 @@ INSERT INTO STORIES (
  TO_DATE('2025-08-06','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (2,
  '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집 탐방 프로젝트',
@@ -99,8 +107,12 @@ INSERT INTO STORIES (
  TO_DATE('2025-05-01','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (3,
  '상쾌한 라임향이 더해진 새로운 파워에이드 제로',
@@ -109,8 +121,12 @@ INSERT INTO STORIES (
  TO_DATE('2025-04-29','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (4,
  '원해? 새로 나온 환타!
@@ -120,8 +136,12 @@ INSERT INTO STORIES (
  TO_DATE('2025-04-29','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (5,
  '몰랐을 걸 백퍼? 닥터 페퍼에 숨겨진 7가지 팩트 체크',
@@ -130,8 +150,12 @@ INSERT INTO STORIES (
   NULL
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (6,
  '취향대로 즐기는 코카-콜라 제로 시리즈',
@@ -140,8 +164,12 @@ INSERT INTO STORIES (
  TO_DATE('2023-08-01','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (7,
  '우주에서 온 콜라라고? 다른 세상의 코카-콜라들',
@@ -150,8 +178,12 @@ INSERT INTO STORIES (
  TO_DATE('2022-03-14','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (8,
  'K-Wave 콘서트 <인기가요> 필수템, '한류’ 응원봉 꾸미기!',
@@ -160,8 +192,12 @@ INSERT INTO STORIES (
  TO_DATE('2024-03-12','YYYY-MM-DD')
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (9,
  '콜라를 못 만들게 했더니 환타가 탄생했습니다',
@@ -170,8 +206,12 @@ INSERT INTO STORIES (
  NULL
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (10,
  '코카-콜라와 관련된 흥미로운 기네스북 기록 10가지!',
@@ -180,8 +220,12 @@ INSERT INTO STORIES (
   NULL
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (11,
  '[제로로 제로하자] #1 제로의 시대, 제로(0)족을 위한 제로 음료 3',
@@ -190,8 +234,12 @@ INSERT INTO STORIES (
   NULL
 );
 
-INSERT INTO STORIES (
-    story_id, story_title, story_summary, story_body, story_image, story_date
+INSERT INTO BRAND_STORY (
+    brand_story_id,
+    brand_story_title,
+    brand_story_summary,
+    brand_story_image,
+    brand_story_date
 ) VALUES
 (12,
  '[제로로 제로하자] #2 제로의 기원부터 현재까지. 코카-콜라 제로의 역사',
@@ -713,3 +761,4 @@ INSERT INTO ORIGINALS (
     '/originals/coke_special',
     TO_DATE('2019-12-24','YYYY-MM-DD')
 );
+
