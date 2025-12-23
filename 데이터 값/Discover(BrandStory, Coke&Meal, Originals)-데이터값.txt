@@ -127,13 +127,12 @@ INSERT INTO BRAND_STORY (
     brand_story_summary,
     brand_story_image,
     brand_story_date
-) VALUES
-(4,
- '원해? 새로 나온 환타!
-환타 멜론 & 환타 제로 상큼 피치',
- '과일향의 상큼달콤함과 톡 쏘는 탄산감이 매력인 환타! 달콤한 ‘환타 멜론’과 상큼하게 즐기는 ‘환타 제로 상큼 피치’가 새롭게 출시됐다.',
- '/brand_story/fanta.png',
- TO_DATE('2025-04-29','YYYY-MM-DD')
+) VALUES (
+    4,
+    '원해? 새로 나온 환타! 환타 멜론 ' || '&' || ' 환타 제로 상큼 피치',
+    '과일향의 상큼달콤함과 톡 쏘는 탄산감이 매력인 환타! 달콤한 ''환타 멜론''과 상큼하게 즐기는 ''환타 제로 상큼 피치''가 새롭게 출시됐다.',
+    '/brand_story/fanta.png',
+    TO_DATE('2025-04-29','YYYY-MM-DD')
 );
 
 INSERT INTO BRAND_STORY (
@@ -359,4 +358,5 @@ VALUES (15, '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
 VALUES (16, '[특별편] 애틀랜타 코카-콜라 본사 & 박물관 투어', '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', '/originals/coke_special.png', TO_DATE('2019-12-24','YYYY-MM-DD'));
+
 
