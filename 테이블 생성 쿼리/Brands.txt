@@ -38,7 +38,11 @@ CREATE TABLE Product (
         REFERENCES SubBrand(sub_brand_id)
 );
 
-
+ALTER TABLE Product ADD (
+    youtube_video_id   VARCHAR2(50),        -- 유튜브 ID
+    has_video          CHAR(1) DEFAULT 'N', -- Y / N
+    has_product_picker CHAR(1) DEFAULT 'N'  -- Y / N
+);
 
 
 CREATE TABLE Category (
@@ -56,6 +60,7 @@ CREATE TABLE Brand_Category (
     CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
 );
+
 
 
 
