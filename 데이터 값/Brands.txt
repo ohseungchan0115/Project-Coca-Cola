@@ -1,112 +1,140 @@
 -- Category
 
 INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(1, 'Sparkling Soft Drinks', '탄산 소프트 음료'), 
-(2, 'Sports Drinks & Hydration', '스포츠 음료 및 수분 보충'), 
-(3, 'Coffee', '커피 음료'), 
-(4, 'Juices', '과일 / 주스 음료'), 
+(1, 'Sparkling Soft Drinks', '탄산 소프트 음료');
+
+INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
+(2, 'Sports Drinks & Hydration', '스포츠 음료 및 수분 보충'); 
+
+INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
+(3, 'Coffee', '커피 음료');
+
+INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
+(4, 'Juices', '과일 / 주스 음료');
+
+INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
 (5, 'Teas', '차 음료');
 
 
 -- Brands
 
-INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin) VALUES
-(1, 'Coca-Cola', '/logo/coca_cola_original_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(1, 'Coca-Cola', '/Products_logo/coca_cola_original_logo.png', q'[
 일상 속 마법 같은 짜릿한 순간을 함께 해온 코카-콜라!
 1886년 미국 애틀랜타에서 처음 탄생해, 130년이 넘는 역사를 거치며 전 세계 200여 개국에서 사랑받는 브랜드로 자리매김하고 있습니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/brands-home-full-hero_1440x810.jpg');
 
-(2, 'Sprite',/logo/sprite_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(2, 'Sprite',/Products_logo/sprite_logo.png', q'[
 전 세계인들이 사랑하는 세계 1등* 사이다 브랜드, 스프라이트!
 강렬한 상쾌함이 가슴 속을 시원하게 물들입니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/kr-sprite-desktopbanner-1960x350.png');
 
-(3, 'Fanta',/logo/fanta_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(3, 'Fanta',/Products_logo/fanta_logo.png', q'[
 상큼함과 즐거운 이미지로 사랑받는 환타는 1940년에 출시되어 코카-콜라사에서 두 번째로 오래된 브랜드입니다.
-]', 'Germany'),
+]', 'Germany', '/Products_mainphoto/2025_fanta-heade_1440x810.png');
 
-(4, 'DrPepper', /logo/dr_pepper_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(4, 'DrPepper', /Products_logo/dr_pepper_logo.png', q'[
 마셔보면 백퍼, 닥터페퍼! 1885년 탄생한 닥터페퍼는 독특한 맛과 달콤함, 톡 쏘는 탄산이 어우러진 음료입니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/kr_dr-pepper_desktopbanner_1440x810.jpg');
 
-(5, 'Powerade', /logo/powerade_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(5, 'Powerade', /Products_logo/powerade_logo.png', q'[
 스포츠의 열정과 파워를 담은 저칼로리 스포츠음료 파워에이드는 운동 후 수분을 보충하고 갈증을 해소해 줍니다.
 국내외 다양한 스포츠 이벤트의 공식 음료로 활동하며, 스포츠가 있는 곳에 항상 함께 해왔습니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/2025_powerade_1440x810.png');
 
-(6, 'Toreta', /logo/toreta_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(6, 'Toreta', /Products_logo/toreta_logo.png', q'[
 토레타!는 산뜻하고 깔끔한 맛과 10가지 과채수분으로 언제 어디서나 가볍게 즐길 수 있는 이온 함유 수분보충음료입니다.​
-]', 'Japan'),
+]', 'Japan', '/Products_mainphoto/2025_toreta_1440x810.png');
 
-(7, '씨그램', /logo/seagram_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(7, '씨그램', /Products_logo/seagram_logo.png', q'[
 마지막까지 톡! 쏘는 상쾌함! 캐나다에서 시작된 160년 전통 브랜드 씨그램은
 톡 쏘는 상쾌함과 깔끔한 뒷맛, 제로 칼로리로 일상을 상쾌하게 채워줍니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/seagram_1440x810.png');
 
-(8, 'Georgia Coffee', /logo/georgia_logo.png', NULL, 'Japan'),
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(8, 'Georgia Coffee', /Products_logo/georgia_logo.png', NULL, 'Japan', '/Products_mainphoto/new-georgia-header-image_1440x810-1.png');
 
-(9, 'Minute Maid', /logo/minute_maid_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(9, 'Minute Maid', /Products_logo/minute_maid_logo.png', q'[
 60년 이상의 노하우로 진정성을 담은 세계적인 주스음료 브랜드, 미닛메이드. 온 가족의 하루를 상큼하게 시작하는 음료로 전 세계인이 즐기고 있습니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/sub-header.png');
 
-(10, 'Glaceau Vitaminwater', /logo/Glaceau_Vitaminwater_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(10, 'Glaceau Vitaminwater', /Products_logo/Glaceau_Vitaminwater_logo.png', q'[
 1996년 뉴욕에서 만들어진 오리지널 액티브 라이프스타일 브랜드 글라소비타민워터는
 세련된 병 디자인과 비비드한 컬러 패키지로 일상에 기분 좋은 활력을 더해줍니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/231024_Full-Hero_glaceau-vitaminwater_1440x810.jpg');
 
-(11, '태양의 식후비법 W차', /logo/taeyang_aftermeal_w_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(11, '태양의 식후비법 W차', /Products_logo/taeyang_aftermeal_w_logo.png', q'[
 식사 후 깔끔하게! 녹차, 우롱차, 홍차와 식이섬유가 함유된 차 음료의 탄생!
 직접 우려낸 세 가지 차를 조화롭게 섞어 깔끔한 맛을 자랑하는 태양의 식후비법 W차
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr_w-tea_desktopbanner_1440x810_v2.jpg');
 
-(12, '태양의 마테차', /logo/taeyang_mate_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(12, '태양의 마테차', /Products_logo/taeyang_mate_logo.png', q'[
 2013년 국내에 선보인 ‘태양의 마테차’는 깔끔한 맛에 제로 칼로리가 특징이며,
 커피, 녹차와 함께 세계 3대 차 중 하나로 알려져 있습니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/sun-of-mate-1440x810.png');
 
-(13, '강원 평창수', /logo/pyeongchang_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(13, '강원 평창수', /Products_logo/pyeongchang_logo.png', q'[
 평창수, 물의 원칙을 지키다. 강원도 평창군 봉평면에서 취수한 먹는 샘물 ‘강원평창수’는 2018 평창동계올림픽
 공식 먹는 샘물로 선정되어 전 세계 선수들에게 깨끗하고 맑은 물을 제공했습니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr pyung changsoo desktopbanner.jpg');
 
-(14, 'Vio', /logo/hweio_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(14, 'Vio', /Products_logo/hweio_logo.png', q'[
 맑고 깨끗한 물을 담다! 글로벌 코카-콜라의 생수 브랜드 휘오(Vio)는
 엄격한 품질 관리로 깨끗하고 순수한 물을 담은 생수 브랜드입니다. 
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/kr_vio_desktopbanner_vio pure_1440x810.jpg');
 
-(15, '휘오 울림워터', /logo/ulim_water_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(15, '휘오 울림워터', /Products_logo/ulim_water_logo.png', q'[
 울릉도 대자연이 전하는 생명의 울림.
 화산섬 깊은 곳으로부터 스스로 솟아난 자연의 물, 휘오 울림워터.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/ulim-water-hero-desktop.png');
 
-(16, 'CANADA DRY', /logo/canada_dry_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(16, 'CANADA DRY', /Products_logo/canada_dry_logo.png', q'[
 1904년 캐나다에서 처음 선보인 캐나다 드라이는 다양한 음료와 함께 또는
 그 자체로도 부담 없이 즐길 수 있는 탄산음료입니다.
-]', 'USA'),
+]', 'USA', '/Products_mainphoto/kr_canada dry_desktopbanner_1440x810.jpg');
 
-(17, '써니텐', /logo/sunny_ten_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(17, '써니텐', /Products_logo/sunny_ten_logo.png', q'[
 우리끼리 통하는 상쾌함과 짜릿함! 10대들의 친구 같은 짜릿한 과일향 탄산음료 써니텐은
 상콤달콤한 맛과 상쾌함으로 언제 어디서든 부담없이 즐길 수 있는 경쾌하고 활기찬 탄산음료 브랜드입니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr_sunny 10_desktopbanner_1440x810.jpg');
 
-(18, '갈아만든 배', /logo/blended_pear_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(18, '갈아만든 배', /Products_logo/blended_pear_logo.png', q'[
 어제는 축배, 오늘은 갈배! 1996년 출시된 갈아만든 배는
 아삭한 배 알갱이와 시원하고 달콤함이 매력적인 주스&스파클링 음료입니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr_crused-pear_desktopbanner_1440x810.jpg');
 
-(19, '과일촌', /logo/fruit_morning_apple_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(19, '과일촌', /Products_logo/fruit_morning_apple_logo.png', q'[
 아침을 여는 싱그러운 사과의 맛! 1989년 출시된 100% 과즙 주스 브랜드 과일촌은
 20년간 과즙 주스의 대명사로 자리잡은 대표 주스 브랜드입니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr_gawailchon_desktopbanner_1440x810.jpg');
 
-(20, '코코팜', /logo/coco-logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(20, '코코팜', /Products_logo/coco-logo.png', q'[
 탱글탱글 알갱이 씹는 재미! 1995년부터 사랑받고 있는 ‘코코팜’은 다양한 과일 맛과 씹는 재미가 특징입니다.
 상큼한 과즙 속 탱글탱글한 나타드코코 젤리는 씹을 때마다 팜!팜! 터지는 즐거움을 선사합니다.
-]', 'Korea'),
+]', 'Korea', '/Products_mainphoto/kr_coco-palm_desktopbanner_1440x810.jpg');
 
-(21, 'I LOHAS', /logo/ilohas_logo.png', q'[
+INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
+(21, 'I LOHAS', /Products_logo/ilohas_logo.png', q'[
 상큼하고, 달콤하게 즐기는 일로하스 피치. 일본에서 오랜 시간 사랑 받아온 일로하스 브랜드를 이제 국내에서 만나볼 수 있습니다.
-]', 'Japan');
+]', 'Japan', '/Products_mainphoto/2025_i-lohas_header_1440x810_2.png');
 
 
 --Brand_Category
@@ -148,18 +176,98 @@ INSERT INTO Brand_Category (brand_category_id, brand_id) VALUES
 -- SubBrand
 
 INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
-(1, 1, 'Coca-Cola Original', '/logo/coca_cola_original_logo.png'),
+(1, 1, 'Coca-Cola Original', '/logo/coca_cola_original_logo.png');
 
-(2, 1, 'Coca-Cola Zero', '/logo/coca_cola_zero_logo.png'),
+INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
+(2, 1, 'Coca-Cola Zero', '/Products_logo/coca_cola_zero_logo.png');
 
-(3, 1, 'Coca-Cola Zero Caffeine', '/logo/coca_cola_zero_caffeine_logo.png'),
+INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
+(3, 1, 'Coca-Cola Zero Caffeine', '/Products_logo/coca_cola_zero_caffeine_logo.png');
 
-(4, 3, 'FANTA', '/logo/fanta_logo.png'),
+INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
+(4, 3, 'FANTA', '/Products_logo/fanta_logo.png');
 
-(5, 3, 'FANTA_Zero', '/logo/fanta_zero_logo.png'),
+INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
+(5, 3, 'FANTA_Zero', '/Products_logo/fanta_zero_logo.png');
 
-(6, 3, 'AMBASA', '/logo/ambasa_logo.png');
+INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
+(6, 3, 'AMBASA', '/Products_logo/ambasa_logo.png');
 
+-- Brand_Video
+
+INSERT INTO Brand_Video (
+    brand_id,
+    youtube_video_id,
+    video_thumbnail_url,
+    video_description
+) VALUES ( 
+    1,
+    'Ni4E5DBWrv8',
+    '/Products_youtube/cok.jpg',
+    q'[
+        식사를 더욱 즐겁게 만들어주는
+        나의 미식 파트너, 코카-콜라
+      ]'
+);
+
+INSERT INTO Brand_Video (
+    brand_id,
+    youtube_video_id,
+    video_thumbnail_url,
+    video_description
+) VALUES ( 
+    2,
+    'N2Vkb_BoFK4',
+    '/Products_youtube/sprite.jpg',
+    q'[
+        입안에 휘몰아 Chill 상쾌함!
+        새롭게 선보인 스프라이트 제로 Chill을 즐겨봐!
+      ]'
+);
+
+INSERT INTO Brand_Video (
+    brand_id,
+    youtube_video_id,
+    video_thumbnail_url,
+    video_description
+) VALUES ( 
+    3,
+    'xd_GW6bl1iM',
+    '/Products_youtube/sddefault.jpg',
+    q'[
+        원해? NEW 환타!
+        새로워진 환타를 만나보세요!
+      ]'
+);
+
+INSERT INTO Brand_Video (
+    brand_id,
+    youtube_video_id,
+    video_thumbnail_url,
+    video_description
+) VALUES ( 
+    5,
+    'KNltMw-Gpns',
+    '/Products_youtube/maxresdefault.jpg',
+    q'[
+        나만의 순간, 멈추지 않는 파워!
+      ]'
+);
+
+INSERT INTO Brand_Video (
+    brand_id,
+    youtube_video_id,
+    video_thumbnail_url,
+    video_description
+) VALUES ( 
+    6,
+    'tm98GbgvzSA',
+    '/Products_youtube/dd.jpg',
+    q'[
+        가볍게 흘린 땀이 오늘의 나를 채워 ​
+        가볍게 이온 실천, 토레타!
+      ]'
+);
 
 -- Product
 
@@ -1434,6 +1542,4 @@ INTO Product (
 )
 
 SELECT * FROM dual;
-
-
 
