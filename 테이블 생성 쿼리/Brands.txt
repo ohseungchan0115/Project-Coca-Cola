@@ -44,6 +44,20 @@ ALTER TABLE Product ADD (
     has_product_picker CHAR(1) DEFAULT 'N'  -- Y / N
 );
 
+CREATE TABLE Product_Video (
+    video_id        NUMBER PRIMARY KEY,
+    product_id      NUMBER NOT NULL,
+
+    youtube_video_id VARCHAR2(50) NOT NULL, -- TiKjZ6vQZIU
+    video_title      VARCHAR2(200),
+    video_description VARCHAR2(1000),
+
+    CONSTRAINT fk_video_product
+        FOREIGN KEY (product_id)
+        REFERENCES Product(product_id)
+        ON DELETE CASCADE
+);
+
 
 CREATE TABLE Category (
     brand_category_id          NUMBER          PRIMARY KEY,
@@ -60,6 +74,7 @@ CREATE TABLE Brand_Category (
     CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
 );
+
 
 
 
