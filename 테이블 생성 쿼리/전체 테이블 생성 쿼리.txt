@@ -5,7 +5,18 @@ CREATE TABLE Brands (
     brand_name          VARCHAR2(100)   NOT NULL,
     brand_logo_url      VARCHAR2(255),
     brand_description   VARCHAR2(1000),
-    brand_origin        VARCHAR2(100)
+    brand_origin        VARCHAR2(100),
+    brand_mainphoto_url     VARCHAR2(255)
+);
+
+CREATE TABLE Brand_Video (
+    brand_id          NUMBER PRIMARY KEY,
+    youtube_video_id  VARCHAR2(50) NOT NULL,
+    video_description VARCHAR2(1000),
+
+    CONSTRAINT fk_brand_video
+        FOREIGN KEY (brand_id)
+        REFERENCES Brands(brand_id)
 );
 
 CREATE TABLE SubBrand (
@@ -40,27 +51,6 @@ CREATE TABLE Product (
         REFERENCES SubBrand(sub_brand_id)
 );
 
-ALTER TABLE Product ADD (
-    youtube_video_id   VARCHAR2(50),        -- 유튜브 ID
-    has_video          CHAR(1) DEFAULT 'N', -- Y / N
-    has_product_picker CHAR(1) DEFAULT 'N'  -- Y / N
-);
-
-CREATE TABLE Product_Video (
-    video_id        NUMBER PRIMARY KEY,
-    product_id      NUMBER NOT NULL,
-
-    youtube_video_id VARCHAR2(50) NOT NULL, -- TiKjZ6vQZIU
-    video_title      VARCHAR2(200),
-    video_description VARCHAR2(1000),
-
-    CONSTRAINT fk_video_product
-        FOREIGN KEY (product_id)
-        REFERENCES Product(product_id)
-        ON DELETE CASCADE
-);
-
-
 CREATE TABLE Category (
     brand_category_id          NUMBER          PRIMARY KEY,
     brand_category_name        VARCHAR2(100)   NOT NULL,
@@ -76,6 +66,7 @@ CREATE TABLE Brand_Category (
     CONSTRAINT fk_bc_brand FOREIGN KEY (brand_id)
         REFERENCES Brands(brand_id)
 );
+
 
 
 -- discover (수진)
@@ -268,4 +259,5 @@ CREATE TABLE DOCUMENT (
         REFERENCES SECTION(section_id)
 
 );
+
 
