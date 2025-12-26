@@ -10,9 +10,10 @@ CREATE TABLE Brands (
 );
 
 CREATE TABLE Brand_Video (
-    brand_id          NUMBER PRIMARY KEY,
-    youtube_video_id  VARCHAR2(50) NOT NULL,
-    video_description VARCHAR2(1000),
+    brand_id            NUMBER PRIMARY KEY,
+    youtube_video_id    VARCHAR2(50) NOT NULL,
+    video_thumbnail_url VARCHAR2(255) NOT NULL,
+    video_description   VARCHAR2(1000),
 
     CONSTRAINT fk_brand_video
         FOREIGN KEY (brand_id)
@@ -259,5 +260,6 @@ CREATE TABLE DOCUMENT (
         REFERENCES SECTION(section_id)
 
 );
+
 
 
