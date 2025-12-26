@@ -264,7 +264,7 @@ INSERT INTO Brand_Video (
     'tm98GbgvzSA',
     '/Products_youtube/dd.jpg',
     q'[
-        가볍게 흘린 땀이 오늘의 나를 채워 ​
+        가볍게 흘린 땀이 오늘의 나를 채워
         가볍게 이온 실천, 토레타!
       ]'
 );
@@ -1541,5 +1541,6 @@ INTO Product (
 ]'
 )
 
-SELECT * FROM dual;
+
+
 
