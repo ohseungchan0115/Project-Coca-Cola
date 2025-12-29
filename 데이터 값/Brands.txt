@@ -1,19 +1,12 @@
 -- Category
 
-INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(1, 'Sparkling Soft Drinks', '탄산 소프트 음료');
-
-INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(2, 'Sports Drinks & Hydration', '스포츠 음료 및 수분 보충'); 
-
-INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(3, 'Coffee', '커피 음료');
-
-INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(4, 'Juices', '과일 / 주스 음료');
-
-INSERT INTO Category (brand_category_id, brand_category_name, brand_category_description) VALUES
-(5, 'Teas', '차 음료');
+INSERT ALL
+  INTO Category VALUES (1, 'Sparkling Soft Drinks', '탄산 소프트 음료')
+  INTO Category VALUES (2, 'Sports Drinks & Hydration', '스포츠 음료 및 수분 보충')
+  INTO Category VALUES (3, 'Coffee', '커피 음료')
+  INTO Category VALUES (4, 'Juices', '과일 / 주스 음료')
+  INTO Category VALUES (5, 'Teas', '차 음료')
+SELECT 1 FROM dual;
 
 
 -- Brands
@@ -25,158 +18,157 @@ INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, bra
 ]', 'USA', 'brands-home-full-hero_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(2, 'Sprite',sprite_logo.png', q'[
+(2, 'Sprite', 'sprite_logo.png', q'[
 전 세계인들이 사랑하는 세계 1등* 사이다 브랜드, 스프라이트!
 강렬한 상쾌함이 가슴 속을 시원하게 물들입니다.
 ]', 'USA', 'kr-sprite-desktopbanner-1960x350.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(3, 'Fanta',fanta_logo.png', q'[
+(3, 'Fanta','fanta_logo.png', q'[
 상큼함과 즐거운 이미지로 사랑받는 환타는 1940년에 출시되어 코카-콜라사에서 두 번째로 오래된 브랜드입니다.
 ]', 'Germany', '2025_fanta-heade_1440x810.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(4, 'DrPepper', dr_pepper_logo.png', q'[
+(4, 'DrPepper', 'dr_pepper_logo.png', q'[
 마셔보면 백퍼, 닥터페퍼! 1885년 탄생한 닥터페퍼는 독특한 맛과 달콤함, 톡 쏘는 탄산이 어우러진 음료입니다.
 ]', 'USA', 'kr_dr-pepper_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(5, 'Powerade', powerade_logo.png', q'[
+(5, 'Powerade', 'powerade_logo.png', q'[
 스포츠의 열정과 파워를 담은 저칼로리 스포츠음료 파워에이드는 운동 후 수분을 보충하고 갈증을 해소해 줍니다.
 국내외 다양한 스포츠 이벤트의 공식 음료로 활동하며, 스포츠가 있는 곳에 항상 함께 해왔습니다.
 ]', 'USA', '2025_powerade_1440x810.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(6, 'Toreta', toreta_logo.png', q'[
+(6, 'Toreta', 'toreta_logo.png', q'[
 토레타!는 산뜻하고 깔끔한 맛과 10가지 과채수분으로 언제 어디서나 가볍게 즐길 수 있는 이온 함유 수분보충음료입니다.​
 ]', 'Japan', '2025_toreta_1440x810.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(7, '씨그램', seagram_logo.png', q'[
+(7, '씨그램', 'seagram_logo.png', q'[
 마지막까지 톡! 쏘는 상쾌함! 캐나다에서 시작된 160년 전통 브랜드 씨그램은
 톡 쏘는 상쾌함과 깔끔한 뒷맛, 제로 칼로리로 일상을 상쾌하게 채워줍니다.
 ]', 'USA', 'seagram_1440x810.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(8, 'Georgia Coffee', georgia_logo.png', NULL, 'Japan', 'new-georgia-header-image_1440x810-1.png');
+(8, 'Georgia Coffee', 'georgia_logo.png', NULL, 'Japan', 'new-georgia-header-image_1440x810-1.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(9, 'Minute Maid', minute_maid_logo.png', q'[
+(9, 'Minute Maid', 'minute_maid_logo.png', q'[
 60년 이상의 노하우로 진정성을 담은 세계적인 주스음료 브랜드, 미닛메이드. 온 가족의 하루를 상큼하게 시작하는 음료로 전 세계인이 즐기고 있습니다.
 ]', 'USA', 'sub-header.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(10, 'Glaceau Vitaminwater', Glaceau_Vitaminwater_logo.png', q'[
+(10, 'Glaceau Vitaminwater', 'Glaceau_Vitaminwater_logo.png', q'[
 1996년 뉴욕에서 만들어진 오리지널 액티브 라이프스타일 브랜드 글라소비타민워터는
 세련된 병 디자인과 비비드한 컬러 패키지로 일상에 기분 좋은 활력을 더해줍니다.
 ]', 'USA', '231024_Full-Hero_glaceau-vitaminwater_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(11, '태양의 식후비법 W차', taeyang_aftermeal_w_logo.png', q'[
+(11, '태양의 식후비법 W차', 'taeyang_aftermeal_w_logo.png', q'[
 식사 후 깔끔하게! 녹차, 우롱차, 홍차와 식이섬유가 함유된 차 음료의 탄생!
 직접 우려낸 세 가지 차를 조화롭게 섞어 깔끔한 맛을 자랑하는 태양의 식후비법 W차
 ]', 'Korea', 'kr_w-tea_desktopbanner_1440x810_v2.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(12, '태양의 마테차', taeyang_mate_logo.png', q'[
+(12, '태양의 마테차', 'taeyang_mate_logo.png', q'[
 2013년 국내에 선보인 ‘태양의 마테차’는 깔끔한 맛에 제로 칼로리가 특징이며,
 커피, 녹차와 함께 세계 3대 차 중 하나로 알려져 있습니다.
 ]', 'Korea', 'sun-of-mate-1440x810.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(13, '강원 평창수', pyeongchang_logo.png', q'[
+(13, '강원 평창수', 'pyeongchang_logo.png', q'[
 평창수, 물의 원칙을 지키다. 강원도 평창군 봉평면에서 취수한 먹는 샘물 ‘강원평창수’는 2018 평창동계올림픽
 공식 먹는 샘물로 선정되어 전 세계 선수들에게 깨끗하고 맑은 물을 제공했습니다.
 ]', 'Korea', 'kr pyung changsoo desktopbanner.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(14, 'Vio', hweio_logo.png', q'[
+(14, 'Vio', 'hweio_logo.png', q'[
 맑고 깨끗한 물을 담다! 글로벌 코카-콜라의 생수 브랜드 휘오(Vio)는
 엄격한 품질 관리로 깨끗하고 순수한 물을 담은 생수 브랜드입니다. 
 ]', 'USA', 'kr_vio_desktopbanner_vio pure_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(15, '휘오 울림워터', ulim_water_logo.png', q'[
+(15, '휘오 울림워터', 'ulim_water_logo.png', q'[
 울릉도 대자연이 전하는 생명의 울림.
 화산섬 깊은 곳으로부터 스스로 솟아난 자연의 물, 휘오 울림워터.
 ]', 'Korea', 'ulim-water-hero-desktop.png');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(16, 'CANADA DRY', canada_dry_logo.png', q'[
+(16, 'CANADA DRY', 'canada_dry_logo.png', q'[
 1904년 캐나다에서 처음 선보인 캐나다 드라이는 다양한 음료와 함께 또는
 그 자체로도 부담 없이 즐길 수 있는 탄산음료입니다.
 ]', 'USA', 'kr_canada dry_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(17, '써니텐', sunny_ten_logo.png', q'[
+(17, '써니텐', 'sunny_ten_logo.png', q'[
 우리끼리 통하는 상쾌함과 짜릿함! 10대들의 친구 같은 짜릿한 과일향 탄산음료 써니텐은
 상콤달콤한 맛과 상쾌함으로 언제 어디서든 부담없이 즐길 수 있는 경쾌하고 활기찬 탄산음료 브랜드입니다.
 ]', 'Korea', 'kr_sunny 10_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(18, '갈아만든 배', blended_pear_logo.png', q'[
+(18, '갈아만든 배', 'blended_pear_logo.png', q'[
 어제는 축배, 오늘은 갈배! 1996년 출시된 갈아만든 배는
 아삭한 배 알갱이와 시원하고 달콤함이 매력적인 주스&스파클링 음료입니다.
 ]', 'Korea', 'kr_crused-pear_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(19, '과일촌', fruit_morning_apple_logo.png', q'[
+(19, '과일촌', 'fruit_morning_apple_logo.png', q'[
 아침을 여는 싱그러운 사과의 맛! 1989년 출시된 100% 과즙 주스 브랜드 과일촌은
 20년간 과즙 주스의 대명사로 자리잡은 대표 주스 브랜드입니다.
 ]', 'Korea', 'kr_gawailchon_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(20, '코코팜', coco-logo.png', q'[
+(20, '코코팜', 'coco-logo.png', q'[
 탱글탱글 알갱이 씹는 재미! 1995년부터 사랑받고 있는 ‘코코팜’은 다양한 과일 맛과 씹는 재미가 특징입니다.
 상큼한 과즙 속 탱글탱글한 나타드코코 젤리는 씹을 때마다 팜!팜! 터지는 즐거움을 선사합니다.
 ]', 'Korea', 'kr_coco-palm_desktopbanner_1440x810.jpg');
 
 INSERT INTO Brands (brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url) VALUES
-(21, 'I LOHAS', ilohas_logo.png', q'[
+(21, 'I LOHAS', 'ilohas_logo.png', q'[
 상큼하고, 달콤하게 즐기는 일로하스 피치. 일본에서 오랜 시간 사랑 받아온 일로하스 브랜드를 이제 국내에서 만나볼 수 있습니다.
 ]', 'Japan', '2025_i-lohas_header_1440x810_2.png');
 
 
 --Brand_Category
 
-INSERT INTO Brand_Category (brand_category_id, brand_id) VALUES
+INSERT ALL
+  -- Sparkling Soft Drinks
+  INTO Brand_Category VALUES (1, 1)
+  INTO Brand_Category VALUES (1, 2)
+  INTO Brand_Category VALUES (1, 3)
+  INTO Brand_Category VALUES (1, 4)
+  INTO Brand_Category VALUES (1, 16)
+  INTO Brand_Category VALUES (1, 17)
+  INTO Brand_Category VALUES (1, 18)
 
--- Sparkling Soft Drinks
-(1, 1),
-(1, 2),
-(1, 3),
-(1, 4),
-(1, 16),
-(1, 17),
-(1, 18),
+  -- Sports Drinks & Hydration
+  INTO Brand_Category VALUES (2, 5)
+  INTO Brand_Category VALUES (2, 6)
+  INTO Brand_Category VALUES (2, 7)
+  INTO Brand_Category VALUES (2, 10)
+  INTO Brand_Category VALUES (2, 13)
+  INTO Brand_Category VALUES (2, 14)
+  INTO Brand_Category VALUES (2, 15)
 
--- Sports Drinks & Hydration
-(2, 5),   
-(2, 6),  
-(2, 7), 
-(2, 10),
-(2, 13),  
-(2, 14), 
-(2, 15), 
+  -- Coffees
+  INTO Brand_Category VALUES (3, 8)
 
--- Coffees
-(3, 8),
+  -- Juices
+  INTO Brand_Category VALUES (4, 9)
+  INTO Brand_Category VALUES (4, 18)
+  INTO Brand_Category VALUES (4, 19)
+  INTO Brand_Category VALUES (4, 20)
 
--- Juices
-(4, 9),
-(4, 18),
-(4, 19),
-(4, 20),
-
--- Teas
-(5, 11),
-(5, 12);
-
+  -- Teas
+  INTO Brand_Category VALUES (5, 11)
+  INTO Brand_Category VALUES (5, 12)
+SELECT 1 FROM dual;
 
 -- SubBrand
 
 INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
-(1, 1, 'Coca-Cola Original', '/logo/coca_cola_original_logo.png');
+(1, 1, 'Coca-Cola Original', 'coca_cola_original_logo.png');
 
 INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
 (2, 1, 'Coca-Cola Zero', 'coca_cola_zero_logo.png');
@@ -338,7 +330,7 @@ INTO Product (
     '언제 어디서나 짜릿하게! 제로 슈거와 제로 카페인으로 부담 없이 즐길 수 있습니다.'
 )
 
-IINTO Product (
+INTO Product (
     product_id, brand_id, sub_brand_id,
     product_name, product_volume,
     product_image_url, product_description
@@ -375,7 +367,6 @@ INTO Product (
 ]'
 )
 
-INSERT ALL
 INTO Product (
     product_id, brand_id, sub_brand_id,
     product_name, product_volume,
@@ -515,7 +506,6 @@ INTO Product (
 ]'
 )
 
-INSERT ALL
 INTO Product (
     product_id, brand_id, sub_brand_id,
     product_name, product_volume,
@@ -1398,14 +1388,14 @@ INTO Product (
 )
 
 INTO Product (
-    product_id, brand_id, sub_brand_id,
-    product_name, product_volume,
-    product_image_url, product_description
+    product_id, brand_id, sub_brand_id,
+    product_name, product_volume,
+    product_image_url, product_description
 ) VALUES (
-    86, 18, NULL,
-    '갈배사이다', '355ml CAN',
-    'blended_pear_cider_355.png',
-    q'[
+    86, 18, NULL,
+    '갈배사이다', '355ml CAN',
+    'blended_pear_cider_355.png',
+    q'[
 갈아만든 배와 사이다를 접목시킨 갈배사이다는 시원한 배향과 톡 쏘는 탄산이 어우러져 시원함과 상쾌함을 선사합니다.
 ]'
 )
@@ -1541,5 +1531,6 @@ INTO Product (
 ]'
 )
 
+SELECT 1 FROM dual;
 
 
