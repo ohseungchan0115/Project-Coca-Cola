@@ -1,65 +1,88 @@
+-- section
+INSERT INTO SECTION
+(section_id, section_title, section_subtitle, section_description, section_image)
+VALUES (1, '자원 순환', NULL, NULL, NULL);
 
--- =========================
--- SECTION
--- =========================
-INSERT INTO SECTION (section_id, section_title, section_subtitle, section_description, section_image) VALUES
-(1, '자원 순환', NULL, NULL, NULL),
-(2, '물환원', NULL, NULL, NULL),
-(3, '커뮤니티', NULL, NULL, NULL);
+INSERT INTO SECTION
+(section_id, section_title, section_subtitle, section_description, section_image)
+VALUES (2, '물환원', NULL, NULL, NULL);
 
--- =========================
--- CONTENT
--- =========================
-INSERT INTO CONTENT (content_id, section_id, content_title, content_body, content_category, content_link) VALUES
-(1, 1, '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project'),
-(2, 1, '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project'),
-(3, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project'),
-(4, 3, '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa'),
-(5, 3, '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan'),
-(6, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project'),
-(7, 3, '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa'),
-(8, 3, '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan'),
-(9, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project'),
-(10, 3, '함께하면 마법 같은 챌린지, 원더플 시즌 5 단체 미션 도전기', '2024. 7. 31\n\n#원더플 시즌 5, 이번엔 단체 미션에 도전하다 ... (본문 전체 삽입)', 'SUSTAINABILITY', 'https://www.coca-cola.com/kr/ko/sustainability/ONETHEPL/onethepl-campaign6');
+INSERT INTO SECTION
+(section_id, section_title, section_subtitle, section_description, section_image)
+VALUES (3, '커뮤니티', NULL, NULL, NULL);
 
--- =========================
--- MEDIA
--- =========================
-INSERT INTO MEDIA (media_id, content_id, media_file_type, media_file, media_description) VALUES
-(1, 1, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/240925_content-card_01_544_408.png', '보틀투보틀 포스터 이미지'),
-(2, 2, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/240925_content-card_01_544_408.png', '보틀투보틀 포스터 이미지'),
-(3, 3, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/241107_1102x827_02.png', '실내 숲 이미지'),
-(4, 4, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/new-images/content-card-07-544-408.png', '아프리카 라스트 마일  프로젝트 이미지'),
-(5, 5, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/241107_1102x827_01.png', NULL),
-(6, 6, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/241107_1102x827_02.png', '실내 숲 이미지'),
-(7, 7, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/new-images/content-card-07-544-408.png', '아프리카 라스트 마일  프로젝트 이미지'),
-(8, 8, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/241107_1102x827_01.png', NULL),
-(9, 9, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/241107_1102x827_02.png', '실내 숲 이미지'),
+--content
+INSERT INTO CONTENT
+(content_id, section_id, content_title, content_body, content_category, content_link)
+VALUES
+(1, 1,
+ '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+ '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+ 'SUSTAINABILITY',
+ 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project');
 
--- 원더플 시즌5 상세페이지 이미지
-(101, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/240726_masism-onethepl-campaign5_1440x810.png', NULL),
-(102, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_01.jpg', NULL),
-(103, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_02.jpg', NULL),
-(104, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_03.jpg', NULL),
-(105, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_04.jpg', NULL),
-(106, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_05.jpg', NULL),
-(107, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_06.jpg', NULL),
-(108, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_07.jpg', NULL),
-(109, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_08.jpg', NULL),
-(110, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/onethepl/masism-onethepl-campaign5/masism-onethepl-campaign5_09.jpg', NULL),
-(111, 10, 'IMAGE', 'https://www.coca-cola.com/content/dam/onexp/kr/ko/sustainability/2023_kakao-plus-short-2.png', NULL);
+INSERT INTO CONTENT VALUES
+(2, 1,
+ '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+ '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+ 'SUSTAINABILITY',
+ 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project');
 
--- =========================
--- DOCUMENT
--- =========================
-INSERT INTO DOCUMENT (document_id, section_id, document_title, document_file, document_description, document_date) VALUES
-(1, 1, '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(2, 1, '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시', 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(3, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(4, 3, '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(5, 3, '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(6, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(7, 3, '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일(Last Mile) 프로젝트', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(8, 3, '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 ‘바다쓰담’', 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(9, 2, '아이들의 꿈과 희망이 자라나는 행복한 실내 숲', 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS')),
-(10, 3, '함께하면 마법 같은 챌린지, 원더플 시즌 5 단체 미션 도전기', 'https://www.coca-cola.com/kr/ko/sustainability/ONETHEPL/onethepl-campaign6', '상세 페이지', TO_DATE('2025-12-22 05:28:36','YYYY-MM-DD HH24:MI:SS'));
+INSERT INTO CONTENT VALUES
+(3, 2,
+ '아이들의 꿈과 희망이 자라나는 행복한 실내 숲',
+ '아이들의 꿈과 희망이 자라나는 행복한 실내 숲',
+ 'SUSTAINABILITY',
+ 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project');
+
+INSERT INTO CONTENT VALUES
+(4, 3,
+ '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일 프로젝트',
+ '코카-콜라가 가는 곳에 의약품도 보낸다! 라스트 마일 프로젝트',
+ 'SUSTAINABILITY',
+ 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa');
+
+INSERT INTO CONTENT VALUES
+(5, 3,
+ '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 바다쓰담',
+ '코카-콜라 X 환경재단이 함께 하는 해양정화 활동 바다쓰담',
+ 'SUSTAINABILITY',
+ 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan');
+
+-- media
+INSERT INTO MEDIA
+(media_id, content_id, media_file_type, media_file, media_description)
+VALUES
+(1, 1, 'IMAGE', '/cocacola/sustainability_images/content_card1.png', '보틀투보틀 이미지');
+
+INSERT INTO MEDIA VALUES
+(2, 2, 'IMAGE', '/cocacola/sustainability_images/content_card2.png', '재생 페트 이미지');
+
+INSERT INTO MEDIA VALUES
+(3, 3, 'IMAGE', '/cocacola/sustainability_images/content_card3.png', '실내 숲 이미지');
+
+INSERT INTO MEDIA VALUES
+(4, 4, 'IMAGE', '/cocacola/sustainability_images/com_slide3.png', '라스트 마일 프로젝트');
+
+INSERT INTO MEDIA VALUES
+(5, 5, 'IMAGE', '/cocacola/sustainability_images/com_slide1.png', '바다쓰담 캠페인');
+
+
+-- document
+INSERT INTO DOCUMENT
+(document_id, section_id, document_title, document_file, document_description, document_date)
+VALUES
+(1, 1,
+ '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+ 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project',
+ '상세 페이지',
+ TO_DATE('2025-12-22 05:28:36', 'YYYY-MM-DD HH24:MI:SS'));
+
+INSERT INTO DOCUMENT VALUES
+(2, 2,
+ '아이들의 꿈과 희망이 자라나는 행복한 실내 숲',
+ 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project',
+ '상세 페이지',
+ TO_DATE('2025-12-22 05:28:36', 'YYYY-MM-DD HH24:MI:SS'));
+
+
