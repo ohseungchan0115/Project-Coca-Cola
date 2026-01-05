@@ -232,60 +232,61 @@ VALUES (20, '[삼각지 편] MZ 문화의 메카', NULL, 'coke-meal-4_card.png',
 -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (1, '[시즌 3] 썰스티', 'MC 콕따, 이이경과 함께 코카-콜라사의 다양한 음료 브랜드의 팬들을 만나 ''나의 최애 음료''에 담긴 ''썰''을 풀어본다! ※ 썰스티, 2025.06 ~', '/originals/ssulsty3.png', TO_DATE('2025-06-09','YYYY-MM-DD'));
+VALUES (1, '[시즌 3] 썰스티', 'MC 콕따, 이이경과 함께 코카-콜라사의 다양한 음료 브랜드의 팬들을 만나 ''나의 최애 음료''에 담긴 ''썰''을 풀어본다! ※ 썰스티, 2025.06 ~', 'ssulsty3.png', TO_DATE('2025-06-09','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (2, '러닝이 처음이라고? ''션''이 알려주는 러닝 입문 꿀팁', '파워에이드 앰배서더이자 대한민국 대표 러너, 션과 함께! 이이경의 첫 러닝 입문기 챌린지', '/originals/running.png', TO_DATE('2025-09-23','YYYY-MM-DD'));
+VALUES (2, '러닝이 처음이라고? ''션''이 알려주는 러닝 입문 꿀팁', '파워에이드 앰배서더이자 대한민국 대표 러너, 션과 함께! 이이경의 첫 러닝 입문기 챌린지', 'running.png', TO_DATE('2025-09-23','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (3, '입터짐 주의! 쭈니형 한입에 신흥시장 통째로 BAAAM!', '신흥시장 곳곳에 스며든 코카-콜라, 그리고 새로워진 코카-콜라 제로까지! 코-크 제로 광팬 쭈니형과 함께 즐긴다!', '/originals/ssulsty2-coke-zero.png', TO_DATE('2025-07-25','YYYY-MM-DD'));
+VALUES (3, '입터짐 주의! 쭈니형 한입에 신흥시장 통째로 BAAAM!', '신흥시장 곳곳에 스며든 코카-콜라, 그리고 새로워진 코카-콜라 제로까지! 코-크 제로 광팬 쭈니형과 함께 즐긴다!', 'ssulsty2-coke-zero.png', TO_DATE('2025-07-25','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (4, '잔나비 콘서트장을 뒤집어놓은 It''s 닥터페퍼 타임!', '닥터페어 엠버서더로 발탁된 잔나비 ''최정훈''을 만나러 콘서트장을 찾은 MC 콕따! 그리고 이어지는 열광의 현장', '/originals/ssulsty1-drpepper.png', TO_DATE('2025-06-09','YYYY-MM-DD'));
+VALUES (4, '잔나비 콘서트장을 뒤집어놓은 It''s 닥터페퍼 타임!', '닥터페어 엠버서더로 발탁된 잔나비 ''최정훈''을 만나러 콘서트장을 찾은 MC 콕따! 그리고 이어지는 열광의 현장', 'ssulsty1-drpepper.png', TO_DATE('2025-06-09','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (5, '[시즌 2] 에이전트 콕의 콕콕콕!', '에이전트 콕, 장도연. 코카-콜라와 관련된 궁금증들을 이해하기 쉽게 콕! 집어서 콕! 콕! 해결한다. ※ 콕콕콕, 2021 ~ 2024', '/originals/ssulsty2.png', NULL);
+VALUES (5, '[시즌 2] 에이전트 콕의 콕콕콕!', '에이전트 콕, 장도연. 코카-콜라와 관련된 궁금증들을 이해하기 쉽게 콕! 집어서 콕! 콕! 해결한다. ※ 콕콕콕, 2021 ~ 2024', 'ssulsty2.png', NULL);
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (6, '"코카-콜라 맛있다♬" 코카-콜라 노래의 기원을 찾아서', '코카-콜라와 관련된 모든 궁금증과 비밀을 콕! 첫 번쩨 미션은, 모두가 아는 그 노래! "코카-콜라 맛있다~" 노래의 기원을 찾아라!', '/originals/coke_song.png', TO_DATE('2021-02-07','YYYY-MM-DD'));
+VALUES (6, '"코카-콜라 맛있다♬" 코카-콜라 노래의 기원을 찾아서', '코카-콜라와 관련된 모든 궁금증과 비밀을 콕! 첫 번쩨 미션은, 모두가 아는 그 노래! "코카-콜라 맛있다~" 노래의 기원을 찾아라!', 'coke_song.png', TO_DATE('2021-02-07','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (7, '인턴 장도연, 코카-콜라 본사 털고 왔습니다.', '한국 코카-콜라의 기업 문화와 업무를 파헤치는 1일 인턴 체험기', '/originals/coke_company.png', TO_DATE('2021-09-08','YYYY-MM-DD'));
+VALUES (7, '인턴 장도연, 코카-콜라 본사 털고 왔습니다.', '한국 코카-콜라의 기업 문화와 업무를 파헤치는 1일 인턴 체험기', 'coke_company.png', TO_DATE('2021-09-08','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
 VALUES (8, 
         '코카-콜라 수집품에 숨겨진 비밀!', 
         '코카-콜라 수집 외길 인생 40년 ' || CHR(38) || ' 코카-콜라 레드리본 맛집 운영까지! 코카-콜라에 누구보다 진심인 콜렉터를 만나다.', 
-        '/originals/coke_collect.png', 
+        'coke_collect.png', 
         TO_DATE('2024-07-31','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (9, 'I Feel Coke 청춘스타, 심혜진을 만나다', '한국 코카-콜라 50주년을 맞아, 그 시절 코카-콜라의 뮤즈였던 심혜진을 만났다.', '/originals/coke_star.png', TO_DATE('2024-06-03','YYYY-MM-DD'));
+VALUES (9, 'I Feel Coke 청춘스타, 심혜진을 만나다', '한국 코카-콜라 50주년을 맞아, 그 시절 코카-콜라의 뮤즈였던 심혜진을 만났다.', 'coke_star.png', TO_DATE('2024-06-03','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (10, 'FIFA 월드컵™ 트로피 투어 일일 인턴 체험', '일일 인턴으로 변신한 에이전트 콕의 미션! 코카-콜라와 함께하는 FIFA 월드컵 트로피의 한국 방문을 생생하게 전달하라!', '/originals/coke_FIFA.png', TO_DATE('2022-11-07','YYYY-MM-DD'));
+VALUES (10, 'FIFA 월드컵™ 트로피 투어 일일 인턴 체험', '일일 인턴으로 변신한 에이전트 콕의 미션! 코카-콜라와 함께하는 FIFA 월드컵 트로피의 한국 방문을 생생하게 전달하라!', 'coke_FIFA.png', TO_DATE('2022-11-07','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (11, '★찐들의 전쟁★ 못 맞히라고 낸 코믈리에 테스트', '자신만만하게 세 명의 코카-콜라 전문가. 단계별로 올라가는 난이도의 벽을 넘을 수 있을 것인가!', '/originals/coke_real_war.png', TO_DATE('2021-08-11','YYYY-MM-DD'));
+VALUES (11, '★찐들의 전쟁★ 못 맞히라고 낸 코믈리에 테스트', '자신만만하게 세 명의 코카-콜라 전문가. 단계별로 올라가는 난이도의 벽을 넘을 수 있을 것인가!', 'coke_real_war.png', TO_DATE('2021-08-11','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (12, '[시즌 1] 코카-콜라 저니 카풀', '일상 속 응원이 필요하다면? 코카-콜라 저니 카풀에 탑승! 꿈을 향한 짜릿한 여정을 코카-콜라가 응원한다. ※ Coca‑Cola Journey Carpool, 2017 ~ 2020', '/originals/coke_dream.png', TO_DATE('2017-10-31','YYYY-MM-DD'));
+VALUES (12, '[시즌 1] 코카-콜라 저니 카풀', '일상 속 응원이 필요하다면? 코카-콜라 저니 카풀에 탑승! 꿈을 향한 짜릿한 여정을 코카-콜라가 응원한다. ※ Coca‑Cola Journey Carpool, 2017 ~ 2020', 'ssulsty1.png', TO_DATE('2017-10-31','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (13, '코카-콜라와 정진운, 절친된 사연부터 깜짝 콘서트까지!', NULL, '/originals/coke_jung.png', TO_DATE('2017-11-01','YYYY-MM-DD'));
+VALUES (13, '코카-콜라와 정진운, 절친된 사연부터 깜짝 콘서트까지!', NULL, 'coke_jung.png', TO_DATE('2017-11-01','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (14, '쭈니형이 떴다! 코카-콜라 한국 오피스 어택', NULL, '/originals/coke_juni.png', TO_DATE('2019-05-21','YYYY-MM-DD'));
+VALUES (14, '쭈니형이 떴다! 코카-콜라 한국 오피스 어택', NULL, 'coke_juni.png', TO_DATE('2019-05-21','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
-VALUES (15, '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 국가대표 박상영', NULL, '/originals/coke_syndrom.png', TO_DATE('2018-12-21','YYYY-MM-DD'));
+VALUES (15, '[올림픽 특집] "할 수 있다" 신드롬의 주인공, 펜싱 국가대표 박상영', NULL, 'coke_syndrom.png', TO_DATE('2018-12-21','YYYY-MM-DD'));
 
 INSERT INTO ORIGINALS (originals_id, originals_title, originals_summary, originals_image, originals_date) 
 VALUES (16, 
         '[특별편] 애틀랜타 코카-콜라 본사 ' || CHR(38) || ' 박물관 투어', 
         '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', 
-        '/originals/coke_special.png', 
+        'coke_special.png', 
         TO_DATE('2019-12-24','YYYY-MM-DD'));
+
 
 
 
