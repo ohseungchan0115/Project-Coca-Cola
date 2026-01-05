@@ -583,7 +583,7 @@ INTO Product (
     product_name, product_volume,
     product_image_url, product_description
 ) VALUES (
-    27, 5, NULL,
+    27, 6, NULL,
     '토레타!', '500ml PET',
     'toreta_500.png',
     q'[
@@ -598,7 +598,7 @@ INTO Product (
     product_name, product_volume,
     product_image_url, product_description
 ) VALUES (
-    28, 5, NULL,
+    28, 6, NULL,
     '토레타! 제로', '500ml PET',
     'toreta_zero_500.png',
     q'[
@@ -1532,6 +1532,7 @@ INTO Product (
 )
 
 SELECT 1 FROM dual;
+
 
 
 
