@@ -174,7 +174,7 @@ INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url
 (2, 1, 'Coca-Cola Zero', 'coca_cola_zero_logo.png');
 
 INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
-(3, 1, 'Coca-Cola Zero Caffeine', 'coca_cola_zero_caffeine_logo.png');
+(3, 1, 'Coca-Cola Zero Caffeine', 'coca_cola_zero_caffeine_logo.jpg');
 
 INSERT INTO SubBrand (sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url) VALUES
 (4, 3, 'FANTA', 'fanta_logo.png');
@@ -1532,5 +1532,6 @@ INTO Product (
 )
 
 SELECT 1 FROM dual;
+
 
 
