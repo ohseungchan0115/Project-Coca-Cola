@@ -182,7 +182,7 @@ INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_me
 VALUES (4, '해방촌 신흥시장에서 뭐 먹지? 맛집 가이드 2편', NULL, 'coke_meal_market2.png', TO_DATE('2025-10-27','YYYY-MM-DD'));
 
 INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
-VALUES (5, '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집', '코카-콜라와 함께하는 짜릿한 미식 생활. 전국 맛집 탐방, 레드리본 가이드로 완전 정복!', 'campaign-card.png', TO_DATE('2025-05-01','YYYY-MM-DD'));
+VALUES (5, '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집', '코카-콜라와 함께하는 짜릿한 미식 생활. 전국 맛집 탐방, 레드리본 가이드로 완전 정복!', 'red-ribbon.png', TO_DATE('2025-05-01','YYYY-MM-DD'));
 
 INSERT INTO COKE_MEAL (coke_meal_id, coke_meal_title, coke_meal_summary, coke_meal_image, coke_meal_date) 
 VALUES (6, '레드리본 맛집 찾기', '내 주변 레드리본 맛집 찾고, 코카-콜라와 함께하는 짜릿한 미식 경험을 즐겨보세요!', 'coke_meal_map.png', TO_DATE('2025-12-15','YYYY-MM-DD'));
@@ -286,6 +286,7 @@ VALUES (16,
         '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', 
         '/originals/coke_special.png', 
         TO_DATE('2019-12-24','YYYY-MM-DD'));
+
 
 
 
