@@ -8,7 +8,7 @@ INSERT INTO BRAND_STORY (
 (1,
  '코카-콜라와 뷔 이토록 짜릿한 만남!',
  'Best Coke Ever? Yes! 코카-콜라 앰배서더로 선정된 뷔가 전하는 이야기, 지금 만나보세요.',
- '/brand_story/coca-cola_v.png',
+ 'coca-cola_v.png',
  TO_DATE('2025-08-06','YYYY-MM-DD')
 );
 
@@ -23,7 +23,7 @@ INSERT INTO BRAND_STORY (
  '코카-콜라 X 블루리본 서베이 2025 레드리본 전국의 맛집 탐방 프로젝트',
  '코카-콜라와 함께하는 짜릿한 미식 생활.  
 전국 맛집 탐방, 레드리본 가이드로 완전 정복!',
- '/brand_story/reed-ribbon.png',
+ 'red-ribbon.png',
  TO_DATE('2025-05-01','YYYY-MM-DD')
 );
 
@@ -37,7 +37,7 @@ INSERT INTO BRAND_STORY (
 (3,
  '상쾌한 라임향이 더해진 새로운 파워에이드 제로',
  '운동 후 갈증 해소는 물론, 상쾌한 하루의 시작까지 책임질 새로운 맛의 파워에이드가 찾아왔다. 파워에이드 제로 라임향이 그 주인공.',
- '/brand_story/powerade-zero-lime.png',
+ 'powerade-zero-lime.png',
  TO_DATE('2025-04-29','YYYY-MM-DD')
 );
 
@@ -51,7 +51,7 @@ INSERT INTO BRAND_STORY (
     4,
     '원해? 새로 나온 환타! 환타 멜론 ' || '&' || ' 환타 제로 상큼 피치',
     '과일향의 상큼달콤함과 톡 쏘는 탄산감이 매력인 환타! 달콤한 ''환타 멜론''과 상큼하게 즐기는 ''환타 제로 상큼 피치''가 새롭게 출시됐다.',
-    '/brand_story/fanta.png',
+    'fanta.png',
     TO_DATE('2025-04-29','YYYY-MM-DD')
 );
 
@@ -65,7 +65,7 @@ INSERT INTO BRAND_STORY (
 (5,
  '몰랐을 걸 백퍼? 닥터 페퍼에 숨겨진 7가지 팩트 체크',
  '닥터 페퍼가 코카-콜라보다 먼저 태어났다? 닥터페어에 숨겨진 7가지 이야기 전격공개!',
- '/brand_story/dr-pepper.jpg',
+ 'dr-pepper.jpg',
   NULL
 );
 
@@ -79,7 +79,7 @@ INSERT INTO BRAND_STORY (
 (6,
  '취향대로 즐기는 코카-콜라 제로 시리즈',
  '코카-콜라 제로, 코카-콜라 제로 레몬, 코카-콜라 제로제로.. 가벼운 짜릿함이 필요할 때, 골라 마시는 코카-콜라 제로!',
- '/brand_story/coca-cola-zero-zero.jpg',
+ 'coca-cola-zero-zero.jpg',
  TO_DATE('2023-08-01','YYYY-MM-DD')
 );
 
@@ -93,7 +93,7 @@ INSERT INTO BRAND_STORY (
 (7,
  '우주에서 온 콜라라고? 다른 세상의 코카-콜라들',
  '만약 매일 마시는 코카-콜라가 달라진다면? 당신이 만나지 못한 마법 같은 코카-콜라 대공개!',
- '/brand_story/masism-unexpected-coke.jpg',
+ 'masism-unexpected-coke.jpg',
  TO_DATE('2022-03-14','YYYY-MM-DD')
 );
 
@@ -107,7 +107,7 @@ INSERT INTO BRAND_STORY (
     8,
     'K-Wave 콘서트 <인기가요> 필수템, ''한류'' 응원봉 꾸미기!',
     'K-POP을 향한 전세계 팬들의 무한한 사랑과 열정을 모티브로 탄생한 코카-콜라 제로 한류. K-팬덤의 마법 같은 짜릿함을 담아낸 한정판 응원봉을 나만의 개성이 담기게 꾸며보자. (a.k.a 응꾸)',
-    '/brand_story/k-wave-light-stick.png',
+    'k-wave-light-stick.png',
     TO_DATE('2024-03-12','YYYY-MM-DD')
 );
 
@@ -121,7 +121,7 @@ INSERT INTO BRAND_STORY (
     9,
     '콜라를 못 만들게 했더니 환타가 탄생했습니다',
     '코카-콜라를 대체할 수 있는 음료로 시작된 환타의 역사 이야기',
-    '/brand_story/fanta-history.jpg',
+    'fanta-history.jpg',
     NULL
 );
 
@@ -135,7 +135,7 @@ INSERT INTO BRAND_STORY (
     10,
     '코카-콜라와 관련된 흥미로운 기네스북 기록 10가지!',
     '세계에서 다이아몬드가 가장 많이 박힌 핸드백? 코카-콜라만의 기네스북 특별한 기록들!',
-    '/brand_story/coca-cola-guinness-world-records.jpg',
+    'coca-cola-guinness-world-records.jpg',
     NULL
 );
 
@@ -149,7 +149,7 @@ INSERT INTO BRAND_STORY (
     11,
     '[제로로 제로하자] #1 제로의 시대, 제로(0)족을 위한 제로 음료 3',
     '제로 라이프를 살고 있는 ‘제로(0)족’ 모여라! 칼로리 제로부터 환경을 생각한 제로까지! 제로로 제로할 수 있는 제로 음료들을 소개한다.',
-    '/brand_story/coke-zero-people.jpg',
+    'coke-zero-people.jpg',
     NULL
 );
 
@@ -163,7 +163,7 @@ INSERT INTO BRAND_STORY (
     12,
     '[제로로 제로하자] #2 제로의 기원부터 현재까지. 코카-콜라 제로의 역사',
     '오랜 시간, “제로”라는 이름을 굳건히 지켜온 제로 칼로리 음료의 대명사, 코카-콜라 제로의 시작부터 현재까지 그 역사를 살펴본다.',
-    '/brand_story/coke-zero-history.jpg',
+    'coke-zero-history.jpg',
     NULL
 );
 
@@ -286,6 +286,7 @@ VALUES (16,
         '코카-콜라 미국 본사로부터 초청받은 박준형. 5가지 미션을 받는데.. 과연 성공할 수 있을 것인가?', 
         '/originals/coke_special.png', 
         TO_DATE('2019-12-24','YYYY-MM-DD'));
+
 
 
 
