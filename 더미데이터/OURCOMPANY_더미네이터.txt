@@ -283,9 +283,10 @@ VALUES (
 );
 
 
+-------------------------------------------------------------------------------------------------------------------------------------------
 
 
---메인페이지 데이터
+--[ 메인페이지 데이터 ]
 -- 1. 상단 배너 
 INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
 VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니', '임의의 데이터_01', 'main_08.png', 1);
@@ -325,5 +326,6 @@ INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME
 VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_18', '임의의 요약_18', 'main_18.png', 11);
 
 COMMIT;
+
 
 
