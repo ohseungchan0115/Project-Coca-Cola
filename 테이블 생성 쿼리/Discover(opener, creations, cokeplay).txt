@@ -26,16 +26,22 @@ CREATE TABLE OPENER_POST (
 );
 
 CREATE TABLE OPENER_POST_DETAIL (
-    DETAIL_ID     NUMBER          PRIMARY KEY,
-    POST_ID       NUMBER          NOT NULL,   -- OPENER_POST 참조
-    CONTENT       CLOB,                       -- 본문 텍스트 (줄바꿈 포함)
-    IMAGE_URL     VARCHAR2(500),              -- 상세 이미지 경로
-    IMAGE_ORDER   NUMBER,                     -- 이미지 순서
+DETAIL_ID     NUMBER PRIMARY KEY,
+POST_ID       NUMBER NOT NULL,         -- OPENER_POST 참조
 
-    CONSTRAINT FK_OPENER_POST_DETAIL
-        FOREIGN KEY (POST_ID)
-        REFERENCES OPENER_POST (POST_ID)
+BLOCK_TYPE    VARCHAR2(20) NOT NULL,   -- 'TEXT' | 'IMAGE'
+TITLE         VARCHAR2(300),            -- TEXT일 때 제목
+CONTENT       CLOB,                     -- TEXT일 때 본문
+IMAGE_URL     VARCHAR2(500),            -- IMAGE일 때 이미지 경로
+
+DISPLAY_ORDER NUMBER NOT NULL,          -- 출력 순서
+CREATED_AT    DATE DEFAULT SYSDATE,
+
+CONSTRAINT FK_OPENER_POST_DETAIL
+FOREIGN KEY (POST_ID)
+REFERENCES OPENER_POST (POST_ID)
 );
+
 
 creations
 
@@ -73,3 +79,4 @@ CREATE TABLE COKEPLAY_BENEFIT (
     DISPLAY_ORDER   NUMBER,
     USE_YN          CHAR(1)         DEFAULT 'Y'
 );
+
