@@ -1,107 +1,406 @@
---section
-INSERT INTO SECTION VALUES (1, '자원 순환', NULL, NULL, NULL);
-INSERT INTO SECTION VALUES (2, '물 환원', NULL, NULL, NULL);
-INSERT INTO SECTION VALUES (3, '커뮤니티', NULL, NULL, NULL);
+-- section
+INSERT INTO SECTION VALUES (
+    1,
+    'SUSTAINABILITY',
+    '지속 가능한 미래',
+    '코카콜라 지속가능성 메인 페이지',
+    '/cocacola/sustainability_images/sustainability-haeder.jpeg'
+);
 
---content
--- 자원 순환
-INSERT INTO CONTENT VALUES
-(1, 1,
- '투명 음료 페트병이 다시 음료 페트병으로!',
- '투명 음료 페트병 자원순환 프로젝트',
- 'SUSTAINABILITY',
- 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project');
+INSERT INTO SECTION VALUES (
+    2,
+    '자원 순환',
+    NULL,
+    NULL,
+'/cocacola/sustainability_images/onethepl_20250701_pc.png'
+);
 
-INSERT INTO CONTENT VALUES
-(2, 1,
- '원더플 단체 미션 도전기',
- '함께하면 마법 같은 챌린지',
- 'SUSTAINABILITY',
- 'https://www.coca-cola.com/kr/ko/sustainability/ONETHEPL/onethepl-campaign6');
+INSERT INTO SECTION VALUES (
+    3,
+    '물 환원',
+    NULL,
+    NULL,
+    '/cocacola/sustainability_images/forest.png'
+);
 
--- 물 환원
-INSERT INTO CONTENT VALUES
-(3, 2,
- '행복한 실내 숲 프로젝트',
- '아이들의 꿈과 희망이 자라나는 실내 숲',
- 'SUSTAINABILITY',
- 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project');
+INSERT INTO SECTION VALUES (
+    4,
+    '글로벌 지속가능성',
+    NULL,
+    NULL,
+    '/cocacola/sustainability_images/global.png'
+);
 
-INSERT INTO CONTENT VALUES
-(4, 2,
- '숲 가꾸기를 통한 물 순환',
- '숲 가꾸기를 통한 물 순환 확대',
- 'SUSTAINABILITY',
- '#');
+-- content
+INSERT INTO CONTENT VALUES (
+    1, 2, NULL,
+    '"친구야, 페트병은 원래 다시 돌아오는거야!" 원더플 전도사가 된 마시즘',
+    'CARD', null,8
+);
 
--- 커뮤니티
-INSERT INTO CONTENT VALUES
-(5, 3,
- '바다쓰담 캠페인',
- '해양 정화 활동 바다쓰담',
- 'SUSTAINABILITY',
- 'https://www.coca-cola.com/kr/ko/social/people-and-communities/ocean-cleanup-busan');
+INSERT INTO CONTENT VALUES (
+    2, 2, NULL,
+    '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+    'CARD', null,9
+);
 
-INSERT INTO CONTENT VALUES
-(6, 3,
- '라스트 마일 프로젝트',
- '의약품 전달 라스트 마일',
- 'SUSTAINABILITY',
- 'https://www.coca-cola.com/kr/ko/social/people-and-communities/last-mile-in-africa');
+INSERT INTO CONTENT VALUES (
+    3, 2, NULL,
+    '왜 투명 음료 페트병은 따로 모아야 할까?',
+    'CARD', null,10
+);
 
---media
--- HERO
-INSERT INTO MEDIA VALUES
-(1, 1, 'IMAGE', '/cocacola/sustainability_images/sustainability-haeder.jpeg', '히어로 이미지');
+INSERT INTO CONTENT VALUES (
+    4, 2, NULL,
+    '함께하면 마법 같은 챌린지, 원더플 단체 미션 도전기',
+    'CARD', NULL,null
+);
 
--- 원더플 메인
-INSERT INTO MEDIA VALUES
-(2, 2, 'IMAGE', '/cocacola/sustainability_images/onethepl_20250701_pc.png', '원더플 캠페인 메인');
+INSERT INTO CONTENT VALUES (
+    5, 2, NULL,
+    '바다쓰담 캠페인',
+    'SLIDE', NULL,null
+);
 
--- 자원순환 카드
-INSERT INTO MEDIA VALUES
-(3, 1, 'IMAGE', '/cocacola/sustainability_images/content_card1.png', '자원순환 카드 1');
+INSERT INTO CONTENT VALUES (
+    6, 2, NULL,
+    '실내 숲 프로젝트',
+    'SLIDE', NULL,null
+);
 
-INSERT INTO MEDIA VALUES
-(4, 1, 'IMAGE', '/cocacola/sustainability_images/content_card2.png', '자원순환 카드 2');
+INSERT INTO CONTENT VALUES (
+    7, 2, NULL,
+    '라스트 마일 프로젝트',
+    'SLIDE', NULL,null
+);
+INSERT INTO CONTENT VALUES (
+    8, 2, NULL,
+    '친구야! ‘페트병’은 원래 다시 돌아오는 거야!',
+    'DETAIL',NULL,null
+);
+INSERT INTO CONTENT VALUES (
+    9, 2, NULL,
+    '코카-콜라 rPET 프로젝트 현장 탐방! 버려진 페트병의 놀라운 재탄생',
+    'DETAIL',NULL,null
+);
 
-INSERT INTO MEDIA VALUES
-(5, 1, 'IMAGE', '/cocacola/sustainability_images/content_card3.png', '자원순환 카드 3');
+INSERT INTO CONTENT VALUES (
+    10, 2, NULL,
+    '플라스틱 VS 플라스틱! 왜 투명 음료 페트병은 따로 모아야 할까?',
+    'DETAIL',NULL,null
+);
+commit;
+desc content;
+select * from content;
+-- media
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    1, 1, 'IMAGE',
+    '/cocacola/sustainability_images/content_card1.png',
+    '자원순환 카드 1'
+);
 
-INSERT INTO MEDIA VALUES
-(6, 2, 'IMAGE', '/cocacola/sustainability_images/content_card4.png', '원더플 카드');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    2, 2, 'IMAGE',
+    '/cocacola/sustainability_images/content_card2.png',
+    '자원순환 카드 2'
+);
 
--- 물 환원
-INSERT INTO MEDIA VALUES
-(7, 4, 'IMAGE', '/cocacola/sustainability_images/forest.png', '숲 가꾸기 이미지');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    3, 3, 'IMAGE',
+    '/cocacola/sustainability_images/content_card3.png',
+    '자원순환 카드 3'
+);
 
--- 커뮤니티 슬라이드
-INSERT INTO MEDIA VALUES
-(8, 5, 'IMAGE', '/cocacola/sustainability_images/com_slide1.png', '바다쓰담 캠페인');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    4, 4, 'IMAGE',
+    '/cocacola/sustainability_images/content_card4.png',
+    '자원순환 카드 4'
+);
 
-INSERT INTO MEDIA VALUES
-(9, 5, 'IMAGE', '/cocacola/sustainability_images/com_slide2.png', '실내 숲');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    5, 5, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide1.png',
+    '바다쓰담 캠페인'
+);
 
-INSERT INTO MEDIA VALUES
-(10, 6, 'IMAGE', '/cocacola/sustainability_images/com_slide3.png', '라스트 마일 프로젝트');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    6, 6, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide2.png',
+    '실내 숲 프로젝트'
+);
 
--- 글로벌
-INSERT INTO MEDIA VALUES
-(11, 3, 'IMAGE', '/cocacola/sustainability_images/global.png', '글로벌 지속가능성');
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    7, 7, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide3.png',
+    '라스트 마일 프로젝트'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    8,8,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail_main.png',
+    '상세페이지 메인 이미지'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    20,9,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail2_main.png',
+    '상세페이지2 메인 이미지'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    21,10,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail3_main.png',
+    '상세페이지3 메인 이미지'
+);
+commit;
+select * from media;
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    9,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card1.jpg',
+    '상세페이지 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    10,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card2.jpg',
+    '상세페이지 서브이미지'
+);
 
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    11,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card3.jpg',
+    '상세페이지 서브이미지'
+);
 
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    12,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card4.jpg',
+    '상세페이지 서브이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    13,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card5.jpg',
+    '상세페이지 서브이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    14,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card1.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    15,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card2.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    16,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card3.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    17,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card4.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    18,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card5.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    19,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card6.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    22,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card1.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    23,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card2.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    24,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card3.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    25,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card4.jpeg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    26,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card5.jpg',
+    '상세페이지3 서브 이미지'
+);
+COMMIT;
+
+select * from media;
 -- document
-INSERT INTO DOCUMENT VALUES
-(1, 1,
- '투명 음료 페트병이 다시 음료 페트병으로!',
- 'https://www.coca-cola.com/kr/ko/sustainability/sustainable-packaging/2023-rpet-project',
- '상세 페이지',
- TO_DATE('2025-12-22 05:28:36', 'YYYY-MM-DD HH24:MI:SS'));
-
-INSERT INTO DOCUMENT VALUES
-(2, 2,
- '아이들의 꿈과 희망이 자라나는 행복한 실내 숲',
- 'https://www.coca-cola.com/kr/ko/sustainability/water-stewardship/coca-cola-indoor-forest-project',
- '상세 페이지',
- TO_DATE('2025-12-22 05:28:36', 'YYYY-MM-DD HH24:MI:SS'));
-
+INSERT INTO DOCUMENT (
+    document_id,
+    section_id,
+    document_title,
+    document_file,
+    document_description,
+    document_date
+) VALUES (
+    1,
+    3,
+    'AWS 이해관계자 공시',
+    '/cocacola/document.pdf',
+    '국제수자원관리동맹(AWS) 이해관계자 공시 문서',
+    DATE '2024-06-01'
+);
