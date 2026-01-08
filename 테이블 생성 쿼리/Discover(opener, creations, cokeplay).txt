@@ -80,3 +80,4 @@ CREATE TABLE COKEPLAY_BENEFIT (
     USE_YN          CHAR(1)         DEFAULT 'Y'
 );
 
+
