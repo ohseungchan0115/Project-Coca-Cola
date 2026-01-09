@@ -167,37 +167,6 @@ CREATE TABLE BRAND_STORY (
     brand_story_date      DATE
 );
 
-CREATE TABLE DISC_MEDIA (
-    media_id        NUMBER PRIMARY KEY,
-    brand_story_id  NUMBER,
-    coke_meal_id    NUMBER,
-    originals_id    NUMBER,
-    media_url       VARCHAR2(255),
-    media_index     NUMBER,
-
-    -- 하나의 콘텐츠에만 속하도록 제한
-    CONSTRAINT ck_disc_media_one_parent CHECK (
-        (CASE WHEN brand_story_id IS NOT NULL THEN 1 ELSE 0 END) +
-        (CASE WHEN coke_meal_id   IS NOT NULL THEN 1 ELSE 0 END) +
-        (CASE WHEN originals_id   IS NOT NULL THEN 1 ELSE 0 END)
-        = 1
-    )
-);
-
-ALTER TABLE DISC_MEDIA
-ADD CONSTRAINT fk_discmedia_brand_story
-FOREIGN KEY (brand_story_id)
-REFERENCES BRAND_STORY (brand_story_id);
-
-ALTER TABLE DISC_MEDIA
-ADD CONSTRAINT fk_discmedia_coke_meal
-FOREIGN KEY (coke_meal_id)
-REFERENCES COKE_MEAL (coke_meal_id);
-
-ALTER TABLE DISC_MEDIA
-ADD CONSTRAINT fk_discmedia_originals
-FOREIGN KEY (originals_id)
-REFERENCES ORIGINALS (originals_id);
 
 --ourcompany
 
@@ -259,6 +228,7 @@ CREATE TABLE DOCUMENT (
         REFERENCES SECTION(section_id)
 
 );
+
 
 
 
