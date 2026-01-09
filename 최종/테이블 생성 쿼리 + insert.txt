@@ -2609,6 +2609,7 @@ VALUES
  'https://www.coca-cola.com/us/en/brands/coca-cola/products/coca-cola-creations',
  SYSDATE, 1);
 
+
 INSERT INTO CREATION_STORY VALUES
 (2, 'CREATION',
  '코카-콜라는 왜 계속 변신을 하는 걸까?',
@@ -3230,6 +3231,4 @@ INSERT INTO DOCUMENT (
     DATE '2024-06-01'
 );
 commit;
-
-
 
