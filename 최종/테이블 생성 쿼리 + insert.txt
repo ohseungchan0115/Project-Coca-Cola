@@ -2421,6 +2421,17 @@ INSERT INTO OPENER_CATEGORY
 VALUES
 (SEQ_OPENER_CATEGORY.NEXTVAL, '나만의 레시피', '더 많은 이야기 : 맛있는 일상, 특별한 레시피!', 3);
 
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '새로운 닥터페퍼 제로의 등장!',
+ '달콤하고 부드러운 딸기크림향 닥터페퍼라니? 당신의 음료 선택지를 넓혀줄 새로운 닥터페퍼 제로의 등장!',
+ '/cocacola/images/opener_01.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-strawberrycream',
+  NULL, SYSDATE, 0
+);
+
 INSERT INTO OPENER_POST 
 (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
 VALUES
@@ -3219,5 +3230,6 @@ INSERT INTO DOCUMENT (
     DATE '2024-06-01'
 );
 commit;
+
 
 
