@@ -230,6 +230,7 @@ CREATE TABLE CONTENT (
     content_body      CLOB,
     content_category  VARCHAR2(50),
     content_link      VARCHAR2(200),
+    DETAIL_CONTENT_ID   NUMBER , 
     CONSTRAINT fk_content_section
         FOREIGN KEY (section_id)
         REFERENCES SECTION(section_id)
@@ -258,6 +259,7 @@ CREATE TABLE DOCUMENT (
         REFERENCES SECTION(section_id)
 
 );
+
 
 
 
