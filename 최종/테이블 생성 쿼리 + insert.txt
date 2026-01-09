@@ -2394,7 +2394,6 @@ VALUES (16,
 SELECT 1 FROM dual;
 
 -- discover2 insert
-
 CREATE SEQUENCE SEQ_OPENER_CATEGORY
 START WITH 1
 INCREMENT BY 1
@@ -2423,16 +2422,20 @@ VALUES
 (SEQ_OPENER_CATEGORY.NEXTVAL, '나만의 레시피', '더 많은 이야기 : 맛있는 일상, 특별한 레시피!', 3);
 
 INSERT INTO OPENER_POST
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL)
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
 VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '새로운 닥터페퍼 제로의 등장!',
  '달콤하고 부드러운 딸기크림향 닥터페퍼라니? 당신의 음료 선택지를 넓혀줄 새로운 닥터페퍼 제로의 등장!',
  '/cocacola/images/opener_01.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-strawberrycream'
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-strawberrycream',
+  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill',
  '바쁜 하루 속에서 필요한 건 잠깐의 Chill. 달콤한 소다향과 시원한 청량감으로 일상을 리셋해 주는 스프라이트 제로 Chill.',
@@ -2442,7 +2445,9 @@ INSERT INTO OPENER_POST VALUES
 );
 
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '올 여름, 당신의 감성을 채워줄 환타는?',
  '특별하고 예쁜 풍경에는 계절의 감성에 어울리는 환타가 필요하다. 환타 멜론과 환타 제로 상큼 피치로 여름의 감성을 채워보자.',
@@ -2451,7 +2456,9 @@ INSERT INTO OPENER_POST VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향',
  '나만의 순간 멈추지 않는 파워, 파워에이드! 10km의 마라톤 여정, 5종의 파워에이드와 함께 달리다.',
@@ -2460,7 +2467,9 @@ INSERT INTO OPENER_POST VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '울림워터, 환상의 섬 ‘울릉도’에서 온 먹는 샘물',
  '울릉도의 자연이 그대로 담긴 한 병의 물. 깨끗한 자연이 만든 청정한 울림워터를 만나보자.',
@@ -2469,7 +2478,9 @@ INSERT INTO OPENER_POST VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '집에서 만난 나만의 오아시스, 미닛메이드 제로 피치에이드',
  '집에서도 가볍게 즐기는 상큼한 휴식. 복숭아 향 가득한 미닛메이드 제로 피치에이드로 일상에 상쾌함을 더하다.',
@@ -2478,7 +2489,9 @@ INSERT INTO OPENER_POST VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '추억은 부드러운 밀크 탄산처럼, 암바사 제로',
  '‘다들 암바사와의 추억 하나쯤 가지고 있지 않나요?’ 상쾌한 탄산과 몽글몽글한 밀크가 만난 암바사 제로.',
@@ -2487,7 +2500,9 @@ INSERT INTO OPENER_POST VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST VALUES
+INSERT INTO OPENER_POST 
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
  '미라클 모닝을 부르는 단 하나의 커피! 조지아',
  '미라클 모닝을 하고 있거나, 혹은 계획 중인 부지런이들을 위한 맞춤형 조지아 커피 추천.',
@@ -2584,7 +2599,6 @@ VALUES
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-1',
  NULL, SYSDATE, 0
 );
-
 
 INSERT INTO CREATION_STORY
 (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CREATED_AT, DISPLAY_ORDER)
@@ -2987,7 +3001,7 @@ INSERT INTO MEDIA (
     '상세페이지3 메인 이미지'
 );
 commit;
-select * from media;
+
 INSERT INTO media (
     media_id,
     content_id,
@@ -3216,7 +3230,5 @@ INSERT INTO DOCUMENT (
     '국제수자원관리동맹(AWS) 이해관계자 공시 문서',
     DATE '2024-06-01'
 );
-
-
-
+commit;
 
