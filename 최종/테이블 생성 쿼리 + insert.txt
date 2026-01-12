@@ -2394,17 +2394,6 @@ VALUES (16,
 SELECT 1 FROM dual;
 
 -- discover2 insert
-CREATE SEQUENCE SEQ_OPENER_CATEGORY
-START WITH 1
-INCREMENT BY 1
-NOCACHE
-NOCYCLE;
-
-CREATE SEQUENCE SEQ_OPENER_POST
-START WITH 1
-INCREMENT BY 1
-NOCACHE
-NOCYCLE;
 
 INSERT INTO OPENER_CATEGORY
 (CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER)
@@ -2429,10 +2418,10 @@ VALUES
  '달콤하고 부드러운 딸기크림향 닥터페퍼라니? 당신의 음료 선택지를 넓혀줄 새로운 닥터페퍼 제로의 등장!',
  '/cocacola/images/opener_01.jpg',
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-strawberrycream',
-  NULL, SYSDATE, 0
+ NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
+INSERT INTO OPENER_POST
 (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
 VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
@@ -2443,121 +2432,120 @@ VALUES
  NULL, SYSDATE, 0
 );
 
-
-INSERT INTO OPENER_POST 
+INSERT INTO OPENER_POST
 (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
 VALUES
 (SEQ_OPENER_POST.NEXTVAL, 1,
- '올 여름, 당신의 감성을 채워줄 환타는?',
- '특별하고 예쁜 풍경에는 계절의 감성에 어울리는 환타가 필요하다. 환타 멜론과 환타 제로 상큼 피치로 여름의 감성을 채워보자.',
+ '새로운 스프라이트가 왔다.',
+ '더 가볍고 더 상쾌해진 스프라이트의 새로운 변화. 일상의 갈증을 단번에 날려줄 청량함을 경험해 보자.',
  '/cocacola/images/opener_03.jpg',
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-fanta-new',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 1,
- '달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향',
- '나만의 순간 멈추지 않는 파워, 파워에이드! 10km의 마라톤 여정, 5종의 파워에이드와 함께 달리다.',
- '/cocacola/images/opener_04.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-powerade-marathon',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 1,
- '울림워터, 환상의 섬 ‘울릉도’에서 온 먹는 샘물',
- '울릉도의 자연이 그대로 담긴 한 병의 물. 깨끗한 자연이 만든 청정한 울림워터를 만나보자.',
- '/cocacola/images/opener_05.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-ulimwater',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 1,
- '집에서 만난 나만의 오아시스, 미닛메이드 제로 피치에이드',
- '집에서도 가볍게 즐기는 상큼한 휴식. 복숭아 향 가득한 미닛메이드 제로 피치에이드로 일상에 상쾌함을 더하다.',
- '/cocacola/images/opener_06.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-minutemade-zero-peachade',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 1,
- '추억은 부드러운 밀크 탄산처럼, 암바사 제로',
- '‘다들 암바사와의 추억 하나쯤 가지고 있지 않나요?’ 상쾌한 탄산과 몽글몽글한 밀크가 만난 암바사 제로.',
- '/cocacola/images/opener_07.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-ambasa-zero',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 1,
- '미라클 모닝을 부르는 단 하나의 커피! 조지아',
- '미라클 모닝을 하고 있거나, 혹은 계획 중인 부지런이들을 위한 맞춤형 조지아 커피 추천.',
- '/cocacola/images/opener_08.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/georgia-miracle-morning',
- NULL, SYSDATE, 0
-);
-
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 2,
- '닥터페퍼 붐은 온다!',
- '닥터페퍼를 사랑하는 팬들이 만들어낸 하나의 문화. 지금 이 순간에도 커지고 있는 닥터페퍼 붐의 중심으로 들어가 본다.',
- '/cocacola/images/opener_09.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-burgerking',
  NULL, SYSDATE, 0
 );
 
 INSERT INTO OPENER_POST
 (POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
 VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '올 여름, 당신의 감성을 채워줄 환타는?',
+ '특별하고 예쁜 풍경에는 계절의 감성에 어울리는 환타가 필요하다. 환타 멜론과 환타 제로 상큼 피치로 여름의 감성을 채워보자.',
+ '/cocacola/images/opener_04.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-powerade-marathon',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향',
+ '나만의 순간 멈추지 않는 파워, 파워에이드! 10km의 마라톤 여정, 5종의 파워에이드와 함께 달리다.',
+ '/cocacola/images/opener_05.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-ulimwater',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '울림워터, 환상의 섬 ‘울릉도’에서 온 먹는 샘물',
+ '울릉도의 자연이 그대로 담긴 한 병의 물. 깨끗한 자연이 만든 청정한 울림워터를 만나보자.',
+ '/cocacola/images/opener_06.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-minutemade-zero-peachade',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '집에서 만난 나만의 오아시스, 미닛메이드 제로 피치에이드',
+ '집에서도 가볍게 즐기는 상큼한 휴식. 복숭아 향 가득한 미닛메이드 제로 피치에이드로 일상에 상쾌함을 더하다.',
+ '/cocacola/images/opener_07.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-ambasa-zero',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '추억은 부드러운 밀크 탄산처럼, 암바사 제로',
+ '‘다들 암바사와의 추억 하나쯤 가지고 있지 않나요?’ 상쾌한 탄산과 몽글몽글한 밀크가 만난 암바사 제로.',
+ '/cocacola/images/opener_08.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/georgia-miracle-morning',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST
+(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
+VALUES
+(SEQ_OPENER_POST.NEXTVAL, 1,
+ '미라클 모닝을 부르는 단 하나의 커피! 조지아',
+ '미라클 모닝을 하고 있거나, 혹은 계획 중인 부지런이들을 위한 맞춤형 조지아 커피 추천.',
+ '/cocacola/images/opener_09.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-burgerking',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 2,
- '코카-콜라 마시는 방법으로 확인하는 나의 성향',
- '같은 콜라를 마셔도 방식은 다르다. 당신의 코카-콜라 음용 습관 속에 숨겨진 성향을 알아보는 흥미로운 테스트.',
- '/cocacola/images/opener_10.jpg',
+ '닥터페퍼 붐은 온다!',
+ '닥터페퍼를 사랑하는 팬들이 만들어낸 하나의 문화. 지금 이 순간에도 커지고 있는 닥터페퍼 붐의 중심으로 들어가 본다.',
+ '/cocacola/images/opener_09.jpg',
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-coca-cola-typetest',
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 2,
- '코카-콜라 소장품 10선',
- '수집가들의 시선을 사로잡은 코카-콜라 아이템들. 브랜드의 역사를 담은 특별한 소장품 10가지를 소개한다.',
- '/cocacola/images/opener_11.jpg',
- 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-coca-cola-collection',
- NULL, SYSDATE, 0
-);
-
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
-(SEQ_OPENER_POST.NEXTVAL, 2,
- '닥터페퍼 굿즈 이야기',
- '닥터페퍼를 사랑하는 마음이 굿즈가 되다. 팬심으로 완성된 다양한 닥터페퍼 굿즈와 그 매력을 살펴본다.',
- '/cocacola/images/opener_12.jpg',
+ '코카-콜라 마시는 방법으로 확인하는 나의 성향',
+ '같은 콜라를 마셔도 방식은 다르다. 당신의 코카-콜라 음용 습관 속에 숨겨진 성향을 알아보는 흥미로운 테스트.',
+ '/cocacola/images/opener_10.jpg',
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-4',
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
+INSERT INTO OPENER_POST VALUES
+(SEQ_OPENER_POST.NEXTVAL, 2,
+ '코카-콜라 소장품 10선',
+ '수집가들의 시선을 사로잡은 코카-콜라 아이템들. 브랜드의 역사를 담은 특별한 소장품 10가지를 소개한다.',
+ '/cocacola/images/opener_11.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-genz',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST VALUES
+(SEQ_OPENER_POST.NEXTVAL, 2,
+ '닥터페퍼 굿즈 이야기',
+ '닥터페퍼를 사랑하는 마음이 굿즈가 되다. 팬심으로 완성된 다양한 닥터페퍼 굿즈와 그 매력을 살펴본다.',
+ '/cocacola/images/opener_12.jpg',
+ 'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-1',
+ NULL, SYSDATE, 0
+);
+
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 3,
  'Z세대가 음료를 마시는 법',
  '취향과 개성을 중시하는 Z세대의 음료 소비 방식. 음료를 통해 드러나는 새로운 세대의 라이프스타일을 살펴본다.',
@@ -2566,9 +2554,7 @@ VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 3,
  '닥터페퍼 레시피 4종',
  '닥터페퍼에 아이스크림을 더하다. 집에서도 간단하게 즐길 수 있는 닥터페퍼 레시피 4가지를 소개한다.',
@@ -2577,9 +2563,7 @@ VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 3,
  '조지아 커피 디저트 레시피',
  '조지아 커피로 만드는 달콤한 디저트. 커피 티라미수부터 커피 젤리까지 색다른 레시피를 제안한다.',
@@ -2588,9 +2572,7 @@ VALUES
  NULL, SYSDATE, 0
 );
 
-INSERT INTO OPENER_POST 
-(POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CONTENT, CREATED_AT, VIEW_COUNT)
-VALUES
+INSERT INTO OPENER_POST VALUES
 (SEQ_OPENER_POST.NEXTVAL, 3,
  '닥터페퍼 요리 레시피',
  '마시는 음료를 넘어 요리 재료로 활용하는 닥터페퍼. 색다른 레시피로 완성되는 새로운 미식 경험.',
@@ -2598,6 +2580,7 @@ VALUES
  'https://www.coca-cola.com/kr/ko/offerings/opener/masism-drpepper-1',
  NULL, SYSDATE, 0
 );
+
 
 INSERT INTO CREATION_STORY
 (STORY_ID, SECTION_TYPE, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, CREATED_AT, DISPLAY_ORDER)
@@ -2608,7 +2591,6 @@ VALUES
  '/cocacola/images/creation_01.jpg',
  'https://www.coca-cola.com/us/en/brands/coca-cola/products/coca-cola-creations',
  SYSDATE, 1);
-
 
 INSERT INTO CREATION_STORY VALUES
 (2, 'CREATION',
@@ -2886,21 +2868,21 @@ INSERT INTO CONTENT VALUES (
 );
 
 INSERT INTO CONTENT VALUES (
-    5, 2, NULL,
+    5, 3, NULL,
     '바다쓰담 캠페인',
-    'SLIDE', NULL,null
+    'CARD', NULL,11
 );
 
 INSERT INTO CONTENT VALUES (
-    6, 2, NULL,
+    6, 3, NULL,
     '실내 숲 프로젝트',
-    'SLIDE', NULL,null
+    'CARD', NULL,null
 );
 
 INSERT INTO CONTENT VALUES (
-    7, 2, NULL,
+    7, 3, NULL,
     '라스트 마일 프로젝트',
-    'SLIDE', NULL,null
+    'CARD', NULL,null
 );
 INSERT INTO CONTENT VALUES (
     8, 2, NULL,
@@ -2916,6 +2898,12 @@ INSERT INTO CONTENT VALUES (
 INSERT INTO CONTENT VALUES (
     10, 2, NULL,
     '플라스틱 VS 플라스틱! 왜 투명 음료 페트병은 따로 모아야 할까?',
+    'DETAIL',NULL,null
+);
+
+INSERT INTO CONTENT VALUES (
+    11, 3, NULL,
+    '부산 광안리에서 함께한 해양 정화 활동 ‘바다쓰담’',
     'DETAIL',NULL,null
 );
 commit;
@@ -3213,6 +3201,73 @@ INSERT INTO media (
     '/cocacola/sustainability_images/detail3_card5.jpg',
     '상세페이지3 서브 이미지'
 );
+--
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    27,
+    11,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail4_main.png',
+    '상세페이지4 메인 이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    28,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card1.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    29,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card2.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    30,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card3.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    31,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card4.png',
+    '상세페이지4 서브 이미지'
+);
 
 -- document
 INSERT INTO DOCUMENT (
@@ -3230,5 +3285,3 @@ INSERT INTO DOCUMENT (
     '국제수자원관리동맹(AWS) 이해관계자 공시 문서',
     DATE '2024-06-01'
 );
-commit;
-
