@@ -1,0 +1,475 @@
+INSERT INTO SECTION VALUES (
+    1,
+    'SUSTAINABILITY',
+    '지속 가능한 미래',
+    '코카콜라 지속가능성 메인 페이지',
+    '/cocacola/sustainability_images/sustainability-haeder.jpeg'
+);
+
+INSERT INTO SECTION VALUES (
+    2,
+    '자원 순환',
+    NULL,
+    NULL,
+'/cocacola/sustainability_images/onethepl_20250701_pc.png'
+);
+
+INSERT INTO SECTION VALUES (
+    3,
+    '물 환원',
+    NULL,
+    NULL,
+    '/cocacola/sustainability_images/forest.png'
+);
+
+INSERT INTO SECTION VALUES (
+    4,
+    '글로벌 지속가능성',
+    NULL,
+    NULL,
+    '/cocacola/sustainability_images/global.png'
+);
+
+-- content
+INSERT INTO CONTENT VALUES (
+    1, 2, NULL,
+    '"친구야, 페트병은 원래 다시 돌아오는거야!" 원더플 전도사가 된 마시즘',
+    'CARD', null,8
+);
+
+INSERT INTO CONTENT VALUES (
+    2, 2, NULL,
+    '투명 음료 페트병이 다시 음료 페트병으로! 코카-콜라 재생페트 출시',
+    'CARD', null,9
+);
+
+INSERT INTO CONTENT VALUES (
+    3, 2, NULL,
+    '왜 투명 음료 페트병은 따로 모아야 할까?',
+    'CARD', null,10
+);
+
+INSERT INTO CONTENT VALUES (
+    4, 2, NULL,
+    '함께하면 마법 같은 챌린지, 원더플 단체 미션 도전기',
+    'CARD', NULL,null
+);
+
+INSERT INTO CONTENT VALUES (
+    5, 3, NULL,
+    '바다쓰담 캠페인',
+    'CARD', NULL,11
+);
+
+INSERT INTO CONTENT VALUES (
+    6, 3, NULL,
+    '실내 숲 프로젝트',
+    'CARD', NULL,null
+);
+
+INSERT INTO CONTENT VALUES (
+    7, 3, NULL,
+    '라스트 마일 프로젝트',
+    'CARD', NULL,null
+);
+INSERT INTO CONTENT VALUES (
+    8, 2, NULL,
+    '친구야! ‘페트병’은 원래 다시 돌아오는 거야!',
+    'DETAIL',NULL,null
+);
+INSERT INTO CONTENT VALUES (
+    9, 2, NULL,
+    '코카-콜라 rPET 프로젝트 현장 탐방! 버려진 페트병의 놀라운 재탄생',
+    'DETAIL',NULL,null
+);
+
+INSERT INTO CONTENT VALUES (
+    10, 2, NULL,
+    '플라스틱 VS 플라스틱! 왜 투명 음료 페트병은 따로 모아야 할까?',
+    'DETAIL',NULL,null
+);
+
+INSERT INTO CONTENT VALUES (
+    11, 3, NULL,
+    '부산 광안리에서 함께한 해양 정화 활동 ‘바다쓰담’',
+    'DETAIL',NULL,null
+);
+commit;
+
+-- media
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    1, 1, 'IMAGE',
+    '/cocacola/sustainability_images/content_card1.png',
+    '자원순환 카드 1'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    2, 2, 'IMAGE',
+    '/cocacola/sustainability_images/content_card2.png',
+    '자원순환 카드 2'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    3, 3, 'IMAGE',
+    '/cocacola/sustainability_images/content_card3.png',
+    '자원순환 카드 3'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    4, 4, 'IMAGE',
+    '/cocacola/sustainability_images/content_card4.png',
+    '자원순환 카드 4'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    5, 5, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide1.png',
+    '바다쓰담 캠페인'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    6, 6, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide2.png',
+    '실내 숲 프로젝트'
+);
+
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    7, 7, 'IMAGE',
+    '/cocacola/sustainability_images/com_slide3.png',
+    '라스트 마일 프로젝트'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    8,8,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail_main.png',
+    '상세페이지 메인 이미지'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    20,9,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail2_main.png',
+    '상세페이지2 메인 이미지'
+);
+INSERT INTO MEDIA (
+    media_id, content_id, media_file_type, media_file, media_description
+) VALUES (
+    21,10,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail3_main.png',
+    '상세페이지3 메인 이미지'
+);
+commit;
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    9,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card1.jpg',
+    '상세페이지 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    10,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card2.jpg',
+    '상세페이지 서브이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    11,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card3.jpg',
+    '상세페이지 서브이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    12,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card4.jpg',
+    '상세페이지 서브이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    13,
+    8,
+    'CARD',
+    '/cocacola/sustainability_images/detail_card5.jpg',
+    '상세페이지 서브이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    14,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card1.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    15,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card2.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    16,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card3.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    17,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card4.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    18,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card5.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    19,
+    9,
+    'CARD',
+    '/cocacola/sustainability_images/detail2_card6.jpg',
+    '상세페이지2 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    22,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card1.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    23,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card2.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    24,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card3.jpg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    25,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card4.jpeg',
+    '상세페이지3 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    26,
+    10,
+    'CARD',
+    '/cocacola/sustainability_images/detail3_card5.jpg',
+    '상세페이지3 서브 이미지'
+);
+--
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    27,
+    11,
+    'IMAGE',
+    '/cocacola/sustainability_images/detail4_main.png',
+    '상세페이지4 메인 이미지'
+);
+
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    28,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card1.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    29,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card2.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    30,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card3.png',
+    '상세페이지4 서브 이미지'
+);
+INSERT INTO media (
+    media_id,
+    content_id,
+    media_file_type,
+    media_file,
+    media_description
+) VALUES (
+    31,
+    11,
+    'CARD',
+    '/cocacola/sustainability_images/detail4_card4.png',
+    '상세페이지4 서브 이미지'
+);
+
+-- document
+INSERT INTO DOCUMENT (
+    document_id,
+    section_id,
+    document_title,
+    document_file,
+    document_description,
+    document_date
+) VALUES (
+    1,
+    3,
+    'AWS 이해관계자 공시',
+    '/cocacola/document.pdf',
+    '국제수자원관리동맹(AWS) 이해관계자 공시 문서',
+    DATE '2024-06-01'
+);

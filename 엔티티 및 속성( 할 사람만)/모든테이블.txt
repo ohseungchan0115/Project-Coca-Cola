@@ -1,0 +1,136 @@
+Brands
+
+Brand
+브랜드 고유번호(PK)	N/A	NUMBER	brand_id(PK)
+브랜드명	N/A	VARCHAR2(100)	brand_name
+브랜드 로고 이미지	N/A	VARCHAR2(255)	brand_logo_url
+브랜드 설명	N/A	VARCHAR2(1000)	brand_description
+브랜드 원산지	N/A	VARCHAR2(100)	brand_origin
+
+Brand_Category
+카테고리 고유ID(PK)(FK)	N/A	NUMBER	brand_category_id(PK)(FK)
+브랜드 고유번호(PK)(FK)	N/A	NUMBER	brand_id(PK)(FK)
+
+Category
+카테고리 고유ID(PK)	N/A	NUMBER	brand_category_id(PK)
+카테고리명	N/A	VARCHAR2(100)	brand_category_name
+카테고리 설명	N/A	VARCHAR2(500)	brand_category_description
+
+Product
+제품 고유번호(PK)	N/A	NUMBER	product_id(PK)
+브랜드 고유번호(PK)(FK)	N/A	NUMBER	brand_id(PK)(FK)
+제품명	N/A	VARCHAR2(150)	product_name
+용량	N/A	VARCHAR2(50)	product_volume
+이미지 URL	N/A	VARCHAR2(255)	product_image_url
+영양 정보	N/A	CLOB	product_nutritional_info
+출시일	N/A	DATE	product_launch_date
+제품 설명	N/A	VARCHAR2(1000)	product_description
+
+----------------------------------------------------------------------------
+Our Company
+
+OURCOMPANY
+고유 식별자(PK)	N/A	NUMBER	CONTENT_ID(PK)
+섹션 구분 코드	N/A	VARCHAR2(50)	SECTION_CODE
+제목 	N/A	VARCHAR2(255)	TITLE
+내용	N/A	VARCHAR2(255)	SUMMARY
+이미지 파일 이름	N/A	VARCHAR2(255)	IMAGE_FILENAME
+버튼 링크	N/A	VARCHAR2(255)	BUTTON_LINK
+출력 순서	N/A	NUMBER	DISPLAY_ORDER
+
+----------------------------------------------------------------------------
+Discover
+
+CREATION_STORY
+스토리 ID(PK)	N/A	NUMBER	STORY_ID(PK)
+섹션 구분(MAIN/RECOMMEND/MORE)	N/A	VARCHAR2(20)	SECTION_TYPE
+제목	N/A	VARCHAR2(300)	TITLE
+요약 설명	N/A	VARCHAR2(1000)	SUMMARY
+대표 이미지 URL	N/A	VARCHAR2(500)	THUMBNAIL_URL
+더보기 링크 URL	N/A	VARCHAR2(500)	EXTERNAL_URL
+등록일시	N/A	DATE	CREATED_AT
+정렬 순서	N/A	NUMBER	DISPLAY_ORDER
+
+COKEPLAY_BENEFIT
+혜택 ID(PK)	N/A	NUMBER	BENEFIT_ID(PK)
+혜택 제목	N/A	VARCHAR2(300)	TITLE
+혜택 설명	N/A	VARCHAR2(1000)	DESCRIPTION
+혜택 이미지 URL	N/A	VARCHAR2(500)	IMAGE_URL
+링크 URL	N/A	VARCHAR2(500)	EXTERNAL_URL
+노출 순서	N/A	NUMBER	DISPLAY_ORDER
+사용 여부	N/A	CHAR(1)	USE_YN
+
+OPENER_CATEGORY
+카테고리 ID(PK)	N/A	NUMBER	CATEGORY_ID(PK)
+카테고리명	N/A	VARCHAR2(100)	CATEGORY_NAME
+섹션 제목	N/A	VARCHAR2(200)	SECTION_TITLE
+노출 순서	N/A	NUMBER	DISPLAY_ORDER
+사용 여부	N/A	CHAR(1)	USE_YN
+
+OPENER_POST
+게시글 ID(PK)	N/A	NUMBER	POST_ID(PK)
+카테고리 ID(FK)	N/A	NUMBER	CATEGORY_ID(FK)
+제목	N/A	VARCHAR2(300)	TITLE
+요약 설명	N/A	VARCHAR2(1000)	SUMMARY
+썸네일 이미지 URL	N/A	VARCHAR2(500)	THUMBNAIL_URL
+더보기 링크 URL	N/A	VARCHAR2(500)	EXTERNAL_URL
+등록일시	N/A	DATE	CREATED_AT
+조회수	N/A	NUMBER	VIEW_COUNT
+
+여기까지 discover 수진 파트
+
+STORIES
+스토리 ID(PK)	N/A	NUMBER	story_id(PK)
+스토리 제목	N/A	VARCHAR2(255)	story_title
+요약 설명	N/A	VARCHAR2(255)	story_summary
+텍스트 본문	N/A	CLOB	story_body
+대표 이미지	N/A	VARCHAR2(255)	story_image
+게시일	N/A	DATE	story_date
+
+CAMPAIGNS
+캠페인 ID(PK)	N/A	NUMBER	campaigns_id(PK)
+캠페인 제목	N/A	VARCHAR2(255)	campaigns_title
+캠페인 요약설명	N/A	VARCHAR2(255)	campaigns_summary
+캠페인 본문	N/A	VARCHAR2(255)	campaigns_body
+캠페인 게시일	N/A	DATE	campaigns_date
+
+DISC_MEDIA
+미디어 ID(PK)	N/A	NUMBER	media_id(PK)
+스토리 ID(PK)(FK)	N/A	NUMBER	story_id(PK)(FK)
+캠페인 ID(PK)(FK)	N/A	NUMBER	campaigns_id(PK)(FK)
+이미지, 동영상 URL	N/A	VARCHAR2(255)	media_url
+표시순서	N/A	NUMBER	media_index
+
+여기까지 discover 소예 파트
+----------------------------------------------------------------------------
+Sustainability
+
+MEDIA
+미디어 ID(PK)	N/A	NUMBER	media_id(PK)
+콘텐츠 ID(FK)	N/A	NUMBER	content_id(FK)
+미디어 파일 유형	N/A	VARCHAR2(50)	media_file_type
+미디어 파일	N/A	VARCHAR2(100)	media_file
+미디어 설명	N/A	CLOB	media_description
+
+CONTENT
+콘텐츠 ID(PK)	N/A	NUMBER	content_id(PK)
+섹션 ID(FK)	N/A	NUMBER	section_id(FK)
+콘텐츠 제목	N/A	VARCHAR2(100)	content_title
+콘텐츠 내용	N/A	CLOB	content_body
+콘텐츠 유형	N/A	VARCHAR2(50)	content_category
+콘텐츠 링크	N/A	VARCHAR2(200)	content_link
+
+SECTION
+섹션 ID(PK)	N/A	NUMBER	section_id(PK)
+섹션 제목	N/A	VARCHAR2(100)	section_title
+섹션 부제	N/A	VARCHAR2(100)	section_subtitle
+섹션 설명	N/A	CLOB	section_description
+섹션 대표 이미지	N/A	VARCHAR2(255)	section_image
+
+DOCUMENT
+문서 ID(PK)	N/A	NUMBER	document_id(PK)
+섹션 ID(FK)	N/A	NUMBER	section_id(FK)
+문서 제목	N/A	VARCHAR2(100)	document_title
+문서 파일	N/A	VARCHAR2(100)	document_file
+문서 설명	N/A	CLOB	document_description
+문서 게시일	N/A	DATE	document_date

@@ -1,0 +1,60 @@
+INSERT INTO SECTION (section_id, section_title, section_subtitle, section_description, section_image) VALUES
+(1, '회사 소개', 'About Us', '우리 회사를 소개하는 섹션입니다.', 'section1.jpg');
+
+INSERT INTO SECTION VALUES
+(2, '제품 안내', 'Products', '제품 관련 정보를 제공하는 섹션입니다.', 'section2.jpg');
+
+INSERT INTO SECTION VALUES
+(3, '공지사항', 'Notice', '새로운 소식을 전달하는 섹션.', 'section3.jpg');
+
+INSERT INTO SECTION VALUES
+(4, '자료실', 'Resources', '문서 및 자료 다운로드 섹션.', 'section4.jpg');
+
+INSERT INTO SECTION VALUES
+(5, '고객지원', 'Support', '고객 문의 및 지원 정보.', 'section5.jpg');
+
+INSERT INTO CONTENT VALUES
+(1, 1, '회사 연혁', '회사의 설립부터 현재까지의 연혁.', 'text', NULL);
+
+INSERT INTO CONTENT VALUES
+(2, 2, '신제품 출시', '신제품에 대한 상세 설명.', 'article', 'https://example.com/product');
+
+INSERT INTO CONTENT VALUES
+(3, 3, '2025년 공지사항', '2025년 주요 공지사항입니다.', 'notice', NULL);
+
+INSERT INTO CONTENT VALUES
+(4, 4, '자료실 사용 방법', '자료실 이용 방법 안내.', 'guide', 'https://example.com/guide');
+
+INSERT INTO CONTENT VALUES
+(5, 5, '자주 묻는 질문', '고객이 자주 문의하는 질문 모음.', 'faq', NULL);
+
+INSERT INTO MEDIA VALUES
+(1, 1, 'image', 'history1.png', '회사 연혁 관련 이미지입니다.');
+
+INSERT INTO MEDIA VALUES
+(2, 2, 'video', 'product_intro.mp4', '신제품 소개 영상입니다.');
+
+INSERT INTO MEDIA VALUES
+(3, 3, 'image', 'notice2025.png', '2025년 공지사항 이미지.');
+
+INSERT INTO MEDIA VALUES
+(4, 4, 'pdf', 'guide_doc.pdf', '자료실 이용 가이드 문서.');
+
+INSERT INTO MEDIA VALUES
+(5, 5, 'image', 'faq_banner.jpg', 'FAQ 안내 배너.');
+
+INSERT INTO DOCUMENT VALUES
+(1, 1, '회사 소개서', 'company_profile.pdf', '회사 소개 문서입니다.', DATE '2025-01-10');
+
+INSERT INTO DOCUMENT VALUES
+(2, 2, '제품 매뉴얼', 'product_manual.pdf', '제품 사용 설명서.', DATE '2025-02-01');
+
+INSERT INTO DOCUMENT VALUES
+(3, 3, '2025 공지 모음', 'notice_2025.pdf', '2025년 공지사항 정리.', DATE '2025-03-15');
+
+INSERT INTO DOCUMENT VALUES
+(4, 4, '자료실 가이드', 'resource_guide.pdf', '자료실 사용 가이드 문서.', DATE '2025-04-05');
+
+INSERT INTO DOCUMENT VALUES
+(5, 5, '고객지원 안내서', 'support_info.pdf', '고객지원 안내 문서.', DATE '2025-05-10');
+

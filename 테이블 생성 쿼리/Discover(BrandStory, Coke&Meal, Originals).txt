@@ -1,0 +1,23 @@
+CREATE TABLE COKE_MEAL (
+    coke_meal_id        NUMBER PRIMARY KEY,
+    coke_meal_title     VARCHAR2(255),
+    coke_meal_summary   VARCHAR2(255),
+    coke_meal_image     VARCHAR2(255),
+    coke_meal_date      DATE
+);
+
+CREATE TABLE ORIGINALS (
+    originals_id        NUMBER PRIMARY KEY,
+    originals_title     VARCHAR2(255),
+    originals_summary   VARCHAR2(255),
+    originals_image     VARCHAR2(255),
+    originals_date      DATE
+);
+
+CREATE TABLE BRAND_STORY (
+    brand_story_id        NUMBER PRIMARY KEY,
+    brand_story_title     VARCHAR2(255),
+    brand_story_summary   VARCHAR2(255),
+    brand_story_image     VARCHAR2(255),
+    brand_story_date      DATE
+);

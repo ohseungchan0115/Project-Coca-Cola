@@ -1,0 +1,43 @@
+CREATE TABLE SECTION (
+    section_id        NUMBER          PRIMARY KEY,
+    section_title     VARCHAR2(100),
+    section_subtitle  VARCHAR2(100),
+    section_description CLOB,
+    section_image     VARCHAR2(255)
+);
+
+CREATE TABLE CONTENT (
+    content_id        NUMBER          PRIMARY KEY,
+    section_id        NUMBER,
+    content_title     VARCHAR2(100),
+    content_body      CLOB,
+    content_category  VARCHAR2(50),
+    content_link      VARCHAR2(200),
+    DETAIL_CONTENT_ID   NUMBER , 
+    CONSTRAINT fk_content_section
+        FOREIGN KEY (section_id)
+        REFERENCES SECTION(section_id)
+);
+
+CREATE TABLE MEDIA (
+    media_id          NUMBER          PRIMARY KEY,
+    content_id        NUMBER,
+    media_file_type   VARCHAR2(50),
+    media_file        VARCHAR2(100),
+    media_description CLOB,
+    CONSTRAINT fk_media_content
+        FOREIGN KEY (content_id)
+        REFERENCES CONTENT(content_id)
+);
+
+CREATE TABLE DOCUMENT (
+    document_id         NUMBER        PRIMARY KEY,
+    section_id          NUMBER,
+    document_title      VARCHAR2(100),
+    document_file       VARCHAR2(100),
+    document_description CLOB,
+    document_date       DATE,
+    CONSTRAINT fk_document_section
+        FOREIGN KEY (section_id)
+        REFERENCES SECTION(section_id)
+);

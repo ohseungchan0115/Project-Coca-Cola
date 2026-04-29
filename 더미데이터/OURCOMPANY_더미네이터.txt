@@ -1,0 +1,331 @@
+
+-- [ 실제 코카콜라 사이트 coca-cola company 데이터 ]
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'COMPANY', 
+    '글로벌 코카-콜라', 
+    '전 세계인들의 일상 속 짜릿한 순간을 함께 해온 코카-콜라의 글로벌 비전과 가치, 지속 가능한 경영 전략.', 
+    'company_02.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'COMPANY', 
+    '한국 코카-콜라', 
+    '전 세계 200여 개국의 소비자들에게 상쾌함과 즐거움을 제공하고 있는 코카-콜라. 한국에서 코카-콜라의 역사는 언제, 어떻게 시작됐을까?', 
+    'company_03.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'COMPANY', 
+    '한국 코카-콜라에는 특별한 기업문화가 있다?', 
+    '음료에 대한 열정을 바탕으로 새로운 도전과 혁신을 만들어나가는 코카-콜라의 기업문화를 알아보는 콕콕콕 오피스 습격편', 
+    'company_04.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'COMPANY', 
+    '미국 애틀랜타 코카-콜라 본사&박물관 투어', 
+    '코카-콜라 미국 본사와 월드 오브 코카-콜라(World of Coca-Cola) 박물관이 궁금하다면? 박준형과 함께한 본격 코카-콜라 체험기!', 
+    'company_05.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+-- [ 실제 코카콜라 사이트 since 데이터 (1) ]
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라의 상징, 컨투어 보틀 탄생 스토리', 
+    '"어두컴컴한 곳에서 만져도, 깨진 병 조각만 보고도 코카-콜라 병인지 알 수 있어야 한다." 코카-콜라의 상징이 된, 누구도 따라할 수 없는 독창적인 병의 탄생 스토리.', 
+    'since_02.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '빨간색은 어떻게 코카-콜라를 상징하는 컬러가 됐을까?', 
+    '코카-콜라는 언제부터 빨간색을 사용했을까? 하나의 약속이 된 코카-콜라 빨간색 이야기', 
+    'since_03.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라를 처음 만든 존 펨버턴 박사', 
+    '코카-콜라를 탄생시킨 존 펨버턴 박사. 그의 이야기는 1886년, 미국 조지아주 애틀랜타의 한 약국에서 시작된다.', 
+    'since_04.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 광고 속 산타클로스, 오늘날 산타의 상징이 되다', 
+    '빨간 옷과 모자, 풍성한 턱수염, 커다란 선물 보따리를 어깨에 메고 이 집 저 집 굴뚝을 넘나드는 유쾌한 할아버지! 우리가 알고 있는 산타클로스가 코카-콜라 광고를 통해 처음 만들어졌다고?', 
+    'since_05.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 역사와 살아 숨 쉬는 월드 오브 코카-콜라 박물관', 
+    '미국 애틀랜타에 가면 130여 년 역사를 한눈에 볼 수 있는 코카-콜라 박물관, 월드 오브 코카-콜라(World of Coca-Cola)가 있다.', 
+    'since_06.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '비밀의 문이 열린다: 130여 년 역사를 간직한 기록보관소', 
+    '코카-콜라 병의 원본 스케치부터 1950년대 코카-콜라 자판기, 88 서울 올림픽 성화봉까지! 직원들도 허가 없이는 들어갈 수 없는 코카-콜라 기록보관소!', 
+    'since_07.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 올림픽 파트너십의 역사', 
+    '가장 오래된 올림픽 파트너인 코카-콜라. 1928년 암스테르담 올림픽부터 지금까지 약 한 세기 동안 쌓아온 코카-콜라의 올림픽 파트너십 역사를 살펴본다.', 
+    'since_08.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+
+
+-- [ 실제 코카콜라 사이트 since 데이터 (2) ]
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 슬로건의 변천사', 
+    '카피 한 줄 소비자들의 마음을 사로잡은 비결은? Drink, Coca-Cola부터 Real Magic까지 코카-콜라 슬로건의 역사.', 
+    'since_09.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라의 기발한 마케팅 전략들', 
+    '최초의 무료 샘플링 쿠폰, 특허 받은 디자인... 업계의 표준이 된 코카-콜라의 마케팅 전략들.', 
+    'since_10.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 성장시킨 10가지 비즈니스 결정들', 
+    '1886년 작은 약국에서 시작한 코카-콜라가 어떻게 세계적인 브랜드로 성장할 수 있었을까?', 
+    'since_11.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '[인터뷰] 코카-콜라의 마스코트, 북극곰의 탄생 비화', 
+    '코카-콜라의 마스코트로 사랑받고 있는 북극곰은 어떻게 만들어진 것일까? 당시 광고 제작자를 만나 인터뷰를 진행했다.', 
+    'since_12.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '응답하라! 그때 그 시절, 코카-콜라 자판기', 
+    '우주왕복선에 실린 코카-콜라 머신부터 200여 개 옵션을 제공하는 자판기까지... 코카-콜라 자판기의 역사', 
+    'since_13.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라 저니위키 - 역사 편', 
+    '1886년부터 시작된 코카-콜라의 여정을 한 페이지로 요약했다.', 
+    'since_14.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+
+
+-- [ 실제 코카콜라 사이트 since 데이터 (3) ]
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '[코카-콜라를 만든 사람들 제2편] 코카-콜라 회사를 만든 아사 캔들러', 
+    '존 펨버턴(John Pemberton) 박사가 세상에 없던 음료를 만들었다면, 아사 캔들러(Asa Candler)는 코카-콜라가 전 세계인이 즐기는 음료가 될 수 있도록 초석을 다졌다.', 
+    'since_15.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '[코카-콜라를 만든 사람들 제3편] 코카-콜라를 60년간 이끈 CEO, 로버트 우드러프의 리더십', 
+    '코카-콜라의 역사를 이야기할 때 로버트 우드러프를 빼놓고 이야기할 수 없다. 그는 60년간 회사를 이끌며, 코카-콜라를 글로벌 기업으로 성장시켰다.', 
+    'since_16.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '코카-콜라의 비밀: 제조법이 지금까지 공개되지 않은 비결은?', 
+    '1886년 존 펨버턴 박사가 코카-콜라를 발명한 이후, 코카-콜라의 제조법은 철저히 비밀에 부쳐져 왔다.', 
+    'since_17.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '1985년 뉴코-크 출시는 왜 실패했나', 
+    '코카-콜라 뉴코-크 출시는 왜 세기의 마케팅 실수라고 불릴까? 수 천 건의 항의 전화가 쏟아졌던 1985년 뉴코-크 사태의 전말을
+되짚어본다.', 
+    'since_18.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '약사가 만든 음료? 코카-콜라, 닥터페퍼, 캐나다 드라이', 
+    '전 세계적으로 100년이 훌쩍 넘는 역사와 전통을 가진 탄산음료들이 모두 약사의 손에서 시작됐다는 공통점은 그저 우연의 일치인 걸까?', 
+    'since_19.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '사진으로 보는 코카-콜라의 FIFA 월드컵 스폰서십 역사', 
+    '코카-콜라는 FIFA의 가장 오래된 파트너사 중 하나로 지금까지 꾸준히 활동하고 있다. 중요한 것은 단순히 음료수를 제공하는데 그치지 않고 오랜 시간 동안 월드컵 전반의 문화를 만들어왔다는데 있다.', 
+    'since_20.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '마틴 루터 킹과 코카-콜라의 인연', 
+    '흑인 해방 운동의 지도자이자 노벨 평화상 수상자로 전 세계에 널리 알려진 마틴 루터 킹이 코카-콜라에 편지를 보낸 이유는 무엇일까?', 
+    'since_21.png', 
+    SEQ_OURCOMPANY.CURRVAL
+);
+
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (
+    SEQ_OURCOMPANY.NEXTVAL, 
+    'SINCE', 
+    '한 세기 동안 타임스퀘어와 함께 해온 코카-콜라 광고', 
+    '하루 통행인구 31만 명에 이르는 세계적인 랜드마크, 타임스퀘어는 글로벌 기업들의 광고 격전지로 유명하다. 코카-콜라는 이 틈에서 무려 한 세기에 가까운 시간 동안 독보적인 존재감을 뽐내며 자리를...', 
+    'since_22.png', 
+    SEQ_OURCOMPANY.CURRVAL
+
+);
+
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+
+--[ 메인페이지 데이터 ]
+-- 1. 상단 배너 
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '달콤하고 부드러운 딸기크림향, 그런데 닥터페퍼 제로라니', '임의의 데이터_01', 'main_08.png', 1);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '치열한 일상 속 Chill한 상쾌함, 스프라이트 제로 Chill', '임의의 데이터_02', 'main_09.png', 2);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '달리다 보면 너의 음료를 알게 될 거야, 파워에이드 제로 라임향', '임의의 데이터_03', 'main_10.png', 3);
+
+
+-- 2. 카드 섹션
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '코카-콜라 Real Magic 스토리', '1886년 탄생 이후, 코카-콜라가 걸어온 130여 년의 짜릿한 여정! 그 마법같은 이야기 속으로 초대합니다.', 'main_11.png', 4);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '지속 가능한 미래', '지속 가능한 미래를 만들기 위한 코카-콜라의 다양한 활동들을 만나보세요. 전 세계 사람들의 삶과 지역사회에 긍정적인 변화를 만들어 나가기 위해 노력하고 있습니다.', 'main_12.png', 5);
+
+
+-- 3. 하단 브랜드 그리드 섹션 
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_13', '임의의 요약_13', 'main_13.png', 6);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_14', '임의의 요약_14', 'main_14.png', 7);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_15', '임의의 요약_15', 'main_15.png', 8);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_16', '임의의 요약_16', 'main_16.png', 9);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_17', '임의의 요약_17', 'main_17.png', 10);
+
+INSERT INTO OURCOMPANY (CONTENT_ID, SECTION_CODE, TITLE, SUMMARY, IMAGE_FILENAME, DISPLAY_ORDER)
+VALUES (SEQ_OURCOMPANY.NEXTVAL, 'MAIN', '임의의 타이틀_18', '임의의 요약_18', 'main_18.png', 11);
+
+COMMIT;
+
+
+

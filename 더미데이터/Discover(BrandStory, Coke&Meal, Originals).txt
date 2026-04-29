@@ -1,0 +1,29 @@
+INSERT INTO CAMPAIGNS (campaigns_id, campaigns_title, campaigns_summary, campaigns_body, campaigns_date) VALUES
+(1, '코카-콜라 X 블루리본 서베이', '2025 레드리본 전국의 맛집', '코카-콜라와 함께하는 전국 맛집 탐방 프로젝트! 레드리본 맛집을 소개합니다. 탄산음료와 찰떡궁합 음식 추천부터 현장 스토리까지.', TO_DATE('2025-05-10','YYYY-MM-DD')),
+(2, '파워에이드 제로 라임향 출시', '상쾌한 라임향을 입은 제로 칼로리 파워에이드', '운동 후 갈증을 상쾌하게 해주는 파워에이드 제로 라임향이 새롭게 출시되었습니다. 가볍고 청량한 한 모금으로 하루를 시작해보세요!', TO_DATE('2025-06-20','YYYY-MM-DD')),
+(3, '환타 멜론 & 피치 신제품 공개', '달콤+상큼, 환타 뉴 페어링', '환타 멜론과 피치가 새롭게 출시되었습니다. 과즙향 탄산의 새로운 경험을 지금 만나보세요!', TO_DATE('2025-07-05','YYYY-MM-DD'));
+
+INSERT INTO STORIES (story_id, story_title, story_summary, story_body, story_image, story_date) VALUES
+(10, '코카-콜라와 뷔: 이토록 짜릿한 만남!', '세계적 아이콘 뷔가 전하는 코카-콜라 이야기', '글로벌 앰배서더 뷔와 함께한 짜릿한 화보와 인터뷰. 그의 하루, 그리고 코카-콜라와의 연결고리를 만나보세요.', 'images/v_bts_coke.jpg', TO_DATE('2025-04-15','YYYY-MM-DD')),
+(11, '우주에서 온 콜라?', '다른 세상의 코카-콜라를 상상하다', '만약 우주 공간에서 마시는 콜라가 있다면 어떤 맛일까요? 코카-콜라 크리에이션팀의 가상의 음료 실험기.', 'images/space_coke.jpg', TO_DATE('2024-12-01','YYYY-MM-DD')),
+(12, '닥터페퍼에 숨겨진 7가지 팩트', '알고 보면 놀라운 닥터페퍼 이야기', '닥터페퍼가 코카-콜라보다 먼저 태어났다는 사실, 믿겨지시나요? 지금까지 알려지지 않았던 7가지 비밀을 공개합니다.', 'images/doctorpepper_facts.jpg', TO_DATE('2025-02-20','YYYY-MM-DD'));
+
+-- 스토리 10의 미디어 (화보, 썸네일)
+INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
+(100, 10, NULL, 'media/v_bts_coke_main.jpg', 1),
+(101, 10, NULL, 'media/v_bts_coke_side.jpg', 2);
+
+-- 캠페인 1의 미디어 (맛집 탐방 이미지)
+INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
+(200, NULL, 1, 'media/blue_ribbon_food1.jpg', 1),
+(201, NULL, 1, 'media/blue_ribbon_food2.jpg', 2);
+
+-- 캠페인 2의 미디어 (파워에이드 신제품 이미지)
+INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
+(300, NULL, 2, 'media/powerade_zero_lime.jpg', 1);
+
+-- 스토리 12의 미디어 (닥터페퍼 팩트 기사 이미지)
+INSERT INTO DISC_MEDIA (media_id, story_id, campaigns_id, media_url, media_index) VALUES
+(400, 12, NULL, 'media/doctorpepper_fact.jpg', 1);
+
+
