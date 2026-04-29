@@ -1,0 +1,70 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.BrandStoryDTO;
+import cocacola.mvc.persistence.BrandStoryDAO;
+
+@WebServlet("/cocacola/Discover1/brandstory")
+public class BrandStoryServlet extends HttpServlet {
+
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        BrandStoryDAO dao = new BrandStoryDAO();
+
+        // 1️ 상세 페이지 처리 로직
+        // 주소창에 ?id=숫자 파라미터가 넘어왔을 때 실행됨
+        String idParam = request.getParameter("id");
+        if (idParam != null) {
+            int id = Integer.parseInt(idParam);
+            // 각 게시글마다 디자인이 다른 특성을 고려하여 ID별 개별 JSP 파일을 호출
+            String jspPath =
+                "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + id + ".jsp";
+            // 지정된 경로의 JSP로 제어권을 넘김
+            request.getRequestDispatcher(jspPath).forward(request, response);
+            return;
+        }
+
+        // 2️ 목록 페이지 처리 로직
+        List<BrandStoryDTO> allStories;
+        try {
+        	// 데이터 베이스 전체 조회
+            allStories = dao.selectAll();
+        } catch (SQLException e) {
+            throw new ServletException(e);
+        }
+
+        // 데이터를 그룹별로 분리하여 저장할 리스트 생성
+        List<BrandStoryDTO> mainStories = new ArrayList<>();
+        List<BrandStoryDTO> recommendStories = new ArrayList<>();
+        List<BrandStoryDTO> moreStories = new ArrayList<>();
+
+        // 인덱스 번호를 기준으로 전체 리스트를 순회하며 적절한 그룹에 배분
+        for (int i = 0; i < allStories.size(); i++) {
+            if (i <= 3) mainStories.add(allStories.get(i));
+            else if (i <= 7) recommendStories.add(allStories.get(i));
+            else moreStories.add(allStories.get(i));
+        }
+
+        // 가공된 데이터를 JSP(View)에서 사용할 수 있도록 request 객체에 바인딩
+        request.setAttribute("mainStories", mainStories);
+        request.setAttribute("recommendStories", recommendStories);
+        request.setAttribute("moreStories", moreStories);
+
+        // 최종적으로 목록을 보여줄 메인 JSP 화면으로 이동
+        request.getRequestDispatcher(
+            "/WEB-INF/views/cocacola/Discover1/BrandStory.jsp"
+        ).forward(request, response);
+    }
+}
+

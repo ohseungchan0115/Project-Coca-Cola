@@ -1,0 +1,85 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.OriginalsDTO;
+import cocacola.mvc.persistence.OriginalsDAO;
+
+@WebServlet("/cocacola/Discover1/originals")
+public class OriginalsServlet extends HttpServlet {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) 
+            throws ServletException, IOException {
+        
+    	// DB에 접근할 객체
+    	OriginalsDAO dao = new OriginalsDAO();
+        List<OriginalsDTO> allStories = null;
+		try {
+			// DB에 저장된 모든 브랜드 스토리 데이터를 리스트 형태로 긁어오기
+			allStories = dao.selectAll();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		// 1~2. 메인 카드 (각 1개씩)
+		OriginalsDTO main1 = null;
+		OriginalsDTO main2 = null;
+
+		// 3. 캐러셀 (여러 개)
+		List<OriginalsDTO> section = new ArrayList<>();
+
+		// 4. 메인 카드 (1개)
+		OriginalsDTO main3 = null;
+
+		// 5. 인기 콘텐츠 (여러 개)
+		List<OriginalsDTO> favStories = new ArrayList<>();
+
+		// 6. 메인 카드 (1개)
+		OriginalsDTO main4 = null;
+
+		// 7. 추천 콘텐츠 (여러 개)
+		List<OriginalsDTO> recStories = new ArrayList<>();
+
+		// 8. 메인 카드 (1개)
+		OriginalsDTO main5 = null;
+
+		// --- 데이터 배분 루프 ---
+		if (allStories != null && !allStories.isEmpty()) {
+		    for (int i = 0; i < allStories.size(); i++) {
+		        OriginalsDTO originals = allStories.get(i);
+		        
+		        if (i == 0) main1 = originals;
+		        else if (i == 1) main2 = originals;
+		        else if (i >= 2 && i <= 3) section.add(originals);
+		        else if (i == 4) main3 = originals;
+		        else if (i >= 5 && i <= 10) favStories.add(originals);
+		        else if (i == 11) main4 = originals;
+		        else if (i >= 12 && i <= 14) recStories.add(originals);
+		        else if (i == 15) main5 = originals;
+		    }
+		}
+
+		// JSP로 전달 (객체든 리스트든 setAttribute는 동일하게 사용)
+		request.setAttribute("main1", main1);
+		request.setAttribute("main2", main2);
+		request.setAttribute("section", section);
+		request.setAttribute("main3", main3);
+		request.setAttribute("favStories", favStories);
+		request.setAttribute("main4", main4);
+		request.setAttribute("recStories", recStories);
+		request.setAttribute("main5", main5);
+
+     // 화면 전환
+     request.getRequestDispatcher("/WEB-INF/views/cocacola/Discover1/Originals.jsp").forward(request, response);
+
+    
+    }
+}

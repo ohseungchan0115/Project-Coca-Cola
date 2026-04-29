@@ -1,0 +1,52 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.BrandDTO;
+import cocacola.mvc.domain.ProductDTO;
+import cocacola.mvc.persistence.BrandDAO;
+
+@WebServlet("/cocacola/brands/minutemaidProduct")
+public class MinuteMadeProductServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+            throws ServletException, IOException {
+
+        String startParam = req.getParameter("start");
+        String endParam = req.getParameter("end");
+
+        int start = startParam != null ? Integer.parseInt(startParam) : 0;
+        int end = endParam != null ? Integer.parseInt(endParam) : 9999;
+
+        try {
+            BrandDAO dao = new BrandDAO();
+
+            // 미닛메이드 브랜드 ID (예: 9)
+            int brandId = 9;
+
+            BrandDTO brand = dao.selectBrand(brandId);
+            List<ProductDTO> products = dao.selectProducts(brandId);
+
+            brand.setProducts(products);
+
+            req.setAttribute("brand", brand);
+            req.setAttribute("start", start);
+            req.setAttribute("end", end);
+
+            req.getRequestDispatcher(
+                "/WEB-INF/views/cocacola/brands/minutemaidProduct.jsp"
+            ).forward(req, resp);
+
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+}

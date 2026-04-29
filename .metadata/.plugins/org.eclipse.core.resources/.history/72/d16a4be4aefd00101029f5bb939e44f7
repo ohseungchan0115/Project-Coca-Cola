@@ -1,0 +1,42 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import cocacola.mvc.domain.OpenerCategoryDTO;
+import cocacola.util.ConnectionProvider;
+
+public class OpenerCategoryDAO {
+
+    public List<OpenerCategoryDTO> selectCategoryList() throws Exception {
+
+        List<OpenerCategoryDTO> list = new ArrayList<>();
+
+        String sql =
+            "SELECT CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER, USE_YN " +
+            "FROM OPENER_CATEGORY " +
+            "WHERE USE_YN = 'Y' " +
+            "ORDER BY DISPLAY_ORDER";
+
+        try (
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery()
+        ) {
+            while (rs.next()) {
+                OpenerCategoryDTO dto = new OpenerCategoryDTO();
+                dto.setCategoryId(rs.getInt("CATEGORY_ID"));
+                dto.setCategoryName(rs.getString("CATEGORY_NAME"));
+                dto.setSectionTitle(rs.getString("SECTION_TITLE"));
+                dto.setDisplayOrder(rs.getInt("DISPLAY_ORDER"));
+                dto.setUseYn(rs.getString("USE_YN"));
+                list.add(dto);
+            }
+        }
+
+        return list;
+    }
+}

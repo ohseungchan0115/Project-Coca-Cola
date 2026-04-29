@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cocacola.mvc.mapper.BrandMapper">
+
+  <!-- 브랜드 전체 목록 -->
+  <select id="selectBrandList" resultType="cocacola.mvc.domain.BrandDTO">
+    SELECT b.brand_id as brandId,
+           b.brand_name as brandName,
+           b.brand_logo_url as brandLogoUrl,
+           NVL(LISTAGG(LOWER(c.brand_category_name), ',')
+               WITHIN GROUP (ORDER BY c.brand_category_name), '') AS brandCategories
+    FROM Brands b
+    LEFT JOIN Brand_Category bc ON b.brand_id = bc.brand_id
+    LEFT JOIN Category c ON bc.brand_category_id = c.brand_category_id
+    GROUP BY b.brand_id, b.brand_name, b.brand_logo_url
+    ORDER BY b.brand_id
+  </select>
+
+  <!-- 브랜드 상세 정보 -->
+  <select id="selectBrand" parameterType="int" resultType="cocacola.mvc.domain.BrandDTO">
+    SELECT brand_id as brandId,
+           brand_name as brandName,
+           brand_logo_url as brandLogoUrl,
+           brand_description as brandDescription,
+           brand_origin as brandOrigin,
+           brand_mainphoto_url as brandMainphotoUrl
+    FROM Brands
+    WHERE brand_id = #{brandId}
+  </select>
+
+  <!-- 브랜드 영상 정보 -->
+  <select id="selectBrandVideo" parameterType="int" resultType="cocacola.mvc.domain.BrandVideoDTO">
+    SELECT brand_id as brandId,
+           youtube_video_id as youtubeVideoId,
+           video_thumbnail_url as videoThumbnailUrl,
+           video_description as videoDescription
+    FROM Brand_Video
+    WHERE brand_id = #{brandId}
+  </select>
+
+  <!-- 브랜드별 제품 목록 -->
+  <select id="selectProducts" parameterType="int" resultType="cocacola.mvc.domain.ProductDTO">
+    SELECT product_id as productId,
+           brand_id as brandId,
+           sub_brand_id as subBrandId,
+           product_name as productName,
+           product_volume as productVolume,
+           product_image_url as productImageUrl,
+           product_description as productDescription
+    FROM Product
+    WHERE brand_id = #{brandId}
+  </select>
+
+  <!-- 서브 브랜드 목록 -->
+  <select id="selectSubBrands" parameterType="int" resultType="cocacola.mvc.domain.SubBrandDTO">
+    SELECT sub_brand_id as subBrandId,
+           brand_id as brandId,
+           sub_brand_name as subBrandName,
+           sub_brand_logo_url as subBrandLogoUrl
+    FROM SubBrand
+    WHERE brand_id = #{brandId}
+  </select>
+
+</mapper>

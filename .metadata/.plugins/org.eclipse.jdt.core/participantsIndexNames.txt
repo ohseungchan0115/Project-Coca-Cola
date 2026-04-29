@@ -1,0 +1,25 @@
+INDEX VERSION 1.131
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2362258192.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2735003290.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1639644939.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\303690410.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\1035276641.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\4198725540.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2763800795.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\448841948.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2253621691.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\416593054.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2165867267.index
+\cocacola\src\main\java
+C:\Class\cocacola\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2769236119.index
+\cocacola\src\main\java

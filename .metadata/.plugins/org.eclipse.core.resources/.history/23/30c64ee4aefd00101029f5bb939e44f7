@@ -1,0 +1,81 @@
+package cocacola.mvc.controller;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.*;
+
+import cocacola.mvc.command.CommandHandler;
+
+import java.io.IOException;
+import java.io.InputStream;
+import java.util.*;
+
+public class DispatcherServlet extends HttpServlet {
+
+    private Map<String, CommandHandler> commandHandlerMap = new HashMap<>();
+
+    @Override
+    public void init() throws ServletException {	
+        String configFile = getInitParameter("mappingPath");
+
+        Properties prop = new Properties();
+        try (InputStream is =
+                 getServletContext().getResourceAsStream(configFile)) {
+
+            prop.load(is);
+
+            for (Object key : prop.keySet()) {
+                String command = (String) key;
+                String handlerClassName = prop.getProperty(command);
+
+                Class<?> handlerClass = Class.forName(handlerClassName);
+                CommandHandler handler =
+                        (CommandHandler) handlerClass.getDeclaredConstructor().newInstance();
+
+                commandHandlerMap.put(command, handler);
+            }
+
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+
+    @Override
+    protected void doGet(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+        process(request, response);
+    }
+
+    @Override
+    protected void doPost(HttpServletRequest request,
+                          HttpServletResponse response)
+            throws ServletException, IOException {
+        process(request, response);
+    }
+
+    private void process(HttpServletRequest request,
+                         HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String uri = request.getRequestURI();
+        String contextPath = request.getContextPath();
+        String command = uri.substring(contextPath.length());
+
+        CommandHandler handler = commandHandlerMap.get(command);
+
+        if (handler == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return;
+        }
+
+        try {
+            String viewPage = handler.process(request, response);
+            if (viewPage != null) {
+                request.getRequestDispatcher(viewPage)
+                       .forward(request, response);
+            }
+        } catch (Exception e) {
+            throw new ServletException(e);
+        }
+    }
+}

@@ -1,0 +1,32 @@
+package cocacola.mvc.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.DetailDTO;
+import cocacola.mvc.service.DetailService;
+
+public class DetailHandler implements CommandHandler {
+
+    private DetailService service = new DetailService();
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        int id = Integer.parseInt(request.getParameter("id"));
+
+        //  List로 받아야 함
+        List<DetailDTO> detailList = service.getOpenerDetail(id);
+
+        System.out.println(">>> detailList size = " + detailList.size());
+
+        request.setAttribute("detailList", detailList);
+        
+        System.out.println("🔥 DetailHandler 실행됨");
+
+        return "/WEB-INF/views/cocacola/common/detail.jsp";
+    }
+
+}

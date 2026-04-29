@@ -1,0 +1,15 @@
+package cocacola.mvc.service;
+
+import java.util.List;
+
+import cocacola.mvc.domain.DetailDTO;
+import cocacola.mvc.persistence.OpenerPostDetailDAO;
+
+public class DetailService {
+
+    private OpenerPostDetailDAO detailDAO = new OpenerPostDetailDAO();
+
+    public List<DetailDTO> getOpenerDetail(int postId) {
+        return detailDAO.selectByPostId(postId);
+    }
+}

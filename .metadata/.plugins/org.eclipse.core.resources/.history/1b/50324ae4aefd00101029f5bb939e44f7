@@ -1,0 +1,43 @@
+package cocacola.mvc.service;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import cocacola.mvc.domain.CokeMealDTO;
+import cocacola.mvc.persistence.CokeMealDAO;
+
+public class CokeMealService {
+    private CokeMealDAO dao = new CokeMealDAO();
+
+    public Map<String, List<CokeMealDTO>> getCokeMealLists() throws SQLException {
+        List<CokeMealDTO> allStories = dao.selectAll();
+        Map<String, List<CokeMealDTO>> result = new HashMap<>();
+        
+        List<CokeMealDTO> cardStories1 = new ArrayList<>();
+        List<CokeMealDTO> guide = new ArrayList<>();
+        List<CokeMealDTO> cardStories2 = new ArrayList<>();
+        List<CokeMealDTO> cardStories2_1 = new ArrayList<>();
+        List<CokeMealDTO> another = new ArrayList<>();
+
+        if (allStories != null) {
+            for (int i = 0; i < allStories.size(); i++) {
+                CokeMealDTO cokemeal = allStories.get(i);
+                if (i <= 1) cardStories1.add(cokemeal);
+                else if (i <= 3) guide.add(cokemeal);
+                else if (i <= 5) cardStories2.add(cokemeal);
+                else if (i == 6) cardStories2_1.add(cokemeal);
+                else another.add(cokemeal);
+            }
+        }
+        
+        result.put("cardStories1", cardStories1);
+        result.put("guide", guide);
+        result.put("cardStories2", cardStories2);
+        result.put("cardStories2_1", cardStories2_1);
+        result.put("another", another);
+        
+        return result;
+    }
+}

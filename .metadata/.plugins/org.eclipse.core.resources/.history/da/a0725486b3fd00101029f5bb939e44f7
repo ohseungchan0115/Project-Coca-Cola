@@ -1,0 +1,39 @@
+package cocacola.mvc.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.CreationStoryDTO;
+import cocacola.mvc.service.CreationService;
+
+
+public class CreationHandler implements CommandHandler {
+
+    private CreationService service = new CreationService();
+
+        @Override
+        public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        	// 1️ Creation 메인 / 전체 리스트
+            List<CreationStoryDTO> creationList =
+                    service.getStoryListBySection("CREATION");
+
+            // 2️ Creation 추천 슬라이드 (RECOMMEND)
+            List<CreationStoryDTO> postList2 =
+             
+            		service.getStoryListBySection("RECOMMEND");
+            // 3 Creation 더 많은 추천 슬라이드 (MORE)
+            List<CreationStoryDTO> postList3 =
+                    service.getStoryListBySection("MORE");
+
+            // request에 각각 담기
+            request.setAttribute("creationList", creationList);
+            request.setAttribute("postList2", postList2);
+            request.setAttribute("postList3", postList3);
+            
+            return "/WEB-INF/views/cocacola/Discover2/creation.jsp";
+    }
+}
+

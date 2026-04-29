@@ -1,0 +1,18 @@
+# requestURI=CommandHandler Mapping
+/opener.do=cocacola.mvc.command.OpenerHandler
+/creation.do=cocacola.mvc.command.CreationHandler
+/cokeplay.do=cocacola.mvc.command.CokeplayHandler
+/detail.do=cocacola.mvc.command.DetailHandler
+
+/brands.do=cocacola.mvc.command.BrandHandler
+/brandDetail.do=cocacola.mvc.command.BrandDetailHandler
+
+/footer.do=cocacola.mvc.command.FooterHandler
+/minutemaidProduct.do=cocacola.mvc.command.MinuteMadeProductHandler
+/brandStoryDetail.do=cocacola.mvc.command.BrandStoryDetailHandler
+/ourcompany.do=cocacola.mvc.command.OurCompanyHandler
+/originals.do=cocacola.mvc.command.OriginalsHandler
+
+/brandstory.do = cocacola.mvc.command.BrandStoryHandler
+/cokemeal.do   = cocacola.mvc.command.CokeMealHandler
+/originals.do  = cocacola.mvc.command.OriginalsHandler

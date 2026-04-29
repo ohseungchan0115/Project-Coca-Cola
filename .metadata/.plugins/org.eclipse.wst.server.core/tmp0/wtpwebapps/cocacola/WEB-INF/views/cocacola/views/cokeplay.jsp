@@ -1,0 +1,94 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>CokePLAY</title>
+  <link rel="stylesheet"
+          href="${pageContext.request.contextPath}/cocacola/css/cokeplay.css">
+</head>
+<body>
+
+ <%@ include file="nav.jsp" %> 
+
+<!-- CokePLAY HERO -->
+<section class="cokeplay-hero">
+  <h1 class="cokeplay-title">CokePLAY</h1>
+
+  <p class="cokeplay-sub">
+    짜릿한 즐거움이 가득한<br>
+    코카-콜라 공식 스토어 APP
+  </p>
+
+  <p class="cokeplay-desc">
+    오직 코-크플레이에서만 만날 수 있는 특별한 즐거움!<br>
+	신제품 출시 이벤트부터 한정판 코카-콜라 굿즈가 가득한 포인트샵, 회원들의 생생한 리뷰를 공유하는 커뮤니티까지 지금 바로 경험해보세요.
+  </p>
+  
+  <div class="cokeplay-apps">
+  <img
+    src="${pageContext.request.contextPath}/cocacola/images/cokeplay_01.jpg"
+    alt="코크플레이 앱 화면"
+    class="cokeplay-apps__image"
+  >
+</div>
+
+  <div class="cokeplay-download">
+  <a href="#" class="download-btn android">
+    Android 코크 플레이 다운로드 ↗
+  </a>
+  <a href="#" class="download-btn ios">
+    iOS 코크 플레이 다운로드 ↗
+  </a>
+</div>
+  
+</section>
+
+<section class="cokeplay-only">
+  <h2 class="cokeplay-only__title">오직 CokePLAY에서만!</h2>
+
+  <div class="cokeplay-only__cards">  
+
+    <!-- 카드 1 -->
+    <div class="only-card">
+      <div class="only-card__image">
+        <img src="${pageContext.request.contextPath}/cocacola/images/cokeplay_02.jpg"
+             alt="스페셜 할인 이벤트">
+      </div>
+      <p class="only-card__text">
+        스페셜 할인과 다양한 이벤트 →
+      </p>
+    </div>
+
+    <!-- 카드 2 -->
+    <div class="only-card">
+      <div class="only-card__image">
+        <img src="${pageContext.request.contextPath}/cocacola/images/cokeplay_03.jpg"
+             alt="포인트 적립">
+      </div>
+      <p class="only-card__text">
+        결제액 기준 최대 60% 포인트 적립 →
+      </p>
+    </div>
+
+    <!-- 카드 3 -->
+    <div class="only-card">
+      <div class="only-card__image">
+        <img src="${pageContext.request.contextPath}/cocacola/images/cokeplay_04.jpg"
+             alt="스페셜 리워드">
+      </div>
+      <p class="only-card__text">
+        포인트로 한정판/스페셜 리워드 GET →
+      </p>
+    </div>
+
+  </div>
+
+  <div class="cokeplay-only__more">
+    <a href="#" class="only-more-btn">혜택 더 알아보기</a>
+  </div>
+</section>
+
+<%@ include file="Footer.jsp" %> 
+</body>
+</html>

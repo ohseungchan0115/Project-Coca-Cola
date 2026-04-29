@@ -1,0 +1,93 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import cocacola.mvc.domain.BrandStoryDTO;
+
+public class BrandStoryDAO {
+    
+    // DB 연결을 위한 정보
+    private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+    private String user = "cola_user"; 
+    private String password = "cola"; 
+
+    public List<BrandStoryDTO> selectAll() throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<BrandStoryDTO> list = new ArrayList<>();
+
+        try {
+            // 드라이버 로딩
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            // 연결 객체 생성 
+            conn = DriverManager.getConnection(url, user, password);
+
+         // sql 순번대로 불러오기 
+            String sql = "SELECT * FROM BRAND_STORY ORDER BY brand_story_id ASC"; 
+
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()) {
+                BrandStoryDTO dto = new BrandStoryDTO();
+                dto.setId(rs.getInt("brand_story_id")); 
+                dto.setTitle(rs.getString("brand_story_title"));
+                dto.setSummary(rs.getString("brand_story_summary"));
+                dto.setImage(rs.getString("brand_story_image"));
+                dto.setDate(rs.getDate("brand_story_date"));
+                list.add(dto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 자원 해제
+            if(rs != null) rs.close();
+            if(pstmt != null) pstmt.close();
+            if(conn != null) conn.close();
+        }
+        return list;
+    }
+
+public BrandStoryDTO selectById(int id) throws SQLException {
+    Connection conn = null;
+    PreparedStatement pstmt = null;
+    ResultSet rs = null;
+    BrandStoryDTO dto = null;
+
+    try {
+        Class.forName("oracle.jdbc.driver.OracleDriver");
+        conn = DriverManager.getConnection(url, user, password);
+
+        String sql = "SELECT * FROM BRAND_STORY WHERE brand_story_id = ?";
+        pstmt = conn.prepareStatement(sql);
+        pstmt.setInt(1, id);
+
+        rs = pstmt.executeQuery();
+
+        if (rs.next()) {
+            dto = new BrandStoryDTO();
+            dto.setId(rs.getInt("brand_story_id"));
+            dto.setTitle(rs.getString("brand_story_title"));
+            dto.setSummary(rs.getString("brand_story_summary"));
+            dto.setImage(rs.getString("brand_story_image"));
+            dto.setDate(rs.getDate("brand_story_date"));
+        }
+
+    } catch (Exception e) {
+        e.printStackTrace();
+    } finally {
+        if (rs != null) rs.close();
+        if (pstmt != null) pstmt.close();
+        if (conn != null) conn.close();
+    }
+
+    return dto;
+}
+}

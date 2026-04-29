@@ -1,0 +1,43 @@
+package cocacola.mvc.command; // 패키지 경로는 기존 컨트롤러 위치 유지
+
+import java.util.List;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+
+import cocacola.mvc.persistence.OurCompanyDAO;
+import cocacola.mvc.persistence.BrandDAO;
+import cocacola.mvc.domain.OurCompanyDTO;
+import cocacola.mvc.domain.BrandDTO;
+
+@Controller // 이 어노테이션이 있으면 이름이 무엇이든 스프링이 컨트롤러로 인식합니다.
+@RequestMapping("/cocacola")
+public class OurCompanyHandler { // 클래스명을 Handler로 변경
+
+    @Autowired
+    private OurCompanyDAO ourCompanyDAO;
+
+    @Autowired
+    private BrandDAO brandDAO;
+
+    @GetMapping("/OurCompany")
+    public String process(@RequestParam(value="page", defaultValue="main") String page, Model model) throws Exception {
+        
+        List<OurCompanyDTO> itemList = ourCompanyDAO.selectAllContents();
+        List<BrandDTO> mainBrands = brandDAO.selectBrandList();
+
+        model.addAttribute("items", itemList);
+        model.addAttribute("mainBrands", mainBrands);
+
+        if ("since".equals(page)) {
+            return "cocacola/ourcompany/since_01";
+        } else if ("main".equals(page)) {
+            return "cocacola/ourcompany/main_01";
+        } else {
+            return "cocacola/ourcompany/ourcompany_01";
+        }
+    }
+}

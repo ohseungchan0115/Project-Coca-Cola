@@ -1,0 +1,32 @@
+package cocacola.mvc.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class FooterHandler implements CommandHandler {
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response)
+            throws Exception {
+
+        String page = request.getParameter("page");
+        String target;
+
+        if (page == null || page.isEmpty()) {
+            target = "/WEB-INF/views/cocacola/footer/sitemap.jsp";
+        } else if ("sitemap".equals(page)) {
+            target = "/WEB-INF/views/cocacola/footer/sitemap.jsp";
+        } else if ("gogak".equals(page)) {
+            target = "/WEB-INF/views/cocacola/footer/gogak.jsp";
+        } else if ("terms_of_service".equals(page)) {
+            target = "/WEB-INF/views/cocacola/footer/terms_of_service.jsp";
+        } else if ("cookie_policy".equals(page)) {
+            target = "/WEB-INF/views/cocacola/footer/cookie_policy.jsp";
+        } else {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND);
+            return null;
+        }
+
+        return target; // FrontController가 forward
+    }
+}

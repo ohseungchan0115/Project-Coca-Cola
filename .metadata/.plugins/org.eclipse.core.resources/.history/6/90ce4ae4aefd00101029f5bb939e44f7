@@ -1,0 +1,58 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import cocacola.mvc.domain.OriginalsDTO;
+
+
+public class OriginalsDAO {
+    
+    // DB 연결을 위한 정보
+    private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+    private String user = "cola_user"; 
+    private String password = "cola"; 
+
+    public List<OriginalsDTO> selectAll() throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<OriginalsDTO> list = new ArrayList<>();
+
+        try {
+            // 드라이버 로딩
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            // 연결 객체 생성 
+            conn = DriverManager.getConnection(url, user, password);
+
+         // sql 순번대로 불러오기 
+            String sql = "SELECT * FROM ORIGINALS ORDER BY originals_id ASC"; 
+
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()) {
+            	OriginalsDTO dto = new OriginalsDTO();
+                dto.setId(rs.getInt("originals_id")); 
+                dto.setTitle(rs.getString("originals_title"));
+                dto.setSummary(rs.getString("originals_summary"));
+                dto.setImage(rs.getString("originals_image"));
+                dto.setDate(rs.getDate("originals_date"));
+                list.add(dto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 자원 해제
+            if(rs != null) rs.close();
+            if(pstmt != null) pstmt.close();
+            if(conn != null) conn.close();
+        }
+        return list;
+    }
+}

@@ -1,0 +1,57 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import cocacola.mvc.domain.CokeMealDTO;
+
+public class CokeMealDAO {
+    
+    // DB 연결을 위한 정보
+    private String url = "jdbc:oracle:thin:@localhost:1521:xe";
+    private String user = "cola_user"; 
+    private String password = "cola"; 
+
+    public List<CokeMealDTO> selectAll() throws SQLException {
+        Connection conn = null;
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        List<CokeMealDTO> list = new ArrayList<>();
+
+        try {
+            // 드라이버 로딩
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+            // 연결 객체 생성 
+            conn = DriverManager.getConnection(url, user, password);
+
+         // sql 순번대로 불러오기 
+            String sql = "SELECT * FROM COKE_MEAL ORDER BY coke_meal_id ASC"; 
+
+            pstmt = conn.prepareStatement(sql);
+            rs = pstmt.executeQuery();
+            
+            while(rs.next()) {
+            	CokeMealDTO dto = new CokeMealDTO();
+                dto.setId(rs.getInt("coke_meal_id")); 
+                dto.setTitle(rs.getString("coke_meal_title"));
+                dto.setSummary(rs.getString("coke_meal_summary"));
+                dto.setImage(rs.getString("coke_meal_image"));
+                dto.setDate(rs.getDate("coke_meal_date"));
+                list.add(dto);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            // 자원 해제
+            if(rs != null) rs.close();
+            if(pstmt != null) pstmt.close();
+            if(conn != null) conn.close();
+        }
+        return list;
+    }
+}

@@ -1,0 +1,43 @@
+package cocacola.mvc.command;
+
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.OpenerCategoryDTO;
+import cocacola.mvc.domain.OpenerPostDTO;
+import cocacola.mvc.service.OpenerPostService;
+import cocacola.mvc.service.OpenerService;
+
+public class OpenerHandler implements CommandHandler {
+
+    // 카테고리 담당 (OpenerService 하나만 사용)
+    private OpenerService openerService = new OpenerService();
+
+    // 포스트 담당
+    private OpenerPostService postService = new OpenerPostService();
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+
+        // 1️⃣ 카테고리 목록
+        List<OpenerCategoryDTO> categoryList = openerService.getCategoryList();
+        request.setAttribute("categoryList", categoryList);
+
+        // 2️ 음료 리뷰(CATEGORY_ID = 1) 포스트 목록
+        List<OpenerPostDTO> postList = postService.getPostListByCategory(1);
+        request.setAttribute("postList", postList);
+        
+        // 카테고리 2 포스트
+        List<OpenerPostDTO> postList2 = postService.getPostListByCategory(2);
+        request.setAttribute("postList2", postList2);
+
+        // 카테고리 3 포스트
+        List<OpenerPostDTO> postList3 = postService.getPostListByCategory(3);
+        request.setAttribute("postList3", postList3);
+        
+        // 3️ JSP forward
+        return "/WEB-INF/views/cocacola/Discover2/opener.jsp";
+    }
+}

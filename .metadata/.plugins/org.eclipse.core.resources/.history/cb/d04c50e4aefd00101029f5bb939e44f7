@@ -1,0 +1,27 @@
+package cocacola.mvc.command;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+public class BrandStoryDetailHandler implements CommandHandler {
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        
+        // 1. 파라미터로 넘어온 id 값 추출
+        String idParam = request.getParameter("id");
+
+        // 2. id가 없을 경우에 대한 예외 처리
+        if (idParam == null || idParam.isEmpty()) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return null; // 컨트롤러에서 forward를 수행하지 않도록 null 반환
+        }
+
+        // 3. JSP 파일 경로 조합 (기존 서블릿 로직 반영)
+        // 예: id가 1이면 /WEB-INF/views/cocacola/Discover1/brandStoryView_1.jsp
+        String jspPath = "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + idParam + ".jsp";
+
+        // 4. 이동할 JSP 경로 반환
+        return jspPath;
+    }
+}

@@ -1,0 +1,120 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.BrandDTO;
+import cocacola.mvc.domain.BrandVideoDTO;
+import cocacola.mvc.domain.ProductDTO;
+import cocacola.mvc.domain.SubBrandDTO;
+import cocacola.mvc.persistence.BrandDAO;
+
+@WebServlet("/cocacola/brands/brandDetail")
+public class BrandDetailServlet extends HttpServlet {
+
+	@Override
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+	        throws ServletException, IOException {
+
+	    String brandIdParam = req.getParameter("brandId");
+	    String tab = req.getParameter("tab");
+	    if (tab == null) {
+	        tab = "home"; // 기본값
+	    }
+
+	    if (brandIdParam == null || brandIdParam.isEmpty()) {
+	        resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "brandId is missing");
+	        return;
+	    }
+
+	    try {
+	        int brandId = Integer.parseInt(brandIdParam);
+	        BrandDAO dao = new BrandDAO();
+
+	        // 1) 브랜드 기본 정보
+	        BrandDTO brand = dao.selectBrand(brandId);
+	        if (brand == null) {
+	            resp.sendError(HttpServletResponse.SC_NOT_FOUND, "Brand not found");
+	            return;
+	        }
+
+	        // 2) 브랜드 유튜브 영상 정보
+	        BrandVideoDTO video = dao.selectBrandVideo(brandId);
+	        if (video != null) {
+	            brand.setYoutubeVideoId(video.getYoutubeVideoId());
+	            brand.setVideoDescription(video.getVideoDescription());
+	            brand.setVideoThumbnailUrl(video.getVideoThumbnailUrl());
+	        }
+
+	        // ** 분기별 데이터 세팅 추가 **
+	     // 예를 들어 brandId에 따라 분기 처리하는 부분
+
+	        if (brandId == 1) {
+	            // 코카콜라의 경우, 서브브랜드, 제품 리스트 세팅 추가 필요
+	            List<SubBrandDTO> subBrands = dao.selectSubBrands(brandId);
+	            req.setAttribute("subBrands", subBrands);
+
+	            List<ProductDTO> products = dao.selectProducts(brandId);
+	            brand.setProducts(products);
+	        } else if (brandId == 8) {
+	            // 조지아 등 다른 브랜드도 동일하게
+	            List<SubBrandDTO> subBrands = dao.selectSubBrands(brandId);
+	            req.setAttribute("subBrands", subBrands);
+
+	            List<ProductDTO> products = dao.selectProducts(brandId);
+	            brand.setProducts(products);
+	        }
+	        // 그리고 brand 자체도 req.setAttribute("brand", brand) 해야 합니다
+               else if (brandId == 9) {
+	            // 미닛메이드: 제품 5개만
+	            List<ProductDTO> products = dao.selectProducts(brandId);
+	            brand.setProducts(products);
+
+	        } else {
+	            // 기타 브랜드: 서브 브랜드 + 제품 목록
+	            List<SubBrandDTO> subBrands = dao.selectSubBrands(brandId);
+	            req.setAttribute("subBrands", subBrands);
+	            List<ProductDTO> products = dao.selectProducts(brandId);
+	            brand.setProducts(products);
+	        }
+
+	        // 공통 브랜드 객체 세팅
+	        req.setAttribute("brand", brand);
+
+	        // ** JSP 포워딩 분기 **
+	        if (brandId == 1) {
+	            // tab 파라미터에 따라 홈 또는 제품 정보 페이지로 분기
+	            if ("products".equals(tab)) {
+	                req.getRequestDispatcher("/WEB-INF/views/cocacola/brands/cocacolaProducts.jsp")
+	                   .forward(req, resp);
+	            } else {
+	                // 기본 홈 탭
+	                req.getRequestDispatcher("/WEB-INF/views/cocacola/brands/cocacolaHomeAndProduct.jsp")
+	                   .forward(req, resp);
+	            }
+	        }
+
+	         else if (brandId == 8) {
+	            req.getRequestDispatcher("/WEB-INF/views/cocacola/brands/georgiaDetail.jsp")
+	               .forward(req, resp);
+	        } else if (brandId == 9) {
+	            req.getRequestDispatcher("/WEB-INF/views/cocacola/brands/minutemaidHome.jsp")
+	               .forward(req, resp);
+	        } else {
+	            req.getRequestDispatcher("/WEB-INF/views/cocacola/brands/brandDetail.jsp")
+	               .forward(req, resp);
+	        }
+
+	    } catch (NumberFormatException e) {
+	        resp.sendError(HttpServletResponse.SC_BAD_REQUEST, "Invalid brandId");
+	    } catch (Exception e) {
+	        throw new ServletException(e);
+	    }
+	}
+}

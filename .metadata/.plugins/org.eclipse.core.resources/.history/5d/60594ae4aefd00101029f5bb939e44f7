@@ -1,0 +1,41 @@
+package cocacola.mvc.service;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+import cocacola.mvc.domain.OriginalsDTO;
+import cocacola.mvc.persistence.OriginalsDAO;
+
+public class OriginalsService {
+    private OriginalsDAO dao = new OriginalsDAO();
+
+    public Map<String, Object> getGroupedOriginalsList() throws Exception {
+        List<OriginalsDTO> allStories = dao.selectAll();
+        Map<String, Object> data = new HashMap<>();
+
+        List<OriginalsDTO> section = new ArrayList<>();
+        List<OriginalsDTO> favStories = new ArrayList<>();
+        List<OriginalsDTO> recStories = new ArrayList<>();
+
+        if (allStories != null) {
+            for (int i = 0; i < allStories.size(); i++) {
+                OriginalsDTO dto = allStories.get(i);
+                if (i == 0) data.put("main1", dto);
+                else if (i == 1) data.put("main2", dto);
+                else if (i <= 3) section.add(dto);
+                else if (i == 4) data.put("main3", dto);
+                else if (i <= 10) favStories.add(dto);
+                else if (i == 11) data.put("main4", dto);
+                else if (i <= 14) recStories.add(dto);
+                else if (i == 15) data.put("main5", dto);
+            }
+        }
+
+        data.put("section", section);
+        data.put("favStories", favStories);
+        data.put("recStories", recStories);
+
+        return data;
+    }
+}

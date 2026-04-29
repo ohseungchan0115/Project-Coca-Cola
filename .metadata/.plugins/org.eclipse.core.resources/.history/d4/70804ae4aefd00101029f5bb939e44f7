@@ -1,0 +1,214 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.util.ConnectionProvider;
+import cocacola.mvc.domain.BrandDTO;
+import cocacola.mvc.domain.BrandVideoDTO;
+import cocacola.mvc.domain.CategoryDTO;
+import cocacola.mvc.domain.ProductDTO;
+import cocacola.mvc.domain.SubBrandDTO;
+
+public class BrandDAO {
+
+    /**
+     * 브랜드 전체 목록
+     */
+    public List<BrandDTO> selectBrandList() throws Exception {
+
+        List<BrandDTO> list = new ArrayList<>();
+
+        String sql =
+            "SELECT b.brand_id, " +
+            "       b.brand_name, " +
+            "       b.brand_logo_url, " +
+            "       NVL( " +
+            "           LISTAGG(LOWER(c.brand_category_name), ',') " +
+            "               WITHIN GROUP (ORDER BY c.brand_category_name), " +
+            "           '' " +
+            "       ) AS brand_categories " +
+            "FROM Brands b " +
+            "LEFT JOIN Brand_Category bc ON b.brand_id = bc.brand_id " +
+            "LEFT JOIN Category c ON bc.brand_category_id = c.brand_category_id " +
+            "GROUP BY b.brand_id, b.brand_name, b.brand_logo_url " +
+            "ORDER BY b.brand_id";
+
+        try (
+            Connection conn = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = conn.prepareStatement(sql);
+            ResultSet rs = pstmt.executeQuery();
+        ) {
+            while (rs.next()) {
+                BrandDTO dto = new BrandDTO();
+
+                dto.setBrandId(rs.getInt("brand_id"));
+                dto.setBrandName(rs.getString("brand_name"));
+                dto.setBrandLogoUrl(rs.getString("brand_logo_url"));
+                dto.setBrandCategories(rs.getString("brand_categories"));
+
+                list.add(dto);
+            }
+        }
+
+        return list;
+    }
+
+    /**
+     * 브랜드 상세
+     */
+    public BrandDTO selectBrand(int brandId) throws Exception {
+        BrandDTO dto = null;
+        String sql =
+            "SELECT brand_id, brand_name, brand_logo_url, brand_description, brand_origin, brand_mainphoto_url " +
+            "FROM Brands WHERE brand_id = ?";
+
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, brandId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    dto = new BrandDTO();
+                    dto.setBrandId(rs.getInt("brand_id"));
+                    dto.setBrandName(rs.getString("brand_name"));
+                    dto.setBrandLogoUrl(rs.getString("brand_logo_url"));
+                    dto.setBrandDescription(rs.getString("brand_description"));
+                    dto.setBrandOrigin(rs.getString("brand_origin"));
+                    dto.setBrandMainphotoUrl(rs.getString("brand_mainphoto_url"));
+                }
+            }
+        }
+        return dto;
+    }
+
+    /**
+     * 브랜드 영상 정보 (Brand_Video 테이블)
+     */
+    public BrandVideoDTO selectBrandVideo(int brandId) throws Exception {
+        BrandVideoDTO videoDTO = null;
+        String sql =
+            "SELECT brand_id, youtube_video_id, video_thumbnail_url, video_description " +
+            "FROM Brand_Video WHERE brand_id = ?";
+
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, brandId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                if (rs.next()) {
+                    videoDTO = new BrandVideoDTO();
+                    videoDTO.setBrandId(rs.getInt("brand_id"));
+                    videoDTO.setYoutubeVideoId(rs.getString("youtube_video_id"));
+                    videoDTO.setVideoThumbnailUrl(rs.getString("video_thumbnail_url"));
+                    videoDTO.setVideoDescription(rs.getString("video_description"));
+                }
+            }
+        }
+        return videoDTO;
+    }
+
+    /**
+     * 서브 브랜드 목록 (SubBrand 테이블)
+     */
+    public List<SubBrandDTO> selectSubBrands(int brandId) throws Exception {
+        List<SubBrandDTO> list = new ArrayList<>();
+        String sql =
+            "SELECT sub_brand_id, brand_id, sub_brand_name, sub_brand_logo_url " +
+            "FROM SubBrand WHERE brand_id = ?";
+
+        // 대표 제품 ID 조회용 쿼리
+        String repProductSql = "SELECT product_id FROM Product WHERE sub_brand_id = ? AND ROWNUM = 1";
+
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);
+             PreparedStatement repPstmt = conn.prepareStatement(repProductSql)) {
+            pstmt.setInt(1, brandId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    SubBrandDTO dto = new SubBrandDTO();
+                    int subBrandId = rs.getInt("sub_brand_id");
+
+                    dto.setSubBrandId(subBrandId);
+                    dto.setBrandId(rs.getInt("brand_id"));
+                    dto.setSubBrandName(rs.getString("sub_brand_name"));
+                    dto.setSubBrandLogoUrl(rs.getString("sub_brand_logo_url"));
+
+                    // 대표 제품 ID 조회
+                    repPstmt.setInt(1, subBrandId);
+                    try (ResultSet repRs = repPstmt.executeQuery()) {
+                        if (repRs.next()) {
+                            dto.setRepresentativeProductId(repRs.getInt("product_id"));
+                        } else {
+                            dto.setRepresentativeProductId(null); // 없으면 null 세팅
+                        }
+                    }
+
+                    list.add(dto);
+                }
+            }
+        }
+        return list;
+    }
+
+
+
+    /**
+     * 상품 목록 (Product 테이블)
+     */
+    public List<ProductDTO> selectProducts(int brandId) throws Exception {
+        List<ProductDTO> list = new ArrayList<>();
+        String sql =
+            "SELECT product_id, brand_id, sub_brand_id, product_name, product_volume, product_image_url, product_description " +
+            "FROM Product WHERE brand_id = ?";
+
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, brandId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    ProductDTO dto = new ProductDTO();
+                    dto.setProductId(rs.getInt("product_id"));
+                    dto.setBrandId(rs.getInt("brand_id"));
+                    dto.setSubBrandId(rs.getInt("sub_brand_id"));
+                    dto.setProductName(rs.getString("product_name"));
+                    dto.setProductVolume(rs.getString("product_volume"));
+                    dto.setProductImageUrl(rs.getString("product_image_url"));
+                    dto.setProductDescription(rs.getString("product_description"));
+                    list.add(dto);
+                }
+            }
+        }
+        return list;
+    }
+
+    /**
+     * 브랜드 카테고리 목록 (Brand_Category + Category JOIN)
+     */
+    public List<CategoryDTO> selectCategories(int brandId) throws Exception {
+        List<CategoryDTO> list = new ArrayList<>();
+        String sql =
+            "SELECT c.brand_category_id, c.brand_category_name, c.brand_category_description " +
+            "FROM Brand_Category bc " +
+            "JOIN Category c ON bc.brand_category_id = c.brand_category_id " +
+            "WHERE bc.brand_id = ?";
+
+        try (Connection conn = ConnectionProvider.getConnection();
+             PreparedStatement pstmt = conn.prepareStatement(sql);) {
+            pstmt.setInt(1, brandId);
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    CategoryDTO dto = new CategoryDTO();
+                    dto.setBrandCategoryId(rs.getInt("brand_category_id"));
+                    dto.setBrandCategoryName(rs.getString("brand_category_name"));
+                    dto.setBrandCategoryDescription(rs.getString("brand_category_description"));
+                    list.add(dto);
+                }
+            }
+        }
+        return list;
+    }
+    
+    
+}

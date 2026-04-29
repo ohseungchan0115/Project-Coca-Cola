@@ -1,0 +1,7 @@
+INDEX VERSION 1.4+C:\Class\cocacola\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+3793927940.index
+1812499393.index
+3275861869.index
+3606912202.index
+4074990619.index
+1557686393.index

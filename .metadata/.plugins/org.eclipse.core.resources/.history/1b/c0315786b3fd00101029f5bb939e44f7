@@ -1,0 +1,14 @@
+package cocacola.mvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller
+public class HomeController {
+
+    @RequestMapping("/")
+    public String home() {
+        // 루트(/)로 접속하면 자동으로 우리가 만든 메인 주소로 보냅니다.
+        return "redirect:/cocacola/OurCompany?page=main";
+    }
+}

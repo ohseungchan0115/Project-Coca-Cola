@@ -1,0 +1,221 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>공연 끝나고 뭐 먹지? 나폴리 피자부터 일본 가정식까지, 대학로 맛집 3곳 | Food | 한국 코카-콜라</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: rgb(229, 229, 229);
+	color: #000;
+	overflow-y: scroll;
+}
+
+.image1 {
+    display: block;       /* 마진 자동 계산을 위해 블록 요소로 변경 */
+    width: 100%;          /* 기본적으로 너비 100% */
+    width: 1120px;    /* ⭐ 이미지의 실제 최대 너비 혹은 원하는 너비로 제한 */
+    height: auto;
+    margin: 0 auto;       /* ⭐ 좌우 마진을 auto로 설정하여 가운데 정렬 */
+}
+
+/* 본문 컨테이너: 이미지처럼 중앙 집중형 레이아웃 */
+    .content {
+        max-width: 850px;
+        margin: 60px auto;
+        padding: 0 50px;
+    }
+
+    .top-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .bottom-title {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .date {
+        text-align: left; /* 이미지처럼 가운데 정렬 */
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .basic {
+        font-size: 16px;
+        margin-bottom: 30px;
+        word-break: keep-all; /* 한글 가독성 향상 */
+    }
+
+    .subtitle {
+    	margin-top: 50px;
+    	margin-bottom: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.3;
+    }
+
+    /* 이미지 스타일 */
+    .image2, .image3 {
+        width: 100%;
+    }
+    
+    .it_content{
+    	width: 400px;
+    	margin:0 auto ;
+    }
+
+    /* 인용구 스타일: 이탈릭 및 중앙 정렬 */
+    .italic_font {
+        font-style: italic;
+        text-align: center;
+        font-size: 16px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .bold_highlight {
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    /* 하단 캡션 */
+    .caption {
+        text-align: center;
+        font-size: 16px;
+        margin-top: -30px;
+        margin-bottom: 40px;
+    }
+
+    /* 카카오 배너 */
+    .image4 {
+        display: block;
+        max-width: 210px;
+        margin: 0 auto;
+    }
+
+    /* 강조 텍스트 */
+    .bold1 {
+        font-weight: bold;
+        font-size: 16px;
+        text-align: left;
+        margin: 20px 0;
+    }
+  
+  .card_img{
+  height: auto;
+  width: 736px;
+  margin: 30px 0 50px 0;
+  }
+  
+  .list-link{
+  text-decoration: underline;
+  margin: 20px 0 70px 0;
+  font-weight: bold;
+  }
+  
+
+</style>
+</head>
+<body>
+<%@ include file="../nav.jsp" %>
+<img class="image1" alt="메인 배너" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_thumbnail_pc.png">
+<div class="content">
+    <h3 class="top-title">[콕!지순례 16편] 레드리본 맛집 순례, 대학로 편</h3>
+    <h2 class="bottom-title">공연 끝나고 뭐 먹지? 나폴리 피자부터
+    <br>
+일본 가정식까지, 대학로 맛집 3곳</h2>
+    <h3 class="date">2025. 08. 29</h3>
+
+    <p class="basic">
+        연극과 뮤지컬, 다양한 공연을 보기 위해 하루에도 수많은 청춘이 모이는 거리, <strong>‘대학로’</strong>. 무대가 끝났다고 하루가 끝난 건 아니지! 공연의 여운을 맛으로 이어가고 싶다면? 지금 바로 &lt;레드리본 맛집&gt;을 따라 코카-콜라와 함께 대학로의 맛있는 이야기를 만나보자.</p>
+
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_01.jpg">
+
+    <h2 class="subtitle">‘호호식당’을 콕!하면,
+    <br>
+	한옥에서 만나는 일본식 집밥의 온기를</h2>
+	
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_03.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_04.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_05.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_06.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_07.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_08.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_09.jpg">
+
+    <p class="basic">
+        공연을 본 뒤 허기와 여운이 동시에 밀려온다면? 전통 한옥을 개조한 일본 가정식 식당 호호식당을 콕! 대학로 중심에서 한 발짝 들어선 골목 안, 나무의 결이 살아 있는 한옥 공간이 일본 가정식 특유의 따뜻한 분위기와 어우러지며 특별한 분위기를 선사한다. 빛깔부터 먹음직스러운 사케동은 감칠맛이 밴 밥 위에 도톰한 연어가 듬뿍 올라 만족감을 더한다. 와사비를 살짝 곁들여 한입 먹으면, 고소함과 산뜻함이 동시에 느껴진다. 육즙 가득한 히레가츠정식은 바삭한 튀김옷과 촉촉한 속살이 어우러져 씹는 즐거움을 더하고, 직화로 구운 우나기동은 직화의 은은한 불향과 달큰한 소스가 어우려져 입안에 깊고 진한 풍미를 남긴다. 각기 다른 매력을 뽐내는 한 상, 그 마지막 커튼콜은 시원한 코카-콜라 제로로 완성된다.</p>
+    
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_10.png">
+    
+    <h2 class="subtitle">‘디마떼오’을 콕!하면,
+    <br>
+한국 나폴리 피자 1호점, 그 시작의 맛을</h2>
+    
+    <img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_11.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_12.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_13.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_14.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_15.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_16.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_17.jpg">
+    
+    <p class="basic">
+        정통 나폴리 화덕피자의 깊은 풍미를 느끼고 싶다면? 1998년, 국내 최초로 나폴리 화덕피자를 선보인 뒤 지금까지 사랑받고 있는 디마떼오를 콕! 희극 배우 출신 사장님이 1997년 교양 프로그램에 출연해 나폴리에서 피자 만드는 법을 배우던 중 그 맛에 반해 가게를 열었다. 그렇게 탄생한 대한민국 1호 나폴리 피자 전문점은 20년 넘게 변함없이 나폴리 정통 참나무 화덕피자의 깊은 풍미를 전하고 있다. 대표 메뉴는 단연 디마떼오 피자. 소금에 절여 숙성한 이탈리아식 햄 프로슈토크루도, 부드럽고 고소한 부팔라 모짜렐라 치즈에 방울 토마토와 루꼴라가 어우러져 짭조름하면서도 싱그러운 맛이 입안을 가득 채운다. 화덕에서 갓 구워낸 도우는 겉은 바삭하고 속은 쫄깃해 정통 나폴리의 맛을 고스란히 전한다. 클래식엔 역시 클래식! 코카-콜라와 함께라면 풍성한 맛의 여운이 더욱 깔끔하게 이어진다.
+	</p>
+    
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_18.png">
+    
+    <h2 class="subtitle">‘도도야’를 콕!하면,
+    <br>
+담백한 재료로 완성한 일본식 솥밥의 맛을</h2>
+    
+    <img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_19.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_20.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_21.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_22.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_23.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_24.jpg">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_25.jpg">
+    
+    <p class="basic">
+        정갈하고 수준 높은 일식을 원한다면? 도도야를 콕! 일본 전통 솥밥인 가마메시를 전문으로 선보이는 곳으로, 재료 본연의 맛을 살린 담백한 한 상을 즐길 수 있다. 대표 메뉴는 관자버터 가마. 뚜껑을 열면 갓 지어진 밥 위에 부드러운 관자살이 올려져 있고, 마늘과 버터의 풍미가 은은하게 퍼진다. 밥과 재료를 잘 섞은 뒤 1분 정도 두었다가 맛보면, 고소함과 풍미가 한층 깊어진다. 자극적이지 않고 담백해 건강한 한 끼를 원한다면 추천. 계절 메뉴인 두유소바는 쯔유를 더한 두유 국물에 소바면을 곁들여, 고소하면서도 부드러운 맛이 일품이다. 정갈한 솥밥 한 그릇과 담백한 면 요리, 그리고 마지막은 역시 코카-콜라. 깔끔한 조합이 식사의 즐거움을 완성한다.
+    </p>
+    
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_26.png">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_27.png">
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/cocacola/coke_meal/coke-meal-16_28.png">
+    
+    <p class="list-link">
+    블루리본 홈페이지 내 ‘레드리본 맛집’ 확인하기 >>
+    <br>
+네이버/카카오맵에서 ‘레드리본 맛집’ 리스트 확인하기 >>
+    </p>
+    
+    <a href="https://pf.kakao.com/_gxdxjrK?utm_source=coca-cola-journey&utm_medium=banner&utm_campaign=coca-cola-journey&utm_term=add-friend&utm_content=link">
+        <img class="image4" alt="카카오 플러스 친구" src="${pageContext.request.contextPath}/cocacola/images/2023_kakao-plus-short-2.png">
+    </a>
+</div>
+
+<%@ include file="../Footer.jsp" %>
+
+</body>
+</html>

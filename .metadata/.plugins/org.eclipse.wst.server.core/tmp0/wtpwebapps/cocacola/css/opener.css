@@ -1,0 +1,1337 @@
+
+/* ==================================================
+   RESET (유지)
+================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+
+/* ==================================================
+   BODY 기본 (유지 – AEM 변수 흉내)
+================================================== */
+body {
+  background: #f3f3f3; /* AEM --color-surface-neutral-opaque-subtle 대체 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  overflow-wrap: break-word;
+  margin: 0;
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif; 
+  overflow-x: hidden;
+  
+}
+
+/* ==================================================
+   MAIN CONTAINER (핵심 구조)  ✅ 유지 + 정리
+   대상: <main class="container responsivegrid">
+================================================== */
+
+/* 모바일 ~ 태블릿 */
+/* 기본 (모바일 ~ 태블릿) */
+main.container {
+  width: 100%;
+  max-width: 1120px;
+  margin: 0 auto;          /* 가운데 정렬 */
+  padding: 0 5px;         /* 좌우 여백은 padding으로 */
+  box-sizing: border-box;
+}
+
+/* 데스크톱 */
+@media (min-width: 1200px) {
+  main.container {
+    max-width: 1120px; /* ⭐ 공식과 동일 */
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+
+/* AEM에서 main이 flex item일 경우 */
+.root > .cmp-container main.container {
+  flex-grow: 1;
+  width: auto;
+}
+
+/* ==================================================
+   AEM GRID SLOT – 구조 유지용 (유지)
+================================================== */
+
+.container.responsivegrid {
+  width: 100%;
+  display: block;
+}
+
+.container_top-start,
+.container_top,
+.container_top-end,
+.container_content-start,
+.container_content,
+.container_content-end,
+.container_bottom {
+  width: 100%;
+  display: block;
+}
+
+.cmp-container {
+  width: 100%;
+  display: block;
+}
+
+/* ===============================
+   OPENER HERO – AEM 방식 최종본
+=============================== */
+
+/* HERO */
+.opener-hero {
+  width: 100%;
+  max-width: 1440px;
+  aspect-ratio: 16 / 9;
+  margin: auto 0;   /* 상단 여백 + 중앙 정렬 */
+  overflow: hidden;
+}
+
+/* 이미지 */
+.opener-hero picture,
+.opener-hero img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.opener-hero img {
+  object-fit: cover;
+}
+
+/* ===============================
+   OPENER INTRO TEXT
+=============================== */
+
+.opener-intro {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.opener-intro__inner {
+  max-width: 840px;   /* ⭐ 720 → 840으로 수정 */
+  width: 100%;
+  text-align: center;
+}
+
+/* 텍스트 */
+.opener-intro p {
+  margin-block: 16px;
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #111;
+	
+	
+  margin-top: 30px;
+  word-break: keep-all;     /* 한글 핵심 */
+  white-space: normal;      /* 혹시 남아있을지 모를 nowrap 방지 */
+}
+
+
+/* 모바일 기본 */
+.opener-intro p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+/* 데스크톱 */
+@media only screen and (min-width: 1200px) {
+  .opener-intro p {
+    font-size: 18px;
+    line-height: 1.8;
+  }
+}
+
+/* ==================================================
+   OPENER BUTTON GRID (AEM three-columns 대체)
+   대상:
+   <div class="container responsivegrid grid three-columns">
+================================================== */
+
+/* 버튼 영역 전체 */
+.container.responsivegrid.grid.three-columns {
+  width: 100%;
+  margin-top: 32px;
+}
+
+/* ==================================================
+   BUTTON CONTAINER (한 줄 유지 + 768px 전까지 3개 유지)
+   - 3개가 한 줄로 유지되도록 flex-wrap: nowrap
+   - 공간이 부족하면 각 버튼이 327px에서 "줄어들 수 있게" flex 설정
+================================================== */
+
+.container.responsivegrid.grid.three-columns > .cmp-container {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  gap: 46px;
+
+  margin: 40px auto 0;
+
+  width: 100%;
+  max-width: 1100px;
+
+  flex-wrap: nowrap;            /* ⭐ 3개 한 줄 유지 */
+}
+
+/* AEM 강제값 차단 + 버튼 3개가 줄어들 수 있게 */
+.container.responsivegrid.grid.three-columns > .cmp-container > * {
+  padding: 0 !important;
+  width: auto !important;
+
+  flex: 1 1 0;                  /* ⭐ 공간 부족하면 줄어듦 */
+  max-width: 327px;             /* ⭐ 기본 최대 폭(디자인) */
+  min-width: 0;                 /* ⭐ 줄어들 때 깨짐 방지 */
+}
+
+/* ==================================================
+   BUTTON STYLE (디자인 그대로)
+================================================== */
+
+.button.button--secondary .cmp-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  width: 100%;                  /* ⭐ 부모(최대 327px) 기준으로 꽉 채움 */
+  height: 48px;
+
+  border: 2px solid #000;
+  border-radius: 9999px;
+
+  background: transparent;
+  color: #000;
+
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+
+  transition: background-color .25s ease, color .25s ease;
+}
+
+.button.button--secondary .cmp-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+/* ==================================================
+   MOBILE (<= 768px) : 세로 스택 + 버튼 가로 100%
+================================================== */
+
+@media (max-width: 1100px) {
+  .container.responsivegrid.grid.three-columns > .cmp-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+
+    max-width: 852px;           /* 모바일에서 너무 넓게 퍼지지 않게 */
+    padding: 0 24px;            /* 좌우 여백 */
+  }
+
+  .container.responsivegrid.grid.three-columns > .cmp-container > * {
+    max-width: none;            /* 모바일에서는 제한 해제 */
+    width: 100% !important;
+  }
+
+  .button.button--secondary .cmp-button {
+    width: 100%;
+  }
+}
+
+
+/* ===============================
+   OPENER TITLE
+================================ */
+
+/* 타이틀 래퍼 (모듈 간 여백 담당) */
+.title {
+  width: 100%;
+  margin-top: 80px;     /* 모바일 기본 */
+  text-align: center;
+}
+
+/* 구조용 */
+.cmp-title {
+  display: block;
+}
+
+/* AEM h2 영향만 차단 (reset 최소화) */
+.cmp-title__text {
+  display: block;
+  margin: 0;
+
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -1.5px;
+
+  color: #000;
+  text-align: center;
+}
+
+/* 데스크탑 */
+@media (min-width: 1200px) {
+  .title {
+    margin-top: 104px;
+  }
+
+  .cmp-title__text {
+    font-size: 36px;
+  }
+}
+
+
+/* ===============================
+   OPENER CARD 
+================================ */
+
+/* 카드 모듈 여백 제거 */
+.teaser.campaign-card {
+  margin-top: 40px !important;
+}
+
+
+/* 카드끼리(두 번째 카드부터) 간격만 넓히기 */
+.teaser.campaign-card + .teaser.campaign-card {
+  margin-top: 96px !important; /* 원하는 값으로 조절 */
+  margin-bottom: 98px !important;
+}
+
+/* 모바일은 조금 줄이기(선택) */
+@media (max-width: 1199px) {
+  .teaser.campaign-card + .teaser.campaign-card {
+    margin-top: 72px !important;
+  }
+}
+
+
+
+/* ===============================
+   CARD LAYOUT
+================================ */
+
+.teaser.campaign-card .cmp-teaser {
+  display: flex;
+  flex-direction: column; /* 모바일 */
+  margin: 0 !important;
+}
+
+/* 데스크탑: 좌 텍스트 / 우 이미지 */
+@media (min-width: 1200px) {
+  .teaser.campaign-card.content-on-left .cmp-teaser {
+    flex-direction: row;
+    align-items: stretch;
+  }
+}
+
+/* ===============================
+   CARD CONTENT (TEXT AREA)
+================================ */
+
+.teaser.campaign-card .cmp-teaser__content {
+  position: relative;
+  z-index: 1;
+
+  width: 100%;
+  padding: 40px;              /* ⭐ 여기서만 padding */
+  min-height: 552px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+/* 데스크탑 카드 높이 고정 (⭐ 핵심) */
+@media (min-width: 1200px) {
+  .teaser.campaign-card.content-on-left .cmp-teaser__content {
+    width: 50%;
+    min-height: 552px; /* 사이트 기준 */
+  }
+}
+
+/* ===============================
+   CARD BACKGROUND (흰 카드)
+================================ */
+
+.teaser.campaign-card .cmp-teaser__content::before {
+  content: "";
+  position: absolute;
+  inset: 24px; /* ⭐ 사이트 카드 여백 */
+  z-index: -1;
+
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 14px 16px rgba(0, 0, 0, 0.06);
+}
+/* 카드 내부 실제 콘텐츠 영역 */
+.teaser.campaign-card .cmp-teaser__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+/* 텍스트 영역 (h3 + p 묶음) */
+.teaser.campaign-card .cmp-teaser__description {
+  padding: 0;
+  display: block;
+}
+
+/* 제목 */
+.teaser.campaign-card .cmp-teaser__description h3 {
+  margin: 0 !important;
+}
+
+/* 본문 */
+.teaser.campaign-card .cmp-teaser__description p {
+  margin-top: 12px !important;
+}
+
+/* 버튼 영역 → 항상 아래로 */
+.teaser.campaign-card .cmp-teaser__action-container {
+  margin-top: auto;   /* ⭐ 핵심 */
+  padding: 0;
+}
+/* ===============================
+   TEXT AREA PADDING
+================================ */
+
+.teaser.campaign-card .cmp-teaser__description,
+.teaser.campaign-card .cmp-teaser__action-container {
+  padding: 40px;
+}
+
+/* ===============================
+   TEXT RESET
+================================ */
+
+.teaser.campaign-card .cmp-teaser__description > * {
+  margin: 0 !important;
+}
+
+/* ===============================
+   TITLE
+================================ */
+
+/* AEM 기본 h3 완전 차단 */
+.teaser.campaign-card .cmp-teaser__description h3 {
+  margin: 0 !important;
+  padding: 0 !important;
+
+  font-weight: 700;
+  letter-spacing: -1.5px;
+  color: #000;
+
+  /* 줄 간격 핵심 */
+  line-height: 1.25;
+
+  /* 모바일 기준 */
+  font-size: 22px;
+}
+
+/* h3 안의 <br> 줄 간격 제어 */
+.teaser.campaign-card .cmp-teaser__description h3 br {
+  content: "";
+  display: block;
+  margin-bottom: 4px; /* ⭐ 줄 사이 간격 */
+}
+
+/* 데스크탑 */
+@media (min-width: 1200px) {
+  .teaser.campaign-card .cmp-teaser__description h3 {
+    font-size: 26px;
+    line-height: 1.3;
+  }
+
+  .teaser.campaign-card .cmp-teaser__description h3 br {
+    margin-bottom: 6px;
+  }
+}
+
+/* ===============================
+   DESCRIPTION
+================================ */
+
+.teaser.campaign-card .cmp-teaser__description p {
+  margin-top: 14px !important;
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+@media (min-width: 1200px) {
+  .teaser.campaign-card .cmp-teaser__description p {
+    margin-top: 16px !important;
+    font-size: 17px;
+  }
+}
+
+/* ===============================
+   ACTION LINK – FINAL FIX
+================================ */
+
+.teaser.campaign-card .cmp-teaser__action-link {
+  text-decoration: none !important;   /* 🔥 밑줄 제거 */
+  color: #000 !important;              /* 🔥 파란색 제거 */
+
+  background-color: transparent;
+  border: 2px solid #000;
+  border-radius: 999px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  
+  width : 100%;
+  height: 40px;
+  padding: 0 32px;
+  font-weight: 600;
+}
+
+/* 데스크탑 버튼 폭 */
+@media (max-width: 1199px) {
+
+  .teaser.campaign-card .cmp-teaser__action-link {
+    width: 100%;              /* ✅ 가로 길게 */
+    max-width: 100%;
+
+    height: 40px;             /* ✅ 사이트랑 동일 */
+    padding: 0 16px;          /* 세로 padding 제거 */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    border-radius: 999px;
+    border: 2px solid #000;
+    background: transparent;
+
+    text-decoration: none !important;
+    color: #000 !important;
+
+    margin-top: 24px;
+  }
+}
+
+/* hover */
+.teaser.campaign-card .cmp-teaser__action-link:hover {
+  background: #000;
+  color: #fff !important;
+}
+
+/* ===============================
+   IMAGE OVERLAP – REAL FINAL
+================================ */
+
+.teaser.campaign-card {
+  position: relative;
+}
+
+.teaser.campaign-card .cmp-teaser {
+  position: relative;
+}
+
+.teaser.campaign-card .cmp-teaser__content {
+  position: relative;
+  z-index: 2;
+  width: 50%;
+}
+
+.teaser.campaign-card .cmp-teaser__image {
+  position: absolute;        /* ⭐ 핵심 */
+  right: 0;
+  top: 50%;
+  transform: translateY(-40%);
+
+  width: 58.333333%;
+  z-index: 1;
+}
+
+.teaser.campaign-card .cmp-teaser__image picture {
+  width: 100%;
+  display: block;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* 실제 이미지에만 확대 */
+.teaser.campaign-card .cmp-image__image {
+ 
+
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+
+/* ===============================
+   IMAGE AREA – MOBILE FIX (이미지만)
+================================ */
+@media (max-width: 1199px) {
+
+  /* 세로 스택 */
+  .teaser.campaign-card .cmp-teaser {
+    display: flex;
+    flex-direction: column;
+  }
+
+  /* 이미지가 위 */
+  .teaser.campaign-card .cmp-teaser__image {
+    order: 1;
+    position: static;   /* absolute 완전 제거 */
+    width: 100%;
+    margin: 0;
+    transform: none;
+  }
+
+  /* 카드가 밑 */
+  .teaser.campaign-card .cmp-teaser__content {
+    order: 2;
+    width: 100%;
+    margin-top: -100px;  /* ⭐ 살짝 겹치고 싶으면, 싫으면 0 */
+  }
+
+  /* 이미지 모서리 둥글림 제거 */
+  .teaser.campaign-card .cmp-teaser__image picture {
+    border-radius: 0;
+  }
+}
+
+
+/* ===============================
+   OPENER CARD – MOBILE REAL FIX
+   (높이 안 줄어드는 진짜 원인 제거)
+================================ */
+
+@media (max-width: 1199px) {
+
+  /* 1️ content 높이 제한 완전 제거 */
+  .teaser.campaign-card .cmp-teaser__content {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 30px !important;
+  }
+
+  /* 2️ 흰 카드 배경도 내용만큼만 */
+  .teaser.campaign-card .cmp-teaser__content::before {
+    inset: 12px !important;
+  }
+
+  /* 3 진짜 범인 제거: 내부 padding 축소 */
+  .teaser.campaign-card .cmp-teaser__description,
+  .teaser.campaign-card .cmp-teaser__action-container {
+    padding: 0 !important;
+  }
+
+  /* 4️ 버튼 위 여백만 최소 유지 */
+  .teaser.campaign-card .cmp-teaser__action-link {
+    margin-top: 16px;
+  }
+
+}
+
+
+/* ==================================================
+   OPENER CARD - RIGHT VERSION (LEFT CSS 그대로 활용)
+   ✅ content-on-right에만 덮어쓰기
+================================================== */
+
+/*  RIGHT 카드 최종 보정 (이 블록을 CSS 맨 아래에 붙여) */
+@media (min-width: 1200px) {
+	
+  .teaser.campaign-card {
+    max-width: 1120px;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  .teaser.campaign-card .cmp-teaser{
+    width: 100%;
+  }	
+	
+  /* right 카드: 내용(흰 카드)은 오른쪽 끝으로 */
+  .teaser.campaign-card.content-on-right .cmp-teaser__content {
+    margin-left: auto !important;
+    margin-right: 0 !important;
+  }
+
+  /* right 카드: 이미지는 왼쪽 끝으로 */
+  .teaser.campaign-card.content-on-right .cmp-teaser__image {
+    left: 0 !important;
+    right: auto !important;
+  }
+
+  /* 혹시 cmp-teaser 자체가 줄어들거나 기준이 틀어지는 것 방지 */
+  .teaser.campaign-card.content-on-right .cmp-teaser {
+    width: 100%;
+  }
+}
+
+@media (min-width: 1200px) {
+
+  /* LEFT 카드(카드 왼쪽/이미지 오른쪽) = 전체가 오른쪽으로 무거워 보이니 왼쪽으로 살짝 */
+  .teaser.campaign-card.content-on-left .cmp-teaser{
+    transform: translateX(-30px);
+  }
+
+  /* RIGHT 카드(카드 오른쪽/이미지 왼쪽) = 전체가 왼쪽으로 무거워 보이니 오른쪽으로 살짝 */
+  .teaser.campaign-card.content-on-right .cmp-teaser{
+    transform: translateX(0px);
+  }
+
+}
+
+
+
+
+/* ===============================
+   two-columns 레이아웃
+================================ */
+.container.grid.two-columns {
+  width: 100%;
+}
+
+.grid.two-columns > .cmp-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;              /* 카드 사이 간격 */
+}
+
+/* 모바일: 1열 */
+.grid.two-columns > .cmp-container > .teaser {
+  width: 100%;
+}
+
+/* 데스크탑: 2열 */
+@media (min-width: 1200px) {
+  .grid.two-columns > .cmp-container > .teaser {
+    width: calc(50% - 16px);
+  }
+}
+
+/* ===============================
+   카드 전체
+================================ */
+.teaser.content-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.teaser.content-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===============================
+   teaser 내부
+================================ */
+.cmp-teaser {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
+/* ===============================
+   이미지
+================================ */
+.cmp-teaser__image img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ===============================
+   콘텐츠 영역
+================================ */
+.grid.two-columns .content-card .cmp-teaser__content{
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+}
+
+/* ===============================
+   제목
+================================ */
+.grid.two-columns .content-card .cmp-teaser__content h3.cmp-teaser__title{
+  margin: 0 0 8px 0;
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: #000;
+}
+
+/* ===============================
+   설명
+================================ */
+.cmp-teaser__description{
+  margin-top: 8px;               /* ✔ 제목 바로 아래 */
+}
+
+.grid.two-columns .content-card .cmp-teaser__description p{
+  margin: 0 0 16px 0;
+  font-size: 16px;
+  line-height: 26px;
+  color: #333;
+}
+
+.cmp-teaser__content h3,
+.cmp-teaser__content p{
+  margin-block: 0;
+}
+
+
+/* ===============================
+   하단 액션
+================================ */
+/* 자세히 보기 (사이트처럼) */
+.grid.two-columns .content-card .cmp-teaser__action-container{
+  margin-top: auto; /* 아래로 밀기 유지 */
+}
+
+.grid.two-columns .content-card .cmp-teaser__action-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  font-weight: var(--typography-font-weight-action-heavy);
+  font-size: var(--mobile-typography-size-action-m);
+  line-height: var(--mobile-typography-line_height-action-m);
+
+  color: var(--color-text-action-main-default);
+
+  background: transparent;
+  border: none;
+
+  text-decoration: underline;
+  text-underline-offset: var(--dimension-spacing-3xs);
+  text-decoration-skip-ink: none;
+
+  padding: 0;
+  padding-inline-end: 24px; /* 화살표 자리 */
+  margin-top: var(--dimension-spacing-2xl);
+
+  cursor: pointer;
+}
+
+/* 화살표 */
+.grid.two-columns .content-card .cmp-teaser__action-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+
+  background-color: currentColor;
+
+  /* ▶ SVG 화살표 */
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 5l7 7-7 7M4 12h16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 5l7 7-7 7M4 12h16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+@media (min-width: 1200px) {
+  .grid.two-columns .content-card .cmp-teaser__action-link {
+    font-size: var(--desktop-typography-size-action-m);
+    line-height: var(--desktop-typography-line_height-action-m);
+  }
+}
+
+
+
+/* ===============================
+   three-columns 레이아웃 (안 사라지는 버전)
+================================ */
+.container.grid.three-columns{
+  width: 100%;
+}
+
+.container.grid.three-columns::before{
+  content: "";
+  display: block;
+  height: 64px;
+}
+
+/* grid 컨테이너 */
+/* cmp-container 완전 고정 */
+.container.grid.three-columns > .cmp-container{
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: flex-start !important;
+
+  gap: 32px;
+  max-width: none !important;
+  margin: 0 !important;
+  padding-inline: 16px;
+}
+
+
+/* ===============================
+   모바일 / 태블릿 : 1열
+================================ */
+.container.grid.three-columns > .cmp-container > .teaser{
+  flex: 0 0 100% !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+/* ===============================
+   데스크탑 : 3열
+================================ */
+
+@media (min-width: 1200px){
+  .container.grid.three-columns > .cmp-container > .teaser{
+    flex: 0 0 calc((100% - 64px) / 3) !important;
+    width: calc((100% - 64px) / 3) !important;
+  }
+  .container.grid.three-columns > .cmp-container{
+    flex-wrap: nowrap !important;   /* 🔥 핵심 */
+  }
+}
+/* ===============================
+   카드 전체
+================================ */
+.grid.three-columns .teaser.content-card{
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+
+  display: block;                 /* 🔥 모바일 height 0 방지 */
+}
+
+/* 링크 */
+.grid.three-columns .teaser.content-card a{
+  display: block;
+  height: 100%;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ===============================
+   teaser 내부 (이미지 위 / 텍스트 아래)
+================================ */
+.grid.three-columns .cmp-teaser{
+  display: flex;
+  flex-direction: column-reverse;         /* 🔥 핵심 */
+  height: 100%;
+}
+
+/* ===============================
+   이미지 영역 (이미지처럼 크게)
+================================ */
+/* 이미지 영역 */
+.grid.three-columns .cmp-teaser__image{
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  min-height: 240px;
+
+  display: flex;
+  align-items: flex-start;   /* 이미 위 기준 */
+  justify-content: center;
+
+  padding-top: 0;            /* 🔥 혹시 남아있는 여백 제거 */
+  overflow: visible;
+}
+
+
+/* 이미지 */
+.grid.three-columns .cmp-teaser__image img{
+  max-width: 100%;
+  width: auto;
+  height: auto;
+
+  object-fit: contain;     /* 절대 안 잘림 */
+  object-position: top;
+
+}
+
+/* three-columns에서 3번째 카드만 */
+.grid.three-columns
+  > .cmp-container
+  > .teaser:nth-child(3)
+  .cmp-teaser__image img {
+  
+  object-fit: contain;     /* 크기 유지 */
+  object-position: top;    /* 기준은 위 */
+  transform: translateY(-30px); /* 위로 살짝 올리기 */
+}
+
+/* ===============================
+   콘텐츠 영역
+================================ */
+.grid.three-columns .cmp-teaser__content{
+  padding: 24px 28px 28px;
+  display: flex;
+  flex-direction: column;
+
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+}
+
+/* 제목 */
+.grid.three-columns .cmp-teaser__title{
+  margin: 0 0 8px;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* 설명 */
+.grid.three-columns .cmp-teaser__description p{
+  margin: 0 0 16px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #333;
+}
+
+/* ===============================
+   하단 액션
+================================ */
+.grid.three-columns .cmp-teaser__action-container{
+  margin-top: auto;
+}
+
+.grid.three-columns .cmp-teaser__action-link{
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+
+  font-weight: 600;
+  font-size: 15px;
+
+  text-decoration: underline;
+  text-underline-offset: 4px;
+
+  padding-right: 24px;
+}
+
+/* 화살표 */
+.grid.three-columns .cmp-teaser__action-link::after{
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 5l7 7-7 7M4 12h16' fill='none' stroke='black' stroke-width='2'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+}
+
+
+/* 
+==================================================
+   three-columns 전용 레이아웃 (독립 / 2열 없음)
+==================================================
+
+.container.grid.three-columns {
+  width: 100%;
+  margin-top: 125px  !important; ← 80~160px 사이에서 취향대로
+}
+
+AEM grid 완전 무력화
+.grid.three-columns > .cmp-container {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 32px;
+  transform: translateX(-14px); -8 ~ -16 사이에서 골라
+}
+
+==================================================
+   모바일 ~ 태블릿: 무조건 1열 (two-columns와 동일)
+==================================================
+.grid.three-columns > .cmp-container > .teaser {
+  flex: 0 0 100% !important;   🔥 AEM flex 제거
+  width: 100%;
+  min-width: 0 !important;    🔥 AEM min-width 제거
+}
+
+==================================================
+   데스크탑: 3열
+==================================================
+@media (min-width: 1200px) {
+  .grid.three-columns > .cmp-container > .teaser {
+    flex: 0 0 calc((100% - 64px) / 3) !important;
+    width: calc((100% - 64px) / 3);
+    min-width: 0 !important;
+  }
+}
+
+==================================================
+   카드 전체
+==================================================
+.grid.three-columns .teaser.content-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 14px 24px rgba(0,0,0,0.08);
+  overflow: hidden;
+}
+
+.grid.three-columns .teaser.content-card a {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+
+==================================================
+   teaser 구조 (모바일 세로 유지)
+==================================================
+.grid.three-columns .cmp-teaser {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+
+==================================================
+   이미지
+==================================================
+이미지 래퍼가 flex 아이템
+.grid.three-columns .cmp-teaser__image {
+  order: -1;
+}
+
+.grid.three-columns .cmp-teaser__image img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   🔥 이게 핵심
+  object-fit: cover;
+  display: block;
+}
+
+
+==================================================
+   콘텐츠 영역
+==================================================
+.grid.three-columns .cmp-teaser__content {
+  padding: 15px 30px;
+  display: flex;
+  flex-direction: column;
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+  font-size: 16px;
+  color: #000;
+  background: #fff;
+}
+
+==================================================
+   제목
+==================================================
+.grid.three-columns .cmp-teaser__title {
+  margin: 0 0 6px;
+  font-size: 22px;
+  line-height: 32px;
+  font-weight: 700;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;      🔥 2줄 고정
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: calc(32px * 2); 🔥 짧아도 2줄 높이 확보
+}
+
+
+==================================================
+   설명
+==================================================
+.grid.three-columns .cmp-teaser__description {
+  margin-top: 8px;
+}
+
+.grid.three-columns .cmp-teaser__description p {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #333;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 3;      🔥 3줄 고정
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: calc(26px * 3); 🔥 공간 강제 확보
+}
+
+
+==================================================
+   액션 (화살표 유지)
+==================================================
+.grid.three-columns .cmp-teaser__action-container {
+  margin-top: auto;
+}
+
+.grid.three-columns .cmp-teaser__action-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  padding-right: 24px;
+  cursor: pointer;
+}
+
+.grid.three-columns .cmp-teaser__action-link::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  background-color: currentColor;
+
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 5l7 7-7 7M4 12h16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: contain;
+
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M13 5l7 7-7 7M4 12h16' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: contain;
+}
+
+ */
+
+
+/* ==================================================
+   list-item (현재 HTML 구조 기준)
+================================================== */
+
+/* 🔥 핵심: 최상위에서 가로 정렬 */
+.teaser.list-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 32px;
+  
+  border-top: none;
+  padding-top: 32px;
+}
+
+/* 텍스트 영역 */
+.teaser.list-item .list-item__content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* list-item + list-item 에만 선 */
+.teaser.list-item + .teaser.list-item {
+  border-top: 1px solid #d9d9d9;
+}
+
+/* 제목 */
+.teaser.list-item .list-item__title {
+  margin: 0 0 8px;
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 700;
+}
+
+/* 설명 */
+.teaser.list-item .list-item__description {
+  margin: 0 0 16px;
+  font-size: 16px;
+  line-height: 26px;
+  color: #333;
+}
+
+/* 더 보기 버튼 */
+.teaser.list-item .cmp-teaser__action-container {
+  margin-top: 20px;
+}
+
+.teaser.list-item .cmp-teaser__action-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  height: 40px;
+  padding: 4px 16px;
+
+  font-size: 16px;
+  font-weight: 500;
+  color: #000;
+  text-decoration: none;
+
+  border: 2px solid #000;
+  border-radius: 9999px;
+  background: transparent;
+}
+
+/* 이미지 영역 (오른쪽 고정) */
+.teaser.list-item .list-item__image {
+  flex: 0 0 105px;     /* 🔥 이미지 크기 고정 */
+  margin-left: auto;  /* 🔥 오른쪽 밀착 */
+}
+
+.teaser.list-item .list-item__image img {
+  width: 105px;
+  height: 105px;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+/* =====================================
+   데스크탑
+===================================== */
+@media only screen and (min-width: 1200px) {
+  .teaser.list-item {
+    margin-top: 56px;
+  }
+
+  .teaser.list-item .cmp-teaser {
+    gap: 48px;
+  }
+
+  .teaser.list-item .cmp-teaser__image {
+    flex-basis: 160px;
+  }
+}
+
+
+
+
+

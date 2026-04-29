@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+   xmlns:security="http://www.springframework.org/schema/security"
+   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+      http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security.xsd">
+
+   <security:http pattern="/static/**" security="none" />
+   <security:http pattern="/design/**" security="none" />
+   <security:http pattern="/OurCompany_images/**" security="none" />
+   <security:http pattern="/images/**" security="none" />
+   <security:http pattern="/resources/**" security="none" />
+
+   <security:http auto-config="true" use-expressions="true">
+      <security:intercept-url pattern="/OurCompany" access="permitAll" />
+      
+      <security:form-login />
+      
+      <security:intercept-url pattern="/cocacola/join" access="permitAll" />
+<security:intercept-url pattern="/cocacola/idCheck" access="permitAll" />
+<security:intercept-url pattern="/cocacola/join.do" access="permitAll" />
+      
+      
+      <security:csrf disabled="true"/>
+   </security:http>
+
+   <security:authentication-manager>
+   </security:authentication-manager>
+
+</beans>

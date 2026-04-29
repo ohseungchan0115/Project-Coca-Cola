@@ -1,0 +1,17 @@
+package cocacola.mvc.service;
+
+import java.sql.Connection;
+import java.util.List;
+
+import cocacola.mvc.domain.OpenerCategoryDTO;
+import cocacola.mvc.persistence.OpenerCategoryDAO;
+import cocacola.util.DBConn;
+
+public class OpenerService {
+
+    public List<OpenerCategoryDTO> getCategoryList() throws Exception {
+        Connection conn = DBConn.getConnection(); // cola_user
+        OpenerCategoryDAO dao = new OpenerCategoryDAO();
+        return dao.selectCategoryList();
+    }
+}

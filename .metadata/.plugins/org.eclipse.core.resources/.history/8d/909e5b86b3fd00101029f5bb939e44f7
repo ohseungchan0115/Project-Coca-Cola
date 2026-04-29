@@ -1,0 +1,13 @@
+package cocacola.mvc.persistence;
+
+import java.util.List;
+
+import cocacola.mvc.domain.CreationStoryDTO;
+import cocacola.mvc.domain.DetailDTO;
+
+public interface CreationDAO {
+    List<CreationStoryDTO> selectBySectionType(String sectionType);
+    
+    // 🔥 이 선언이 반드시 있어야 함
+    DetailDTO selectDetail(int id);
+}

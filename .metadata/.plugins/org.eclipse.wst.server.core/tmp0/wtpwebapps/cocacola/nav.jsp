@@ -1,0 +1,260 @@
+<%@ page pageEncoding="UTF-8" %>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+<style>
+/* 1. 네비게이션 기본 구조 */
+.main-nav {
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    z-index: 1000;
+    
+}
+
+.nav-container {
+    max-width: 1200px; 
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    height: 80px;
+    
+    padding: 0 40px;
+}
+
+/* 2. 로고 및 대메뉴 */
+.nav-logo img {
+    height: 28px;
+    display: block;
+}
+
+.nav-menu {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    align-items: center;
+    margin-right: auto;
+}
+
+.nav-auth a {
+    text-decoration: none;
+    color: #000;
+    font-size: 14px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border: 1px solid #000;
+    border-radius: 20px;
+    transition: all 0.2s ease;
+}
+
+/* Login hover */
+.nav-auth a:hover {
+    background-color: #000;
+    color: #fff;
+}
+
+.nav-menu > li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-menu > li > a {
+    text-decoration: none;
+    color: #000;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 0 20px;
+    height: 100%;
+    display: flex; 
+    align-items: center;
+    white-space: nowrap;
+}
+
+/* 대메뉴 화살표 */
+.nav-menu > li > a.has-arrow::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    border-top: 2px solid #000;
+    border-right: 2px solid #000;
+    margin-left: 10px;
+    transform: rotate(45deg); 
+    transition: transform 0.3s ease;
+}
+
+.dropdown:hover > a.has-arrow::after {
+    transform: rotate(135deg);
+    margin-top: -4px;
+    
+}
+.nav-menu > li > a::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+.nav-menu > li > a:hover::before {
+    opacity: 1;
+}
+
+
+/* 활성화 메뉴 밑줄 */
+.nav-menu > li > a.active::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20px;
+    right: 20px;
+    height: 4px;
+    background-color: #000;
+    opacity: 1;
+}
+
+/* 4. 드롭다운 하위 메뉴 */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 80px;
+    left: 0;
+    background-color: #fff;
+    width: 220px; 
+    border: 1px solid #ddd;
+    border-top: none;
+    list-style: none;
+    padding: 20px 0;
+    margin: 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.dropdown:hover > a::before {
+    opacity: 1;
+}
+.dropdown-content li a {
+    text-decoration: none;
+    color: black;
+    /* 좌우 여백 */
+    padding: 12px 30px; 
+    display: flex;
+    align-items: center;
+    font-size: 0.9rem; 
+    font-weight: 400;
+    line-height: 1.4;
+    white-space: nowrap;
+    background-color: transparent;
+    transition: color 0.2s;
+}
+
+/* 하위 메뉴 호버 시: 박스 크기 변하지 않음 */
+.dropdown-content li a:hover {
+    color: black;
+    font-weight: 800;
+}
+
+/* 하위 메뉴 화살표: 텍스트 바로 옆에 일관되게 배치 */
+.dropdown-content li a::after {
+    content: '>';
+    font-size: 0.85rem;
+    font-weight: bold;
+    visibility: hidden;
+    opacity: 0;
+    margin-left: 10px;
+    transition: opacity 0.2s;
+}
+
+.dropdown-content li a:hover::after {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* 드롭다운 표시 */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+</style>
+
+
+<nav class="main-nav">
+    <div class="nav-container">
+        <a href="${pageContext.request.contextPath}/ourcompany.do?page=main">
+           <img src="${pageContext.request.contextPath}/cocacola/logo/Coke-company-logo-black.png"
+                 alt="Coca-Cola Logo" 
+                 style="display: block; width: 120px; height: auto; margin-right: 50px;">
+        </a>
+
+        <ul class="nav-menu">
+            <!-- Brands -->
+            <li>
+                <a href="${pageContext.request.contextPath}/brands.do"
+                  class="<%= request.getRequestURI().contains("/brands.do") ? "active" : "" %>">
+                   Brands
+                </a>
+            </li>
+
+<%
+  String pageParam = request.getParameter("page");
+  boolean isActive = !"main".equals(pageParam) && 
+                     ("company".equals(pageParam) || "since".equals(pageParam));
+%>
+
+<li class="dropdown">
+  <a href="#"
+     class="has-arrow <%= isActive ? "active" : "" %>">
+     Our Company
+  </a>
+  <ul class="dropdown-content">
+   <li><a href="${pageContext.request.contextPath}/ourcompany.do?page=company">Coca-Cola Company</a></li>
+   <li><a href="${pageContext.request.contextPath}/ourcompany.do?page=since">Since 1886</a></li>
+  </ul>
+</li>
+
+
+            <!-- Discover -->
+            <li class="dropdown">
+                <a href="#"
+                   class="has-arrow <%= request.getRequestURI().contains("/Discover1") ? "active" : "" %>">
+                   Discover
+                </a>
+                <ul class="dropdown-content">
+                    <li><a href="${pageContext.request.contextPath}/brandstory.do">Brand Story</a></li>
+               <li><a href="${pageContext.request.contextPath}/cokemeal.do">Coke & Meal</a></li>
+                    <li><a href="${pageContext.request.contextPath}/originals.do">Originals</a></li>
+              <li>
+                  <a href="${pageContext.request.contextPath}/opener.do">
+                      Opener
+                  </a>
+              </li>
+              <li>
+                  <a href="${pageContext.request.contextPath}/creation.do">
+                      Creations
+                  </a>
+              </li>
+              <li>
+                  <a href="${pageContext.request.contextPath}/cokeplay.do">
+                      CokePLAY App
+                  </a>
+              </li>
+                </ul>
+            </li>
+
+            <!-- Sustainability -->
+            <li>
+                <a href="${pageContext.request.contextPath}/sustainability.do">
+                   Sustainability
+                </a>
+            </li>
+        </ul>
+        
+    </div>
+</nav>
+

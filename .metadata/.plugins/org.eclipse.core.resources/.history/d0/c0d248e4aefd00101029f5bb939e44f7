@@ -1,0 +1,35 @@
+package cocacola.mvc.service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
+import java.util.HashMap;
+import cocacola.mvc.domain.BrandStoryDTO;
+import cocacola.mvc.persistence.BrandStoryDAO;
+
+public class BrandStoryService {
+    
+    private BrandStoryDAO dao = new BrandStoryDAO();
+
+    // 전체 리스트를 가져와서 그룹별로 분류된 Map을 반환
+    public Map<String, List<BrandStoryDTO>> getGroupedStoryList() throws Exception {
+        List<BrandStoryDTO> allStories = dao.selectAll();
+        
+        List<BrandStoryDTO> mainStories = new ArrayList<>();
+        List<BrandStoryDTO> recommendStories = new ArrayList<>();
+        List<BrandStoryDTO> moreStories = new ArrayList<>();
+
+        for (int i = 0; i < allStories.size(); i++) {
+            if (i <= 3) mainStories.add(allStories.get(i));
+            else if (i <= 7) recommendStories.add(allStories.get(i));
+            else moreStories.add(allStories.get(i));
+        }
+
+        Map<String, List<BrandStoryDTO>> groupedData = new HashMap<>();
+        groupedData.put("mainStories", mainStories);
+        groupedData.put("recommendStories", recommendStories);
+        groupedData.put("moreStories", moreStories);
+        
+        return groupedData;
+    }
+}

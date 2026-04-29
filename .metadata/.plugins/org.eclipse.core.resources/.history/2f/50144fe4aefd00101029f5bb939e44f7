@@ -1,0 +1,43 @@
+package cocacola.mvc.controller;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yourcompany.mvc.model.dao.SustainabilityDAO;
+import com.yourcompany.mvc.model.vo.Document;
+import com.yourcompany.mvc.model.vo.Section;
+
+import java.io.IOException;
+import java.util.List;
+
+@WebServlet("/sustainability")
+public class SustainabilityController extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        SustainabilityDAO dao = new SustainabilityDAO();
+
+        // ① 기존 섹션 데이터
+        List<Section> sections = dao.getAllSections();
+        List<Document> waterDocs = dao.getDocumentsBySection(3);
+ 
+
+        // ③ request에 담기
+        request.setAttribute("sections", sections);
+       
+
+        request.setAttribute("waterDocs", waterDocs);
+
+
+        // ④ JSP로 forward
+        request.getRequestDispatcher("/WEB-INF/views/cocacola/Sustainability/sustainability.jsp")
+        .forward(request, response);
+    }
+}

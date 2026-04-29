@@ -1,0 +1,139 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>환타 멜론 & 환타 제로 상큼 피치 출시 | Brand Story | 한국
+	코카-콜라</title>
+<style>
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: rgb(229, 229, 229);
+	color: #000;
+	overflow-y: scroll;
+}
+
+.image1 {
+	display: block; /* 마진 자동 계산을 위해 블록 요소로 변경 */
+	width: 100%; /* 기본적으로 너비 100% */
+	width: 1120px; /* ⭐ 이미지의 실제 최대 너비 혹은 원하는 너비로 제한 */
+	height: auto;
+	margin: 0 auto; /* ⭐ 좌우 마진을 auto로 설정하여 가운데 정렬 */
+}
+
+/* 본문 컨테이너: 이미지처럼 중앙 집중형 레이아웃 */
+.content {
+	max-width: 850px;
+	margin: 60px auto;
+	padding: 0 50px;
+}
+
+.top-title {
+	text-align: center;
+	font-size: 28px;
+	font-weight: bold;
+	margin-bottom: 10px;
+	color: #333;
+}
+
+.bottom-title {
+	text-align: center;
+	font-size: 38px;
+	font-weight: 900;
+	margin-bottom: 20px;
+	letter-spacing: -1px;
+}
+
+.date {
+	text-align: left; /* 이미지처럼 가운데 정렬 */
+	font-size: 16px;
+	margin-bottom: 10px;
+}
+
+.basic {
+	font-size: 16px;
+	margin-bottom: 30px;
+	word-break: keep-all; /* 한글 가독성 향상 */
+}
+
+.subtitle {
+	margin-top: 50px;
+	margin-bottom: 20px;
+	font-size: 32px;
+	font-weight: bold;
+	line-height: 1.3;
+}
+
+/* 이미지 스타일 */
+.image2 {
+	width: 100%;
+	margin-bottom: 50px;
+}
+
+
+.kakao {
+	display: block;
+	max-width: 210px;
+	margin: 0 auto;
+}
+
+
+</style>
+</head>
+<body>
+<%@ include file="../nav.jsp" %>
+	<img class="image1" alt=""
+		src="${pageContext.request.contextPath}/cocacola/brandstory/page4_1.png">
+
+	<div class="content">
+		<h2 class="bottom-title">
+		원해? 새로운 맛의 환타!
+		<br>
+환타 멜론 & 환타 제로 상큼 피치
+</h2>
+		<h3 class="date">2025. 04. 29</h3>
+
+		<p class="basic">
+		색다른 즐거움을 기다려온 환타 팬들에게 반가운 소식이 찾아왔다. 바로 환타의 두 가지 새로운 맛 – <strong>‘환타 멜론’</strong>과 <strong>‘환타 제로 상큼 피치’</strong>가 출시된 것. 각기 다른 매력을 담고 있는 두 가지 맛의 새로운 환타를 소개한다.  
+</p>
+
+		<h2 class="subtitle">
+			달콤하게 즐기는 환타 멜론과
+			<br>
+복숭아맛 환타 제로 상큼 피치 
+		</h2>
+
+		<img class="image2" alt=""
+			src="${pageContext.request.contextPath}/cocacola/brandstory/page4_2.png">
+
+		<p class="basic">
+			환타 멜론은 부드러운 멜론향과 달콤한 풍미, 그리고 환타 특유의 톡 쏘는 탄산이 조화롭게 어우러진 제품이다. 반면, 환타 제로 상큼 피치는 이름 그대로 제로 칼로리로 가볍게, 복숭아향의 상큼함을 살린 제품으로 가볍고 상큼한 선택을 원하는 이들에게 제격이다.  
+<br><br>
+이번 신제품은 환타의 오리지널 라인과 제로 라인을 동시에 확장하는 의미 있는 시도로, 과일향 탄산음료의 대표 브랜드로서의 입지를 더욱 공고히 한다.
+<br><br>
+출시 전 사전 예약 단계부터 뜨거운 관심을 받은 두 제품은 현재 코카-콜라 공식 앱 ‘코-크플레이 (CokePLAY)’에서 만나볼 수 있으며, 전국 대형마트와 주요 온라인몰 등에서도 순차적으로 만나볼 수 있다. 
+<br><br>
+어떤 맛을 골라도 환타 특유의 유쾌함과 즐거움은 그대로 즐길 수 있다. 두 가지 맛의 신상 환타와 함께, 당신의 하루 속에 특별하고도 즐거운 Fantastic한 ‘환타 모먼트’를 더해보는 건 어떨까?
+		</p>
+
+		<a
+			href="https://pf.kakao.com/_gxdxjrK?utm_source=coca-cola-journey&utm_medium=banner&utm_campaign=coca-cola-journey&utm_term=add-friend&utm_content=link">
+			<img class="kakao" alt="카카오 플러스 친구"
+			src="${pageContext.request.contextPath}/cocacola/images/2023_kakao-plus-short-2.png">
+		</a>
+	</div>
+
+<%@ include file="../Footer.jsp" %>
+
+</body>
+</html>

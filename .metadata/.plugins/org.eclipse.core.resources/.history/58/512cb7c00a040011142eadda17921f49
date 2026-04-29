@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="cocacola.mvc.mapper.SustainabilityMapper">
+
+    <!-- Section + Content + Media -->
+    <select id="getAllSectionsWithMedia" resultMap="sectionResultMap">
+        SELECT * FROM SECTION ORDER BY section_id
+    </select>
+
+    <resultMap id="sectionResultMap" type="com.yourcompany.mvc.model.vo.Section">
+        <id property="section_id" column="section_id"/>
+        <result property="section_title" column="section_title"/>
+        <result property="section_subtitle" column="section_subtitle"/>
+        <result property="section_image" column="section_image"/>
+        <result property="section_description" column="section_description"/>
+        <collection property="contents" ofType="com.yourcompany.mvc.model.vo.Content" 
+                    select="getContentsBySectionId" column="section_id"/>
+    </resultMap>
+
+    <select id="getContentsBySectionId" resultMap="contentResultMap">
+        SELECT * FROM CONTENT WHERE section_id = #{section_id} ORDER BY content_id
+    </select>
+
+    <resultMap id="contentResultMap" type="com.yourcompany.mvc.model.vo.Content">
+        <id property="content_id" column="content_id"/>
+        <result property="section_id" column="section_id"/>
+        <result property="content_title" column="content_title"/>
+        <result property="content_body" column="content_body"/>
+        <result property="content_category" column="content_category"/>
+        <result property="content_link" column="content_link"/>
+        <result property="detail_content_id" column="detail_content_id"/>
+        <collection property="mediaList" ofType="com.yourcompany.mvc.model.vo.Media" 
+                    select="getMediaByContentId" column="content_id"/>
+    </resultMap>
+
+    <select id="getMediaByContentId" resultType="com.yourcompany.mvc.model.vo.Media">
+        SELECT * FROM MEDIA WHERE content_id = #{content_id} ORDER BY media_id
+    </select>
+
+    <!-- Documents by Section -->
+    <select id="getDocumentsBySection" resultType="com.yourcompany.mvc.model.vo.Document">
+        SELECT * FROM DOCUMENT WHERE section_id = #{sectionId} ORDER BY document_date DESC
+    </select>
+
+    <!-- Content 단건 조회 (Media 포함) -->
+    <select id="getContentById" resultMap="contentResultMap">
+        SELECT * FROM CONTENT WHERE content_id = #{contentId}
+    </select>
+
+</mapper>

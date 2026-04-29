@@ -1,0 +1,23 @@
+package cocacola.mvc.command;
+
+import javax.servlet.http.*;
+
+public class BrandStoryDetailHandler implements CommandHandler {
+
+    @Override
+    public String process(HttpServletRequest request,
+                          HttpServletResponse response) throws Exception {
+
+        String idParam = request.getParameter("id");
+
+        if (idParam == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return null;
+        }
+
+        int id = Integer.parseInt(idParam);
+
+        // 🔥 기존 로직 그대로
+        return "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + id + ".jsp";
+    }
+}

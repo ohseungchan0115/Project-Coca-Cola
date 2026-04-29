@@ -1,0 +1,34 @@
+package cocacola.mvc.command;
+
+import java.util.List;
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import cocacola.mvc.domain.BrandStoryDTO;
+import cocacola.mvc.service.BrandStoryService;
+
+public class BrandStoryHandler implements CommandHandler {
+
+    private BrandStoryService service = new BrandStoryService();
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        
+        // 1. 상세 페이지 처리
+        String idParam = request.getParameter("id");
+        if (idParam != null) {
+            return "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + idParam + ".jsp";
+        }
+
+        // 2. 목록 페이지 처리 (서비스 호출)
+        Map<String, List<BrandStoryDTO>> groupedData = service.getGroupedStoryList();
+
+        // 서비스에서 받은 Map 데이터를 각각 request 객체에 세팅
+        request.setAttribute("mainStories", groupedData.get("mainStories"));
+        request.setAttribute("recommendStories", groupedData.get("recommendStories"));
+        request.setAttribute("moreStories", groupedData.get("moreStories"));
+
+        return "/WEB-INF/views/cocacola/Discover1/BrandStory.jsp";
+    }
+}

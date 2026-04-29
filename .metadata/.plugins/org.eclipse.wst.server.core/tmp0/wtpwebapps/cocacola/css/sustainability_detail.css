@@ -1,0 +1,182 @@
+/* ---------------------- 글로벌 ---------------------- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body.page {
+    font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif;
+    background: #f5f5f5;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    direction: ltr;
+    overflow-wrap: break-word;
+    color: #000;
+}
+
+html, body {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+/* ---------------------- 루트 컨테이너 ---------------------- */
+.root > .cmp-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+/* ------------------ 전체 섹션 컨테이너 ------------------ */
+.sustainability-section-container {
+  max-width: 750px;   /* 전체 컨테이너 너비 고정 */
+  margin: 0 auto;      /* 중앙 정렬 */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+      
+}/* ------------------ 전체 섹션 컨테이너2 ------------------ */
+.sustainability-section-container2 {
+  width: 1120px;   /* 전체 컨테이너 너비 고정 */
+  margin: 0 auto;      /* 중앙 정렬 */
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+    
+}
+/* ---------------------- HERO 섹션 ---------------------- */
+.sustainability-hero {
+    display: flex;
+    justify-content: center;
+    padding: 0 20px; /* 좌우 최소 여백 */
+ 
+}
+
+.sustainability-hero .hero-inner {
+    width: 100%;
+    max-width: 1440px;   /* 중앙 이미지 최대 너비 제한 */
+    position: relative;  /* 텍스트 오버레이를 위한 위치 기준 */
+}
+
+.sustainability-hero .hero-inner img {
+    width: 1120px;
+    height: 630px;
+    display: block;
+    aspect-ratio: 2.32;  /* PC 기준 비율 */
+    margin: 0 auto;
+}
+
+@media (max-width: 1199px) {
+    .sustainability-hero .hero-inner img {
+        aspect-ratio: 0.75; /* 모바일 기준 비율 */
+    }
+}
+/* ------------------ INTRO 섹션 ------------------ */
+.sustainability-intro {
+  width:100%;
+
+}
+
+.sustainability-intro .intro-inner {
+ 
+  text-align: center;
+}
+
+.sustainability-intro .intro-inner p {
+  font-weight:bolder;
+  margin-bottom: 25px;
+  text-align: left;
+}
+.sustainability-intro .intro-inner p#s1 {
+  font-weight:400;
+  margin-top: 25px;
+  margin-bottom:10px;
+  text-align: left;
+  
+}
+
+.sustainability-intro h2 {
+  font-size: 36px;
+  color: #000;
+  margin-top: 50px;
+  margin-bottom: 20px;
+}
+
+/* 상세페이지 */
+.global-card__image img {
+    width: 100%;
+	margin: 0 auto;
+    display: block;
+}
+.global-sustainability {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 50px;
+    
+}
+.global-card__image2 img {
+    width: 100%;
+	margin: 0 auto;
+    display: block;
+   
+}
+.global-sustainability2 {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    margin-bottom: 50px;
+    margin-top: 25px;
+}
+#s2 {
+	margin-bottom:50px;
+	
+}
+#s3{
+	text-decoration: underline;
+}
+a{
+	color:black;
+}
+/* 카카오 버튼 */
+.detail-cta {
+    margin: 60px 0;
+    text-align: center;
+}
+/* 상세페이지2 */
+#s4{
+	text-align: left;
+	line-height: 1.2;
+}
+#s5{
+	margin-bottom:12px;
+}
+#s6{
+	margin-top:-40px;
+	margin-bottom: 8px;
+}
+#s7{
+	margin-top:40px;
+	
+}
+.global-card__image3 img {
+    width: 736px;
+	margin: 0 auto;
+    display: block;
+    margin-bottom:40px;
+}
+.global-card__image3 a{
+	font-weight: bolder;
+}
+.global-card__image4 img {
+    width: 736px;;
+	margin: 0 auto;
+    display: block;
+   
+}
+.sustainability-hero .hero-inner2 img {
+    width: 1300px;
+    height: 630px;
+    display: block;
+    aspect-ratio: 2.32;  /* PC 기준 비율 */
+    margin: 0 auto;
+}

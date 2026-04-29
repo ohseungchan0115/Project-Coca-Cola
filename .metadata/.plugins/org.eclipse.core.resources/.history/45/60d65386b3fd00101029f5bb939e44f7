@@ -1,0 +1,58 @@
+package cocacola.mvc.command;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+import cocacola.mvc.domain.BrandStoryDTO;
+import cocacola.mvc.persistence.BrandStoryDAO;
+
+@Controller 
+@RequestMapping("/cocacola")
+public class BrandStoryHandler implements CommandHandler {
+
+    @Override
+    @RequestMapping("/brandstory.do")
+    public String process(HttpServletRequest request,
+                          HttpServletResponse response) throws Exception {
+
+        BrandStoryDAO dao = new BrandStoryDAO();
+
+        // 1️⃣ 상세 페이지
+        String idParam = request.getParameter("id");
+        if (idParam != null) {
+            int id = Integer.parseInt(idParam);
+            return "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + id + ".jsp";
+        }
+
+        // 2️⃣ 목록 페이지
+        List<BrandStoryDTO> allStories;
+        try {
+            allStories = dao.selectAll();
+        } catch (SQLException e) {
+            throw e;
+        }
+
+        List<BrandStoryDTO> mainStories = new ArrayList<>();
+        List<BrandStoryDTO> recommendStories = new ArrayList<>();
+        List<BrandStoryDTO> moreStories = new ArrayList<>();
+
+        for (int i = 0; i < allStories.size(); i++) {
+            if (i <= 3) mainStories.add(allStories.get(i));
+            else if (i <= 7) recommendStories.add(allStories.get(i));
+            else moreStories.add(allStories.get(i));
+        }
+
+        request.setAttribute("mainStories", mainStories);
+        request.setAttribute("recommendStories", recommendStories);
+        request.setAttribute("moreStories", moreStories);
+
+        return "cocacola/Discover1/BrandStory";
+    }
+}

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cocacola.mvc.mapper.OurCompanyMapper">
+
+    <select id="selectAllContents" resultType="cocacola.mvc.domain.OurCompanyDTO">
+        SELECT 
+            CONTENT_ID      AS contentId, 
+            SECTION_CODE    AS sectionCode, 
+            TITLE, 
+            SUMMARY, 
+            IMAGE_FILENAME  AS imageFilename, 
+            BUTTON_LINK     AS buttonLink, 
+            DISPLAY_ORDER   AS displayOrder 
+        FROM OURCOMPANY 
+        ORDER BY DISPLAY_ORDER ASC
+    </select>
+
+</mapper>

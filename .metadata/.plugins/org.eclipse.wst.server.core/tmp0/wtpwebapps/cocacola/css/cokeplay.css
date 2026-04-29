@@ -1,0 +1,204 @@
+body {
+  background: #f3f3f3; /* AEM --color-surface-neutral-opaque-subtle 대체 */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  direction: ltr;
+  overflow-wrap: break-word;
+  margin: 0;
+  font-family: Noto-regional, Noto-latin, TCCC-UnityText, sans-serif; 
+  overflow-x: hidden;
+  
+}
+
+/* =========================
+   CokePLAY Hero
+========================= */
+.cokeplay-hero {
+  text-align: center;
+  padding: 80px 20px 60px;
+  padding-bottom: -500px;
+}
+
+/* CokePLAY 로고 텍스트 */
+.cokeplay-title {
+  font-size: 64px;
+  font-weight: 900;
+  color: #e41c2c; /* 코카콜라 레드 */
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+/* 서브 타이틀 */
+.cokeplay-sub {
+  font-size: 22px;
+  font-weight: 700;
+  color: #111;
+  line-height: 1.4;
+  margin-bottom: 20px;
+}
+
+/* 설명 문구 */
+.cokeplay-desc {
+  text-align: center;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #555;
+  max-width: 820px;
+  margin: 24px auto 0;
+  word-break: keep-all;
+}
+
+/* 첫 줄 강조하고 싶을 때 (br 기준 위쪽 문장) */
+.cokeplay-desc br {
+  line-height: 2;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .cokeplay-desc {
+    font-size: 13px;
+    padding: 0 20px;
+  }
+}
+
+/* CokePLAY 앱 이미지 영역 */
+.cokeplay-apps {
+  margin-top: 48px;
+  padding: 60px 0;
+  text-align: center;
+}
+
+/* 이미지 자체 */
+.cokeplay-apps__image {
+  max-width: 1120px;   /* 네 DevTools에 찍힌 1120 기준 */
+  width: 100%;
+  height: auto;
+  display: inline-block;
+}
+
+
+/* 다운로드 버튼 영역 */
+.cokeplay-download {
+  margin-top: 32px;
+  padding: 24px 0 48px;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+/* 공통 버튼 */
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 12px 28px;
+  min-width: 260px;
+
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  text-decoration: none;
+
+  background-color: #000; /* 버튼 색 */
+  border-radius: 999px;      /* 완전 둥근 버튼 */
+
+  transition: background-color 0.2s ease;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .cokeplay-download {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .download-btn {
+    width: 90%;
+    max-width: 320px;
+  }
+}
+
+/* 전체 영역 */
+.cokeplay-only {
+  padding: 80px 0 0;
+  text-align: center;
+}
+
+/* 타이틀 */
+.cokeplay-only__title {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 40px;
+}
+
+/* 카드 래퍼 */
+.cokeplay-only__cards {
+  max-width: 1120px;
+  margin: 0 auto;
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+}
+
+/* 카드 */
+.only-card {
+  flex: 1;
+  max-width: 340px;
+  border-radius: 16px;
+  padding: 32px 24px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.06);
+}
+
+/* 이미지 */
+.only-card__image {
+  margin-bottom: 24px;
+}
+
+.only-card__image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* 텍스트 */
+.only-card__text {
+  font-size: 14px;
+  font-weight: 600;
+  text-align: left;
+}
+
+/* 하단 버튼 */
+/* 하단 버튼 */
+.cokeplay-only__more {
+  margin-top: 40px;
+  padding-bottom: 80px;  /* ✅ footer와 간격은 여기서만 */
+}
+
+.only-more-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #000;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  border-radius: 999px;
+  text-decoration: none;
+}
+
+.only-more-btn:hover {
+  background: #222;
+}
+
+/* 모바일 */
+@media (max-width: 768px) {
+  .cokeplay-only__cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .only-card {
+    max-width: 90%;
+  }
+}
+

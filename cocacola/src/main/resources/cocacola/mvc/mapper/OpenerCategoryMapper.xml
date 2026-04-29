@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cocacola.mvc.mapper.OpenerCategoryMapper">
+
+    <select id="selectCategoryList"
+        resultType="cocacola.mvc.domain.OpenerCategoryDTO">
+        SELECT CATEGORY_ID, CATEGORY_NAME, SECTION_TITLE, DISPLAY_ORDER, USE_YN
+        FROM OPENER_CATEGORY
+        WHERE USE_YN = 'Y'
+        ORDER BY DISPLAY_ORDER
+    </select>
+
+</mapper>

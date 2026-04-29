@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="cocacola.mvc.mapper.CreationMapper">
+
+    <select id="selectBySectionType"
+            parameterType="string"
+            resultType="cocacola.mvc.domain.CreationStoryDTO">
+
+        SELECT
+            story_id        AS storyId,
+            section_type    AS sectionType,
+            title,
+            summary,
+            thumbnail_url   AS thumbnailUrl,
+            external_url    AS externalUrl
+        FROM creation_story
+        WHERE section_type = #{sectionType}
+        ORDER BY display_order
+
+    </select>
+
+</mapper>

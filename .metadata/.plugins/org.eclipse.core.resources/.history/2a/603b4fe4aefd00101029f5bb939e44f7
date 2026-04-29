@@ -1,0 +1,29 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/cocacola/Discover1/brandstory/detail")
+public class BrandStoryDetailServlet extends HttpServlet {
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        String idParam = request.getParameter("id");
+
+        if (idParam == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST);
+            return;
+        }
+
+        int id = Integer.parseInt(idParam);
+
+        // 🔥 JSP 파일명 조합
+        String jspPath = "/WEB-INF/views/cocacola/Discover1/brandStoryView_" + id + ".jsp";
+
+        request.getRequestDispatcher(jspPath).forward(request, response);
+    }
+}

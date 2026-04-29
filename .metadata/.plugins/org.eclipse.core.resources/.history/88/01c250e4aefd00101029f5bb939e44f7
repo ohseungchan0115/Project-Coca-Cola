@@ -1,0 +1,30 @@
+package cocacola.mvc.command;
+
+import java.util.Map;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import cocacola.mvc.service.OriginalsService;
+
+public class OriginalsHandler implements CommandHandler {
+    private OriginalsService service = new OriginalsService();
+
+    @Override
+    public String process(HttpServletRequest request, HttpServletResponse response) throws Exception {
+        
+        // 1. 파라미터로 넘어온 id 값 확인
+        String idParam = request.getParameter("id");
+
+        // 2. id 값이 있다면 상세 페이지(View)로 이동
+        if (idParam != null && !idParam.isEmpty()) {
+            // 상세 페이지 JSP 파일명 규칙에 맞춰 경로 반환
+            // 파일이 /WEB-INF/views/cocacola/Discover1/ 폴더 안에 있어야 합니다.
+            return "/WEB-INF/views/cocacola/Discover1/originalsView_" + idParam + ".jsp";
+        }
+
+        // 3. id 값이 없다면 기존처럼 목록 데이터 로드 및 Originals.jsp 반환
+        Map<String, Object> data = service.getGroupedOriginalsList();
+        data.forEach((key, value) -> request.setAttribute(key, value));
+
+        return "/WEB-INF/views/cocacola/Discover1/Originals.jsp";
+    }
+}

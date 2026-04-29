@@ -1,0 +1,51 @@
+package cocacola.mvc.persistence;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
+
+import cocacola.mvc.domain.DetailDTO;
+import cocacola.mvc.domain.OpenerPostDTO;
+import cocacola.util.ConnectionProvider;
+import cocacola.util.JdbcUtil;
+
+public class OpenerPostDAO {
+
+    public List<OpenerPostDTO> selectByCategory(int categoryId) throws Exception {
+
+        List<OpenerPostDTO> list = new ArrayList<>();
+
+        String sql =
+        	    "SELECT POST_ID, CATEGORY_ID, TITLE, SUMMARY, THUMBNAIL_URL, EXTERNAL_URL, DETAIL_URL " +
+        	    "FROM OPENER_POST " +
+        	    "WHERE CATEGORY_ID = ? " +
+        	    "ORDER BY POST_ID";
+
+
+        try (
+            Connection con = ConnectionProvider.getConnection();
+            PreparedStatement pstmt = con.prepareStatement(sql)
+        ) {
+            pstmt.setInt(1, categoryId);
+
+            try (ResultSet rs = pstmt.executeQuery()) {
+                while (rs.next()) {
+                    OpenerPostDTO dto = new OpenerPostDTO();
+                    dto.setPostId(rs.getInt("POST_ID"));
+                    dto.setCategoryId(rs.getInt("CATEGORY_ID"));
+                    dto.setTitle(rs.getString("TITLE"));
+                    dto.setSummary(rs.getString("SUMMARY"));
+                    dto.setThumbnailUrl(rs.getString("THUMBNAIL_URL"));
+                    dto.setExternalUrl(rs.getString("EXTERNAL_URL"));
+                    dto.setDetailUrl(rs.getString("DETAIL_URL"));
+                    list.add(dto);
+                }
+            }
+        }
+
+        return list;
+    }
+   
+}

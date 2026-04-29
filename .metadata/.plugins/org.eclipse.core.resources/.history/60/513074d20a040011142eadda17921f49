@@ -1,0 +1,294 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Originals 오리지널 콘텐츠 | 한국 코카-콜라</title>
+<link rel="stylesheet" href="${pageContext.request.contextPath}/css/Originals.css">
+</head>
+
+<body>
+<%@ include file="../nav.jsp" %>
+
+	<div class="mainphoto">
+		<img alt="" src="${pageContext.request.contextPath}/originals/originals_banner.png" class="mphoto">
+	</div>
+
+	<div class="journey-card">
+		<h2>코카-콜라 이야기 속으로 떠나는 여정</h2>
+		<p>코카-콜라가 선보이는 오리지널 콘텐츠! 오직 코카-콜라 유튜브 채널에서 전체 풀 버전 영상을 만날 수 있습니다.</p>
+		<a
+			href="https://www.youtube.com/playlist?list=PLi_dgkvr6Fr7Tets1DExrTB5BTTFgcuhi"><button
+				class="journey-btn">자세히 보러 가기</button></a>
+	</div>
+
+
+
+	<div class="overlap-row">
+		<div class="card text-card">
+			<h3 class="title">${main1.title}</h3>
+			<p class="desc">${main1.summary}</p>
+			<a href="${pageContext.request.contextPath}/cocacola/originals?id=1">
+    <button class="outline-btn">더 보기</button>
+</a>
+		</div>
+
+		<div class="card image-card coca-red">
+			<img alt=""
+				src="${pageContext.request.contextPath}/originals/${main1.image}"
+				class="mphoto">
+		</div>
+	</div>
+
+	<h2 class="section-title">최신 영상, 지금 만나보세요</h2>
+
+	<div class="productvideo">
+		<iframe width="100%" height="100%"
+			src="https://www.youtube.com/embed/7mLJmXuORk0?si=V1L7x7x7x7x7x7x7"
+			title="YouTube video player" frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen> </iframe>
+	</div>
+
+	<h2 class="section-title">베스트 썰 다시보기</h2>
+
+	<div class="overlap-row reverse">
+		<div class="card image-card photo">
+			<img alt=""
+				src="${pageContext.request.contextPath}/originals/${main2.image}"
+				class="mphoto">
+		</div>
+
+		<div class="card text-card">
+			<h3 class="title">${main2.title}</h3>
+			<p class="desc">${main2.summary}</p>
+			<button class="outline-btn">더 보기</button>
+		</div>
+	</div>
+
+	<section class="recommend-section">
+		<div class="carousel">
+			<div class="carousel-track">
+				<c:forEach var="originals" items="${section}" varStatus="status">
+					<div class="carousel-card">
+						<img
+							src="${pageContext.request.contextPath}/originals/${originals.image}"
+							alt="">
+						<div class="card-body">
+							<h3>${originals.title}</h3>
+							<p>${originals.summary}</p>
+							<a href="#">자세히 보기 →</a>
+						</div>
+					</div>
+				</c:forEach>
+			</div>
+		</div>
+
+
+<div class="carousel-dots">
+			<c:forEach var="originals" items="${section}" varStatus="s">
+				<span class="dot ${s.first ? 'active' : ''}"></span>
+			</c:forEach>
+		</div>
+	</section>
+
+	<div class="overlap-row">
+		<div class="card text-card">
+			<h3 class="title">${main3.title}</h3>
+			<p class="desc">${main3.summary}</p>
+			<button class="outline-btn">더 보기</button>
+		</div>
+
+		<div class="card image-card coca-red">
+			<img alt=""
+				src="${pageContext.request.contextPath}/originals/${main3.image}"
+				class="mphoto">
+		</div>
+	</div>
+
+	<h2 class="section-title">콕콕콕 인기 콘텐츠</h2>
+
+	<div class="restaurant-grid">
+		<c:forEach var="originals" items="${favStories}" varStatus="status">
+			<a href="#" class="restaurant-card">
+				<div class="res-img-wrapper">
+					<img
+						src="${pageContext.request.contextPath}/originals/${originals.image}"
+						alt="콘텐츠 이미지">
+				</div>
+				<div class="res-info">
+					<h3>${originals.title}</h3>
+					<p>${originals.summary}</p>
+					<div class="more-link">더보기 →</div>
+				</div>
+			</a>
+		</c:forEach>
+	</div>
+
+	<div class="overlap-row reverse">
+		<div class="card image-card photo">
+			<img alt=""
+				src="${pageContext.request.contextPath}/originals/${main4.image}"
+				class="mphoto">
+		</div>
+
+		<div class="card text-card">
+			<h3 class="title">${main4.title}</h3>
+			<p class="desc">${main4.summary}</p>
+			<button class="outline-btn">더 보기</button>
+		</div>
+	</div>
+
+	<h2 class="section-title">저니 카풀 추천 콘텐츠</h2>
+
+	<section class="sub-recommend-section">
+		<div class="sub-carousel">
+			<div class="sub-carousel-track">
+				<c:forEach var="originals" items="${recStories}" varStatus="status">
+					<div class="sub-carousel-card">
+						<img
+							src="${pageContext.request.contextPath}/originals/${originals.image}"
+							alt="">
+						<div class="sub-card-body">
+							<h3>${originals.title}</h3>
+							<a href="#" class="sub-more-link">더 보기 →</a>
+						</div>
+					</div>
+				</c:forEach>
+				</div></div>
+				<div class="sub-carousel-dots">
+			<c:forEach var="originals" items="${recStories}" varStatus="s">
+				<span class="sub-dot ${s.first ? 'active' : ''}"></span>
+			</c:forEach>
+		</div>
+	</section>
+
+	<div class="overlap-row">
+		<div class="card text-card">
+			<h3 class="title">${main5.title}</h3>
+			<p class="desc">
+				${main5.summary}</p>
+			<button class="outline-btn">더 보기</button>
+		</div>
+
+		<div class="card image-card coca-red">
+			<img alt="" src="${pageContext.request.contextPath}/originals/${main5.image}" class="mphoto">
+		</div>
+	</div>
+
+<%@ include file="../Footer.jsp" %>
+
+<script>
+window.addEventListener('load', function() {
+    /**
+     * 캐러셀 초기화 공통 함수
+     * @param {string} containerSelector - 최외곽 컨테이너 클래스 (.carousel)
+     * @param {string} trackSelector - 카드가 담긴 트랙 클래스 (.carousel-track)
+     * @param {string} cardClass - 개별 카드 클래스 (carousel-card)
+     * @param {string} dotSelector - 인디케이터 도트 클래스 (.dot)
+     * @param {number} gap - 카드 사이의 간격 (px)
+     */
+    function initCarousel(containerSelector, trackSelector, cardClass, dotSelector, gap) {
+        const container = document.querySelector(containerSelector);
+        if (!container) return;
+
+        const track = container.querySelector(trackSelector);
+        const originalCards = track.querySelectorAll(':scope > .' + cardClass);
+        const dots = document.querySelectorAll(dotSelector);
+
+        if (originalCards.length === 0) return;
+
+        const originalCount = originalCards.length;
+
+        // 1. 무한 루프용 카드 복제
+        originalCards.forEach(card => {
+            const clone = card.cloneNode(true);
+            track.appendChild(clone);
+        });
+
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+
+        // 카드 너비 계산 (JSP EL 충돌 방지를 위해 일반 함수 사용)
+        const getMoveDistance = () => originalCards[0].offsetWidth + gap;
+        const setTransform = (value) => {
+            track.style.transform = 'translateX(' + value + 'px)';
+        };
+
+        // 2. 드래그 시작 (mousedown)
+        container.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            startX = e.pageX;
+            track.style.transition = 'none';
+            container.style.cursor = 'grabbing';
+        });
+
+        // 3. 드래그 중 (mousemove)
+        window.addEventListener('mousemove', (e) => {
+            if (!isDragging) return;
+            const diff = e.pageX - startX;
+            currentTranslate = prevTranslate + diff;
+            setTransform(currentTranslate);
+        });
+
+        // 4. 드래그 종료 및 무한 루프 처리 (mouseup)
+        window.addEventListener('mouseup', () => {
+            if (!isDragging) return;
+            isDragging = false;
+            container.style.cursor = 'grab';
+
+            const moveDistance = getMoveDistance();
+            let currentIndex = Math.round(currentTranslate / -moveDistance);
+            
+            track.style.transition = 'transform 0.4s ease-out';
+            currentTranslate = currentIndex * -moveDistance;
+            prevTranslate = currentTranslate;
+            setTransform(currentTranslate);
+
+            // 무한 루프 순간이동 로직
+            if (currentIndex >= originalCount) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentTranslate = 0;
+                    prevTranslate = 0;
+                    setTransform(0);
+                    updateDots(0);
+                }, 400);
+            } else if (currentIndex < 0) {
+                setTimeout(() => {
+                    track.style.transition = 'none';
+                    currentTranslate = (originalCount - 1) * -moveDistance;
+                    prevTranslate = currentTranslate;
+                    setTransform(currentTranslate);
+                    updateDots(originalCount - 1);
+                }, 400);
+            }
+            updateDots(currentIndex);
+        });
+
+        // 도트 업데이트 함수
+        function updateDots(index) {
+            if (!dots.length) return;
+            let dotIndex = ((index % originalCount) + originalCount) % originalCount;
+            dots.forEach((dot, i) => dot.classList.toggle('active', i === dotIndex));
+        }
+        
+        // 이미지 기본 드래그 방지
+        container.addEventListener('dragstart', (e) => e.preventDefault());
+    }
+
+    // ⭐ 각 캐러셀에 맞게 함수 호출 (코드량이 확 줄어듭니다)
+    // 1. 상단 캐러셀 실행
+    initCarousel('.carousel', '.carousel-track', 'carousel-card', '.carousel-dots .dot', 24);
+
+    // 2. 하단 캐러셀 실행
+    initCarousel('.sub-carousel', '.sub-carousel-track', 'sub-carousel-card', '.sub-carousel-dots .sub-dot', 24);
+});
+</script>
+
+</body>
+</html>

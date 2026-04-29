@@ -1,0 +1,179 @@
+<%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>MC 콕따 이이경이 ‘콕!’ 따는 음료 썰, 유튜브 오리지널 콘텐츠 ‘썰스티’ | Original | 한국 코카-콜라</title>
+<style>
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	background: rgb(229, 229, 229);
+	color: #000;
+	overflow-y: scroll;
+}
+
+.image1 {
+    display: block;       /* 마진 자동 계산을 위해 블록 요소로 변경 */
+    width: 100%;          /* 기본적으로 너비 100% */
+    width: 1120px;    /* ⭐ 이미지의 실제 최대 너비 혹은 원하는 너비로 제한 */
+    height: auto;
+    margin: 0 auto;       /* ⭐ 좌우 마진을 auto로 설정하여 가운데 정렬 */
+}
+
+/* 본문 컨테이너: 이미지처럼 중앙 집중형 레이아웃 */
+    .content {
+        max-width: 850px;
+        margin: 60px auto;
+        padding: 0 50px;
+    }
+
+    .top-title {
+        text-align: center;
+        font-size: 28px;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+    }
+
+    .bottom-title {
+        text-align: center;
+        font-size: 38px;
+        font-weight: 900;
+        margin-bottom: 20px;
+        letter-spacing: -1px;
+    }
+
+    .date {
+        text-align: left; /* 이미지처럼 가운데 정렬 */
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .basic {
+        font-size: 16px;
+        margin-bottom: 30px;
+        word-break: keep-all; /* 한글 가독성 향상 */
+    }
+
+    .subtitle {
+    	margin-top: 50px;
+    	margin-bottom: 20px;
+        font-size: 32px;
+        font-weight: bold;
+        line-height: 1.3;
+    }
+
+    /* 이미지 스타일 */
+    .image2, .image3 {
+        width: 100%;
+    }
+    
+    .it_content{
+    	width: 400px;
+    	margin:0 auto ;
+    }
+
+    /* 인용구 스타일: 이탈릭 및 중앙 정렬 */
+    .italic_font {
+        font-style: italic;
+        text-align: center;
+        font-size: 16px;
+        padding: 20px;
+        margin: 20px 0;
+    }
+
+    .bold_highlight {
+        font-weight: bold;
+        font-size: 16px;
+        text-align: center;
+        margin: 30px 0;
+    }
+
+    /* 하단 캡션 */
+    .caption {
+        text-align: center;
+        font-size: 16px;
+        margin-top: -30px;
+        margin-bottom: 40px;
+    }
+
+    /* 카카오 배너 */
+    .image4 {
+        display: block;
+        max-width: 210px;
+        margin: 0 auto;
+    }
+
+    /* 강조 텍스트 */
+    .bold1 {
+        font-weight: bold;
+        font-size: 16px;
+        text-align: left;
+        margin: 20px 0;
+    }
+  
+  .card_img{
+  height: auto;
+  width: 736px;
+  margin: 30px 0 50px 0;
+  }
+  
+  .list-link{
+  text-decoration: underline;
+  margin: 20px 0 70px 0;
+  font-weight: bold;
+  }
+  
+
+</style>
+</head>
+<body>
+<%@ include file="../nav.jsp" %>
+<img class="image1" alt="메인 배너" src="${pageContext.request.contextPath}/originals/ssulsty-about_01.png">
+<div class="content">
+    <h2 class="bottom-title">MC 콕따 이이경이 ‘콕!’ 따는 음료 썰, 
+    <br>
+	유튜브 오리지널 콘텐츠 ‘썰스티’</h2>
+    <h3 class="date">2025. 06. 09</h3>
+
+    <p class="basic">
+        우리에겐 각자 목마름을 채워주는 것 이상의 의미를 가진 음료가 하나쯤 있다. 그리고 그러한 음료를 둘러싼 다양한 사람들의 이야기를 담아내는 코카-콜라의 새로운 유튜브 오리지널 콘텐츠, '썰스티'가 시작된다. 
+<br><br>
+'썰스티'는 &lt;오늘의 음료&gt;를 주제로, 코카-콜라사의 다양한 음료에 얽힌 팬들의 이야기—일명 '썰'을 풀어가는 콘텐츠다. 코카-콜라, 스프라이트, 닥터페퍼 등 다양한 코카-콜라 음료를 사랑하는 팬들을 직접 만나, 그들이 빠져든 음료의 진짜 매력과 ‘썰’을 풀어본다. 여기에 다양한 미션과 챌린지로 재미 보장! 이렇게 한 잔의 음료에 담긴 이야기를 유쾌하게 풀어가는 시간, 그 중심엔 바로 ‘MC 콕따’, 이이경이 있다.</p>
+
+    <h2 class="subtitle">입담은 기본, 팬심은 만렙!
+    <br>
+코-크 찐사랑 이이경, ‘MC 콕따’로 변신</h2>
+	
+	<img class="card_img" alt="" src="${pageContext.request.contextPath}/originals/ssulsty-about_02.jpg">
+
+    <p class="basic">
+        그래서 발탁된 ‘썰스티’의 진행자는 바로 배우 이이경이다. 유쾌한 에너지와 센스 있는 리액션으로 게스트들의 마음을 자연스럽게 여는 능력을 지닌 ‘입담 장인’ 이이경. 게다가 그는 평소에도 코카-콜라에 대한 찐한 애정을 드러내온 찐팬이자 '덕후'이기도 하다. 그래서 붙은 애칭이 바로 ‘MC 콕따’! 앞으로 다양한 음료의 팬들을 만나며, 그들의 이야기를 콕! 따고, 그들의 마음에 콕! 가서 닿겠다는 의지를 담은 애칭이다.
+<br><br>
+실제 이이경 또한 “코카-콜라 한 모금에 기분까지 리프레시되는 코카-콜라의 찐팬으로서, ‘썰스티’의 MC를 맡게 되어 너무 기쁘고 설렌다”며 “단순히 음료를 마시는 게 아니라, 그 한 잔에 담긴 감정과 추억을 함께 나누는 시간이 정말 특별하게 느껴진다. 앞으로도 많은 팬들과 즐겁고 유쾌하게 '썰'을 나누고 싶다”고 소감을 전했다.</p>
+    
+    <h2 class="subtitle">썰스티, 음료 그 이상의 이야기 </h2>
+
+<img class="card_img" alt="" src="${pageContext.request.contextPath}/originals/ssulsty-about_01.png">
+
+<p class="basic">
+브랜드와 팬을 잇는 코카-콜라의 콘텐츠 실험은 ‘썰스티’ 이전에도 계속돼 왔다. 2017년 개그우먼 김신영과 함께 다양한 이들의 꿈을 응원했던 ‘코카-콜라 저니 카풀’, 2021년 장도연과 함께 브랜드 궁금증을 유쾌하게 풀어내는 ‘콕콕콕’ 시리즈까지. 코카-콜라는 매번 색다른 방식으로 소비자와 소통하며, 살아있는 브랜드의 이야기를 만들어왔다. 이는 코카-콜라가 오랜 시간에 걸쳐 다져온 브랜드 저널리즘 전략의 일환이다. 그리고 이제, 그 탐구의 여정은 ‘썰스티’로 이어진다.
+<br><br>
+‘썰스티’는 단순한 콘텐츠를 넘어, 한 잔의 음료에 담긴 이야기를 들여다보는 콘텐츠다. 그 안에 담긴 웃음과 공감, 썰과 목마름(Thirsty)까지. 다양한 사람들의 이야기로 앞으로 더욱 풍성해질 ‘썰스티’—기대해주세요.
+</p>
+    <a href="https://pf.kakao.com/_gxdxjrK?utm_source=coca-cola-journey&utm_medium=banner&utm_campaign=coca-cola-journey&utm_term=add-friend&utm_content=link">
+        <img class="image4" alt="카카오 플러스 친구" src="${pageContext.request.contextPath}/images/2023_kakao-plus-short-2.png">
+    </a>
+</div>
+
+<%@ include file="../Footer.jsp" %>
+
+</body>
+</html>

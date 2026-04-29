@@ -1,0 +1,56 @@
+package cocacola.mvc.controller;
+
+import java.io.IOException;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.yourcompany.mvc.model.dao.SustainabilityDAO;
+import com.yourcompany.mvc.model.vo.Content;
+
+@WebServlet("/cocacola/Sustainability/detail")
+public class SustainabilityDetailController extends HttpServlet {
+
+    private static final long serialVersionUID = 1L;
+
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException {
+
+        // 1️⃣ 파라미터 받기
+        String contentIdParam = request.getParameter("content_id");
+
+        if (contentIdParam == null) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "content_id is required");
+            return;
+        }
+
+        int contentId;
+        try {
+            contentId = Integer.parseInt(contentIdParam);
+        } catch (NumberFormatException e) {
+            response.sendError(HttpServletResponse.SC_BAD_REQUEST, "invalid content_id");
+            return;
+        }
+
+        // 2️⃣ DAO 조회
+        SustainabilityDAO dao = new SustainabilityDAO();
+        Content content = dao.getContentById(contentId);
+
+        if (content == null) {
+            response.sendError(HttpServletResponse.SC_NOT_FOUND, "content not found");
+            return;
+        }
+
+        // 3️⃣ request 저장
+        request.setAttribute("content", content);
+
+        // 4️⃣ forward
+        request.getRequestDispatcher(
+            "/WEB-INF/views/cocacola/Sustainability/sustainability_detail.jsp"
+        ).forward(request, response);
+    }
+}

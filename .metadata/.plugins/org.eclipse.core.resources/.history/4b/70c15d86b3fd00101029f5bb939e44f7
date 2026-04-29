@@ -1,0 +1,18 @@
+package cocacola.mvc.service;
+
+import java.util.List;
+
+import cocacola.mvc.domain.CreationStoryDTO;
+import cocacola.mvc.persistence.CreationDAO;
+import cocacola.mvc.persistence.CreationDAOImpl;
+
+public class CreationService {
+
+    private CreationDAO dao = new CreationDAOImpl();
+
+    public List<CreationStoryDTO> getStoryListBySection(String sectionType) throws Exception {
+        return dao.selectBySectionType(sectionType);
+    }
+    
+
+}
